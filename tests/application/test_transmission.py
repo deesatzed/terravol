@@ -6,3 +6,6 @@ class TransmissionTests(unittest.TestCase):
   result=MatchedEvidenceComparator(("a","b"),("a","b")).compare()
   self.assertEqual(result,"COMPARABLE")
   with self.assertRaises(ValueError):MatchedEvidenceComparator(("a",),("b",)).compare()
+ def test_future_covariate_is_scenario_weighted(self):
+  from volterra.transmission import future_covariate_mean
+  self.assertEqual(future_covariate_mean(((.5,0),(.5,2))),1)
