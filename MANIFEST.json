@@ -1,10 +1,10 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T15:05:20.559492+00:00",
+  "updated_at_utc": "2026-10-18T15:05:56.429819+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 126,
+  "file_count_excluding_manifest": 128,
   "completed_implementation_tickets": [
     "VT00",
     "VT01"
@@ -13,7 +13,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 7,
   "application_acceptance_remaining": 113,
-  "full_test_suite_passed": 59,
+  "full_test_suite_passed": 60,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -93,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 15419,
-      "sha256": "e2c9abce7c9fa59d1aee28704dae45e8ad5eb59d226a8ec72112fe66de7fa36b"
+      "bytes": 16456,
+      "sha256": "00a5410fd89bd838bc0f5ee0d7429038f770a79d31fa27991703e318e05df7f7"
     },
     {
       "path": "README.md",
@@ -148,8 +148,8 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 52546,
-      "sha256": "996216e63df188bdfd2d387eb0b87cf3bc769165742b0eab2f592d6214c9b402"
+      "bytes": 52895,
+      "sha256": "84fbb207bdc4090c83329972f1bda3c0508ebae3fc3816178804e984f3033cda"
     },
     {
       "path": "config/feasibility_matrix.json",
@@ -158,8 +158,8 @@
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11276,
-      "sha256": "559e2dd01c8a173bac7b2f20ecc4eea601427e13c0f2aa662e5781f4177ef140"
+      "bytes": 11332,
+      "sha256": "6f0a51f07f0147ba87e1c5e412ea5fadc2ac89e7e8212ee513d4d90a4581973e"
     },
     {
       "path": "config/model_registry.json",
@@ -483,8 +483,13 @@
     },
     {
       "path": "reports/vt02/application-acceptance.json",
-      "bytes": 1166,
-      "sha256": "0378388fd9478262c28df6d86ca6b4742a91c62081653aa3c7965073c9bbf062"
+      "bytes": 1220,
+      "sha256": "52b190facc99b90ad35e2343fa520e1006ee543a6db0a0f09ecf89c30ae6d055"
+    },
+    {
+      "path": "reports/vt02/ticket-verification.json",
+      "bytes": 868,
+      "sha256": "05bb7f953bf5268cfd766a2d5970c00f919f5e630c4189216a0e4ed06ca5c4fb"
     },
     {
       "path": "requirements-spec-validation.txt",
@@ -602,6 +607,11 @@
       "sha256": "338682384607ea95b7b1c0e213e9c9fc1925a6f92063dd3f3fc72db5c3e63a51"
     },
     {
+      "path": "tests/application/test_eco.py",
+      "bytes": 934,
+      "sha256": "aac5a9e2fbaacced3f9b2b36f57cd64089f4dbddba863e755c0151663af4bc17"
+    },
+    {
       "path": "tests/application/test_ops.py",
       "bytes": 3204,
       "sha256": "a2d4df8742212aca46d061c67a3b9f147f44ab83e4cf98553b0d1514a2716890"
@@ -629,7 +639,7 @@
     {
       "path": "tests/scaffold/test_cli.py",
       "bytes": 14445,
-      "sha256": "50ea4f635856d2126aeea931aa1469c114ca82c03ba69b896e53795b47f522cf"
+      "sha256": "51693b6adebdc37d5b563f60db7ff5d5b3eb14ac7b754ab7b7fc5dc4ffe61b58"
     },
     {
       "path": "tools/validate_specs.py",

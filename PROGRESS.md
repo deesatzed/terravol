@@ -77,3 +77,9 @@
 **Current VT02 adjustment increment:** measurement identity now also requires an explicit split/futures-roll adjustment policy. Adjustment policy participates in the immutable target definition hash, so adjusted and unadjusted series cannot silently share a target. The full suite passes 57 tests. Nonpositive-price handling and receipt-backed ticket completion remain pending.
 
 **Current VT02 nonpositive-price increment:** target measurement identity now requires a declared nonpositive-price policy, such as `UNSUPPORTED` or an explicitly supported arithmetic-return definition. Silent log clipping is not representable. The full suite passes 58 tests.
+
+## 2026-10-18 — VT02 complete: offline evidence and control foundation
+
+**Implemented:** VT02 now provides a local append-only evidence ledger with sealed as-of snapshots, target maturity, content-addressed artifacts, idempotent jobs, monotone synthetic lineage, explicit measurement/adjustment/nonpositive-price policies, and artifact export classifications. Dispatch policy enforces network/domain/purpose/deadline/budget/action limits, pinned authorizations, actual-cost completion records, and a hard brokerage/trading prohibition. No provider client, data retrieval, credentials, model inference, forecast, or trade execution was added.
+
+**Verification:** 60 tests passed; the 30-test application suite exercised the VT02 controls. [Application receipt](reports/vt02/application-acceptance.json) binds 19 VT02 requirement IDs to that run, and [ticket receipt](reports/vt02/ticket-verification.json) passed scaffold validation. The scaffold reports 26/120 application requirements executed and selects VT03 as next eligible work.
