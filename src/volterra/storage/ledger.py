@@ -131,6 +131,10 @@ class EvidenceLedger:
             "OBSERVED", "MISSING", "UNAVAILABLE", "STALE", "CONTRADICTORY", "CENSORED", "ASSUMED",
         }:
             raise LedgerError("observation_state is unsupported")
+        if evidence.observation_state == "OBSERVED" and evidence.payload is None:
+            raise LedgerError("observed evidence requires an explicit payload")
+        if evidence.observation_state != "OBSERVED" and evidence.payload is not None:
+            raise LedgerError("non-observed evidence cannot be encoded as a numeric or categorical observation")
         timestamps = {
             "event_at": _utc(evidence.event_at, "event_at"),
             "published_at": _utc(evidence.published_at, "published_at"),
