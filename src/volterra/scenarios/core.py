@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass,replace
 import hashlib,json
 class ScenarioError(ValueError):pass
+def concurrent_mechanisms(values:tuple[float,...])->tuple[float,...]:
+ if any(not 0<=value<=1 for value in values):raise ScenarioError("mechanism probabilities must be marginals")
+ return values
 @dataclass(frozen=True)
 class Scenario:
  observations:dict[str,str]
