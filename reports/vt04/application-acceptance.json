@@ -1,0 +1,19 @@
+{
+  "scope": "application_acceptance",
+  "status": "PASSED",
+  "requirement_ids": [
+    "AC-TIME-02",
+    "AC-DIST-01",
+    "AC-DIST-08",
+    "AC-DIST-09"
+  ],
+  "test_refs": [
+    "tests/application/test_baselines.py"
+  ],
+  "tests_run": 46,
+  "run_id": "vt04-classical-baselines-20261018",
+  "executed_at": "2026-10-18T17:43:25+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT04 baseline primitives passed only on origin-bound synthetic inputs: persistence, EWMA, configured Log-HAR, and configured GJR-GARCH remain point forecasts; residual uncertainty is target-measurement-bound; the admissible baseline context excludes realized targets and future features. No fitted parameters, external data, scoring result, model artifact, or market claim is included."
+}

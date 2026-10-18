@@ -124,8 +124,18 @@ class StudentTSpec:
         object.__setattr__(self, "scale", scale)
 
     def require_finite_variance(self) -> None:
-        if self.degrees_of_freedom <= 2.0:
-            raise ContractError("Student-t variance is undefined for degrees_of_freedom <= 2")
+        self.require_finite_moment(2, consumer="variance")
+
+    def require_finite_moment(self, order: int, *, consumer: str) -> None:
+        if isinstance(order, bool) or not isinstance(order, int) or order <= 0:
+            raise ContractError("moment order must be a positive integer")
+        if not consumer:
+            raise ContractError("moment consumer identity is required")
+        if self.degrees_of_freedom <= order:
+            raise ContractError(
+                f"{consumer} requires finite moment order {order}; "
+                f"Student-t degrees_of_freedom must exceed {order}"
+            )
 
 
 @dataclass(frozen=True)

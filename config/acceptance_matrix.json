@@ -25,11 +25,20 @@
       "id": "AC-TIME-02",
       "requirement": "The scored target cannot appear inside a model context, scaler fit, gate feature, or analog retrieval.",
       "ticket": "VT04",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_time.py::test_ac_time_02",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_baselines.py"
+      ],
+      "planned_test": "tests/application/test_baselines.py::ClassicalBaselineTests::test_ac_time_02_baseline_context_excludes_realized_target_and_future_features",
+      "last_run": {
+        "run_id": "vt04-classical-baselines-20261018",
+        "executed_at": "2026-10-18T17:43:25+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt04/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-03",
@@ -450,11 +459,20 @@
       "id": "AC-DIST-01",
       "requirement": "Identical point experts can retain nonzero predictive uncertainty through their outcome distributions.",
       "ticket": "VT04",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_dist.py::test_ac_dist_01",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_baselines.py"
+      ],
+      "planned_test": "tests/application/test_baselines.py::ClassicalBaselineTests::test_ac_dist_01_identical_point_experts_can_retain_residual_uncertainty",
+      "last_run": {
+        "run_id": "vt04-classical-baselines-20261018",
+        "executed_at": "2026-10-18T17:43:25+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt04/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-02",
@@ -529,21 +547,39 @@
       "id": "AC-DIST-08",
       "requirement": "Unsupported/infinite required moments block the relevant score or payoff consumer with a specific reason.",
       "ticket": "VT04",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_dist.py::test_ac_dist_08",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_baselines.py"
+      ],
+      "planned_test": "tests/application/test_baselines.py::ClassicalBaselineTests::test_ac_dist_08_blocks_a_consumer_that_requires_an_unsupported_moment",
+      "last_run": {
+        "run_id": "vt04-classical-baselines-20261018",
+        "executed_at": "2026-10-18T17:43:25+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt04/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-09",
       "requirement": "Point/mean return-variance baselines do not silently masquerade as full intraday realized-variance distributions.",
       "ticket": "VT04",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_dist.py::test_ac_dist_09",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_baselines.py"
+      ],
+      "planned_test": "tests/application/test_baselines.py::ClassicalBaselineTests::test_ac_dist_09_persistence_is_explicit_point_variance_not_intraday_distribution",
+      "last_run": {
+        "run_id": "vt04-classical-baselines-20261018",
+        "executed_at": "2026-10-18T17:43:25+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt04/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-10",

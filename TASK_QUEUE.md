@@ -1,14 +1,14 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00 and VT01 are closed within their bounded local/synthetic scopes; current next ticket is VT02. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT03 are closed within their bounded local/synthetic scopes; VT04 is in progress and remains the next ticket. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
 | VT00 | None | COMPLETE | Bounded local/synthetic current-state and source/data feasibility audit |
 | VT01 | VT00 | COMPLETE | Typed finite contracts, safe serialization and capability-manifest primitives |
-| VT02 | VT01 | NOT_IMPLEMENTED | As-of evidence, targets, maturity and early deterministic call controls |
-| VT03 | VT01, VT02 | NOT_IMPLEMENTED | Seeded market/event worlds and exact cascade reference |
-| VT04 | VT02, VT03 | NOT_IMPLEMENTED | Classical forecasts and measurement-compatible distributions |
+| VT02 | VT01 | COMPLETE | As-of evidence, targets, maturity and early deterministic call controls |
+| VT03 | VT01, VT02 | COMPLETE | Seeded market/event worlds and exact cascade reference |
+| VT04 | VT02, VT03 | IN_PROGRESS | Classical forecasts and measurement-compatible distributions |
 | VT05 | VT04 | NOT_IMPLEMENTED | Sealed forecasts, delayed proper scoring and first offline slice |
 | VT06 | VT02, VT05 | NOT_IMPLEMENTED | TTM, Chronos-2 and TimesFM 2.5 adapters |
 | VT07 | VT05 | NOT_IMPLEMENTED | Joint paths and episode derivation |

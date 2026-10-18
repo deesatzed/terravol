@@ -1,6 +1,6 @@
 # VOLTERRA progress
 
-**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. The entries below retain earlier observations and scope as history. The consolidated scaffold is validated; the forecasting application remains NOT_IMPLEMENTED, with 0/120 application acceptance requirements executed. Next application work is VT00 closure, then VT01–VT05 for the first scored offline slice.
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. The entries below retain earlier observations and scope as history. The consolidated scaffold is validated; the forecasting application remains NOT_IMPLEMENTED, with 41/120 application acceptance requirements executed. VT04 is the next application ticket for the first scored offline slice.
 
 ## 2026-10-18 — ANALYSIS-VOLTUPD
 
@@ -83,3 +83,15 @@
 **Implemented:** VT02 now provides a local append-only evidence ledger with sealed as-of snapshots, target maturity, content-addressed artifacts, idempotent jobs, monotone synthetic lineage, explicit measurement/adjustment/nonpositive-price policies, and artifact export classifications. Dispatch policy enforces network/domain/purpose/deadline/budget/action limits, pinned authorizations, actual-cost completion records, and a hard brokerage/trading prohibition. No provider client, data retrieval, credentials, model inference, forecast, or trade execution was added.
 
 **Verification:** 60 tests passed; the 30-test application suite exercised the VT02 controls. [Application receipt](reports/vt02/application-acceptance.json) binds 19 VT02 requirement IDs to that run, and [ticket receipt](reports/vt02/ticket-verification.json) passed scaffold validation. The scaffold reports 26/120 application requirements executed and selects VT03 as next eligible work.
+
+## 2026-10-18 — VT03 complete: exact cascade references
+
+**Implemented:** VT03 supplies deterministic finite-state cascade references for independent, coincident, and exclusive branches; background/no-event mass; complete-set arithmetic; shared-downstream de-duplication; joint-probability bounds; and explicit logical queries. It rejects duplicate source identities and invalid exclusive branch tables. The work operates only on supplied finite probabilities and does not fit, retrieve, or validate a real-world causal graph.
+
+**Verification:** 68 total tests passed at completion. The 38-test application suite produced [application evidence](reports/vt03/application-acceptance.json) for 11 requirements and a [VT03 ticket receipt](reports/vt03/ticket-verification.json); scaffold validation selected VT04 next.
+
+## 2026-10-18 — VT04 in progress: measurement-bound classical baselines
+
+**Implemented so far:** Persistence, EWMA, configured Log-HAR, and configured GJR-GARCH produce explicit point-variance forecasts from supplied pre-origin synthetic histories. A residual Normal outcome distribution binds to the immutable target measurement identity, and named consumers reject Student-t distributions without the required finite moment. The classical primitives do not fit parameters, infer intraday realized-variance distributions, retrieve external data, or score forecasts.
+
+**Verification:** the 46-test application suite passed; [application evidence](reports/vt04/application-acceptance.json) binds AC-TIME-02, AC-DIST-01, AC-DIST-08, and AC-DIST-09. Scaffold validation reports 41/120 requirements executed and retains VT04 as the next ticket. The remaining VT04 work is sealed-origin baseline assembly and distribution/measurement validation needed before VT05 delayed scoring.
