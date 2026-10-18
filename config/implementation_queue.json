@@ -1,0 +1,399 @@
+{
+  "schema_version": "2.1",
+  "canonical_goal": "GOAL_UPD.md",
+  "first_scored_slice_through": "VT05",
+  "tickets": [
+    {
+      "id": "VT00",
+      "dependencies": [],
+      "title": "Current-state and source/data feasibility audit",
+      "owns": [
+        "docs",
+        "config"
+      ],
+      "status": "PARTIAL",
+      "exit_evidence": "Close environment, repository and source/data feasibility records; scaffold preparation is not application completion.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT01",
+      "dependencies": [
+        "VT00"
+      ],
+      "title": "Typed contracts, safe serialization and manifests",
+      "owns": [
+        "contracts"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Close finite-number/Student-t defects with failing regressions; version schemas and capabilities.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT02",
+      "dependencies": [
+        "VT01"
+      ],
+      "title": "As-of evidence, targets, maturity and early deterministic call controls",
+      "owns": [
+        "storage",
+        "evidence",
+        "instruments",
+        "targets",
+        "policy"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Durable revisions/snapshots, FK/artifact integrity, jobs, zero-default reservations, allowlists, timeouts and completion logs before external calls.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT03",
+      "dependencies": [
+        "VT01",
+        "VT02"
+      ],
+      "title": "Seeded market/event worlds and exact cascade reference",
+      "owns": [
+        "fixtures",
+        "cascades"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Exact known-answer enumeration, explicit assumptions, no-event/background mass and future-mutation invariance.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT04",
+      "dependencies": [
+        "VT02",
+        "VT03"
+      ],
+      "title": "Classical forecasts and measurement-compatible distributions",
+      "owns": [
+        "models",
+        "distributions"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Persistence, EWMA, Log-HAR, GJR-GARCH and residual/measurement links with valid moments.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT05",
+      "dependencies": [
+        "VT04"
+      ],
+      "title": "Sealed forecasts, delayed proper scoring and first offline slice",
+      "owns": [
+        "forecast_store",
+        "evaluation"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Reproduce seeded load/snapshot/baseline/exact-cascade/seal/advance/mature/score; no downloaded weights required.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT06",
+      "dependencies": [
+        "VT02",
+        "VT05"
+      ],
+      "title": "TTM, Chronos-2 and TimesFM 2.5 adapters",
+      "owns": [
+        "models"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Exact artifacts/terms, capability/failure identity, resource and reload checks; unavailable integration remains blocked.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT07",
+      "dependencies": [
+        "VT05"
+      ],
+      "title": "Joint paths and episode derivation",
+      "owns": [
+        "distributions",
+        "targets"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Time/instrument/world dependence, horizon sums, censoring, joint calibration and diagnostics.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT08",
+      "dependencies": [
+        "VT05",
+        "VT07"
+      ],
+      "title": "Numerical CLI replay and chronological benchmark",
+      "owns": [
+        "service",
+        "evaluation"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Offline gate independent of VT06; checkpoint benchmark requires each actual VT06 integration and a separate gate.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT09",
+      "dependencies": [
+        "VT01",
+        "VT03",
+        "VT05"
+      ],
+      "title": "ESS rules, inference and immutable scenarios",
+      "owns": [
+        "ess",
+        "scenarios"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Exact graph reference, safe functions, supported inference, fitted filter and scenario isolation.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT10",
+      "dependencies": [
+        "VT02",
+        "VT09"
+      ],
+      "title": "External events, clocks, expectations and monitor observation contracts",
+      "owns": [
+        "events",
+        "expectations",
+        "instruments"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "After equity integrity, verify exact gas contracts and as-issued weather/storage coverage; separate physical/evidence/propagation states.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT11",
+      "dependencies": [
+        "VT07",
+        "VT09",
+        "VT10"
+      ],
+      "title": "Transmission specialist and same-information numerical control",
+      "owns": [
+        "models",
+        "ess"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Chronological OOF event/reference inputs, exposure, buffers and conditional distributions.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT12",
+      "dependencies": [
+        "VT03",
+        "VT07",
+        "VT11"
+      ],
+      "title": "Fitted dependency-aware cascades and joint-world queries",
+      "owns": [
+        "cascades",
+        "distributions"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Shared drivers/outcomes, lag/absence/cancellation, canonical episode matching and branch-failure mass.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT13",
+      "dependencies": [
+        "VT10",
+        "VT12"
+      ],
+      "title": "Coverage planning and conditional research watches",
+      "owns": [
+        "coverage",
+        "scenarios"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Observation-aware lead time, explicit utility/cost units, bounded candidates, exact-small-set monitoring controls; no live jobs until enabled.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT14",
+      "dependencies": [
+        "VT05",
+        "VT08"
+      ],
+      "title": "Same-pool global/rolling/feature arbitration",
+      "owns": [
+        "arbitration",
+        "forecast_store"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Classical pool can be used first; separate supported objectives, OOF forecasts and actual mixture scoring.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT15",
+      "dependencies": [
+        "VT10",
+        "VT11",
+        "VT12",
+        "VT14"
+      ],
+      "title": "Event-stage gates and conditional-world fusion",
+      "owns": [
+        "arbitration",
+        "distributions"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Distinct q/world mass and model weights, no double marginalization, shrinkage and joint-compatible gate.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT16",
+      "dependencies": [
+        "VT02",
+        "VT14",
+        "VT15"
+      ],
+      "title": "Cheap pre-inference selector and charged reliability audits",
+      "owns": [
+        "selection",
+        "policy"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "No fresh expensive outputs in cheap features; cold/warm cost; unrun forecasts missing; full-pool audit costs/propensities explicit.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT17",
+      "dependencies": [
+        "VT10",
+        "VT13",
+        "VT16"
+      ],
+      "title": "Bounded investigation and time-matched revisions",
+      "owns": [
+        "acquisition",
+        "policy"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Permitted requests, pre-dispatch reservations, stopping and same-time/same-future-target controls.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT18",
+      "dependencies": [
+        "VT05",
+        "VT15",
+        "VT17"
+      ],
+      "title": "Matured-outcome memory, shadow promotion and rollback",
+      "owns": [
+        "learning"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "No consensus labels; state versions, fresh confirmation, approved algorithms and reversible promotions.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT19",
+      "dependencies": [
+        "VT08",
+        "VT09",
+        "VT12",
+        "VT13",
+        "VT15",
+        "VT18"
+      ],
+      "title": "Computed local workbench for W01-W09",
+      "owns": [
+        "ui",
+        "service"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Forecast/watch/event/graph/arbitration/scenario/evaluation views; graph edits change the actual numerical branch.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT20",
+      "dependencies": [
+        "VT11",
+        "VT12",
+        "VT15",
+        "VT18"
+      ],
+      "title": "Full ablation and negative-result research report",
+      "owns": [
+        "evaluation"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Preregister protocol before fitting, matched evidence/budgets, event-group uncertainty and untouched confirmation.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT21",
+      "dependencies": [
+        "VT20"
+      ],
+      "title": "Prospective collection protocol and jobs",
+      "owns": [
+        "evaluation",
+        "service"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Frozen new observations; implementation can complete while real labels/results remain pending.",
+      "evidence_refs": [],
+      "optional": false
+    },
+    {
+      "id": "VT22",
+      "dependencies": [
+        "VT07",
+        "VT08",
+        "VT12",
+        "VT20"
+      ],
+      "title": "Optional contract-aware options research W10",
+      "owns": [
+        "options"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "Authorized quotes, actual timing/payoff/costs and no-edge results; no execution or brokerage integration.",
+      "evidence_refs": [],
+      "optional": true
+    },
+    {
+      "id": "VT23",
+      "dependencies": [
+        "VT19",
+        "VT20",
+        "VT21"
+      ],
+      "title": "Evidence-backed engineering release",
+      "owns": [
+        "service",
+        "docs"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "exit_evidence": "All applicable receipts, real blocked-capability accounting, resource/license/security checks; separate prospective/scientific/economic readiness.",
+      "evidence_refs": [],
+      "optional": false
+    }
+  ]
+}

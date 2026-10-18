@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:volterra:schema:DecisionResult:1",
+  "title": "DecisionResult",
+  "type": "object",
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "forecast_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "criterion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "PUBLISH_NUMERIC",
+          "CHECK_DATA",
+          "RUN_SPECIALIST",
+          "FETCH_APPROVED_EVIDENCE",
+          "ABSTAIN",
+          "STOP"
+        ]
+      }
+    },
+    "selected_action": {
+      "enum": [
+        "PUBLISH_NUMERIC",
+        "CHECK_DATA",
+        "RUN_SPECIALIST",
+        "FETCH_APPROVED_EVIDENCE",
+        "ABSTAIN",
+        "STOP"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "decision_model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "calibration_status": {
+      "enum": [
+        "not_applicable",
+        "uncalibrated",
+        "validated_mapping"
+      ]
+    },
+    "raw_model_score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "estimated_cost_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "available_budget_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "policy_approved": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "decision_id",
+    "origin",
+    "forecast_id",
+    "synthetic",
+    "criterion",
+    "allowed_actions",
+    "selected_action",
+    "reason_codes",
+    "decision_model_id",
+    "calibration_status",
+    "raw_model_score",
+    "estimated_cost_usd",
+    "available_budget_usd",
+    "policy_approved"
+  ],
+  "additionalProperties": false
+}

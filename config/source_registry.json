@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.1",
+  "approved_sources": [],
+  "candidate_domains": [
+    "NOAA operational weather archives",
+    "authorized exact-contract market observations",
+    "EIA vintage releases",
+    "timestamped consensus when authorized"
+  ],
+  "strict_historical_availability_required": true,
+  "paid_subscription_allowance_usd": 0,
+  "status": "FEASIBILITY_NOT_VERIFIED"
+}

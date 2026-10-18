@@ -1,0 +1,42 @@
+{
+  "schema_version": "2.1",
+  "canonical_goal": "GOAL_UPD.md",
+  "authority_decision": "ADR-001",
+  "scaffold_status": "PREPARED",
+  "application_status": "NOT_IMPLEMENTED",
+  "research_status": "NOT_EVALUATED",
+  "prospective_status": "NOT_STARTED",
+  "economic_status": "NOT_ASSESSED",
+  "core_foundation_roster": [
+    "ttm",
+    "chronos_2",
+    "timesfm_2_5"
+  ],
+  "protected_paths": [
+    "aXc-ace-forecaster/"
+  ],
+  "archive": "docs/archive/spec-v1",
+  "application_acceptance_count": 120,
+  "required_documents": [
+    "GOAL_UPD.md",
+    "GOAL.md",
+    "AGENTS.md",
+    "STANDARDS.md",
+    "IMPLEMENT.md",
+    "DECISIONS.md",
+    "PROGRESS.md",
+    "TASK_QUEUE.md",
+    "docs/ARCHITECTURE.md",
+    "docs/DATA_CONTRACTS.md",
+    "docs/PROBABILITY_SEMANTICS.md",
+    "docs/WORKFLOWS.md",
+    "docs/BENCHMARK_PROTOCOL.md",
+    "docs/TRANSFORMATION_AUDIT.md",
+    "docs/STATUS.md",
+    "docs/ACCEPTANCE_MATRIX.md"
+  ],
+  "supplied_commands": [
+    "doctor",
+    "scaffold validate"
+  ]
+}

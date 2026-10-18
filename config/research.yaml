@@ -1,0 +1,66 @@
+{
+  "specification_version": "1.0",
+  "status": "PLANNED_POLICY_NOT_EXECUTABLE_ENGINE",
+  "mode": "research_only",
+  "instruments": {
+    "initial_research_universe": [
+      "SPY",
+      "QQQ",
+      "IWM"
+    ],
+    "is_investment_recommendation": false,
+    "fixture_instrument": "SYNTH-01",
+    "universe_is_frozen_per_experiment": true
+  },
+  "targets": {
+    "horizon_sessions": [
+      1,
+      5,
+      20
+    ],
+    "annualization_sessions": 252,
+    "primary": "intraday_plus_overnight_realized_variance",
+    "daily_close_fallback_name": "daily_return_variance_proxy",
+    "proxy_fallback_requires_explicit_approval": true
+  },
+  "data_policy": {
+    "require_point_in_time": true,
+    "allow_assumed_archive_in_confirmation": false,
+    "source_revisions_append_only": true
+  },
+  "paid_budget": {
+    "currency": "USD",
+    "max_per_run": 0,
+    "max_per_day": 0,
+    "unknown_price_policy": "DENY",
+    "transactional_reservations_required": true
+  },
+  "runtime": {
+    "profile": "single_mac_cpu_first",
+    "max_parallel_model_workers": 1,
+    "optional_acceleration": "benchmark_before_enable",
+    "hardware_performance": "NOT_MEASURED"
+  },
+  "learning": {
+    "official_lane": "FROZEN",
+    "shadow_updates": "matured_outcomes_only",
+    "automatic_production_promotion": false,
+    "human_approval_required": true
+  },
+  "promotion": {
+    "primary_metric": "predeclared_WIS_or_CRPS",
+    "proposed_relative_improvement": 0.03,
+    "requires_dependence_aware_uncertainty": true,
+    "requires_fresh_confirmation": true,
+    "threshold_is_planning_target_not_observed_result": true
+  },
+  "options": {
+    "enabled": false,
+    "execution_enabled": false,
+    "missing_quotes_status": "NOT_ASSESSED"
+  },
+  "network": {
+    "core_fixture_tests_allow_network": false,
+    "external_research_requires_allowlist": true
+  }
+}

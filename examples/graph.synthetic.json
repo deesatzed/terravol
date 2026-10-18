@@ -1,0 +1,63 @@
+{
+  "graph_id": "G-SYN-001",
+  "version": "1",
+  "prior_version": "synthetic-1",
+  "domain_adapter": "synthetic_event_variance",
+  "rule_set_version": "rules-fixture-1",
+  "inference_backend": "specification_only_not_executable",
+  "approved_function_registry": [],
+  "causal_status": "predictive_associations",
+  "synthetic": true,
+  "nodes": [
+    {
+      "node_id": "event_probability",
+      "role": "parameter",
+      "unit": "probability",
+      "support": {
+        "lower": 0,
+        "upper": 1
+      },
+      "distribution": {
+        "family": "beta",
+        "parameters": {
+          "alpha": 2,
+          "beta": 8
+        }
+      },
+      "prior_provenance": "Illustrative prior; not fitted or elicited.",
+      "numeric_origin": "synthetic_fixture",
+      "observation_status": "assumed",
+      "editable": true,
+      "function_id": null
+    },
+    {
+      "node_id": "event_active",
+      "role": "latent",
+      "unit": "binary",
+      "support": {
+        "lower": 0,
+        "upper": 1
+      },
+      "distribution": {
+        "family": "bernoulli",
+        "parameters": {
+          "p": {
+            "node_ref": "event_probability"
+          }
+        }
+      },
+      "prior_provenance": "Synthetic child of event_probability.",
+      "numeric_origin": "synthetic_fixture",
+      "observation_status": "latent",
+      "editable": false,
+      "function_id": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "event_probability",
+      "target": "event_active",
+      "lag_sessions": 0
+    }
+  ]
+}

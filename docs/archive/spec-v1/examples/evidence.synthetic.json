@@ -1,0 +1,23 @@
+{
+  "evidence_id": "E-SYN-001",
+  "instrument_id": "SYNTH-01",
+  "event_time": "2026-10-01T20:00:00Z",
+  "published_at": "2026-10-01T20:02:00Z",
+  "available_at": "2026-10-01T20:03:00Z",
+  "ingested_at": "2026-10-01T20:04:00Z",
+  "availability_basis": "synthetic_fixture",
+  "source_id": "synthetic-known-world",
+  "source_uri": "synthetic://variance-fixture/001",
+  "content_sha256": "862d9f5f09be99a575836805122ffc3e6b467976563a4656dcbad7cc01e2a699",
+  "revision_id": "r1",
+  "status": "observed",
+  "unit": "decimal_return_squared",
+  "value": 0.00012,
+  "dependency_group": "synthetic-price-stream-1",
+  "synthetic": true,
+  "provenance": {
+    "method": "hand-authored contract fixture; not a model run",
+    "source_span": null,
+    "supersedes_revision_id": null
+  }
+}

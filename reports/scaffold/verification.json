@@ -1,0 +1,170 @@
+{
+  "scope": "scaffold_controls_and_packaging_only",
+  "status": "PASSED",
+  "checked_at_utc": "2026-10-18T14:26:23.372808+00:00",
+  "canonical_goal": "GOAL_UPD.md",
+  "application_status": "NOT_IMPLEMENTED",
+  "application_acceptance_total": 120,
+  "application_acceptance_executed": 0,
+  "environment": {
+    "python": "3.12.15",
+    "system": "Darwin",
+    "architecture": "arm64",
+    "packages": {
+      "volterra-research": "0.0.0",
+      "jsonschema": "4.25.1",
+      "attrs": "26.1.0",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1",
+      "jsonschema-specifications": "2025.9.1",
+      "typing-extensions": "4.16.0"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/scaffold",
+        "-v"
+      ],
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_offline_spending_and_monitoring_defaults_remain_disabled (test_cli.ScaffoldCommandTests.test_all_offline_spending_and_monitoring_defaults_remain_disabled) ... ok\ntest_application_cannot_be_declared_ready_without_implementation_evidence (test_cli.ScaffoldCommandTests.test_application_cannot_be_declared_ready_without_implementation_evidence) ... ok\ntest_bound_pass_and_failure_receipts_have_consistent_execution_counts (test_cli.ScaffoldCommandTests.test_bound_pass_and_failure_receipts_have_consistent_execution_counts) ... ok\ntest_changed_v1_archive_is_rejected (test_cli.ScaffoldCommandTests.test_changed_v1_archive_is_rejected) ... ok\ntest_commands_are_read_only (test_cli.ScaffoldCommandTests.test_commands_are_read_only) ... ok\ntest_committed_roster_must_exist_in_registry (test_cli.ScaffoldCommandTests.test_committed_roster_must_exist_in_registry) ... ok\ntest_dependency_cycle_is_rejected (test_cli.ScaffoldCommandTests.test_dependency_cycle_is_rejected) ... ok\ntest_doctor_distinguishes_valid_scaffold_from_unimplemented_application (test_cli.ScaffoldCommandTests.test_doctor_distinguishes_valid_scaffold_from_unimplemented_application) ... ok\ntest_execution_counts_require_consistent_run_metadata (test_cli.ScaffoldCommandTests.test_execution_counts_require_consistent_run_metadata) ... ok\ntest_forecasting_command_is_explicitly_unavailable (test_cli.ScaffoldCommandTests.test_forecasting_command_is_explicitly_unavailable) ... ok\ntest_goal_and_queue_dependency_drift_is_rejected (test_cli.ScaffoldCommandTests.test_goal_and_queue_dependency_drift_is_rejected) ... ok\ntest_invalid_document_path_is_reported (test_cli.ScaffoldCommandTests.test_invalid_document_path_is_reported) ... ok\ntest_invalid_goal_encoding_is_reported (test_cli.ScaffoldCommandTests.test_invalid_goal_encoding_is_reported) ... ok\ntest_malformed_control_shapes_return_diagnostics (test_cli.ScaffoldCommandTests.test_malformed_control_shapes_return_diagnostics) ... ok\ntest_malformed_receipt_test_reference_is_rejected_without_crashing (test_cli.ScaffoldCommandTests.test_malformed_receipt_test_reference_is_rejected_without_crashing) ... ok\ntest_missing_canonical_requirement_is_rejected (test_cli.ScaffoldCommandTests.test_missing_canonical_requirement_is_rejected) ... ok\ntest_nested_status_types_return_diagnostics (test_cli.ScaffoldCommandTests.test_nested_status_types_return_diagnostics) ... ok\ntest_nonstring_requirement_identity_is_rejected_without_crashing (test_cli.ScaffoldCommandTests.test_nonstring_requirement_identity_is_rejected_without_crashing) ... ok\ntest_nonstring_requirement_owner_returns_diagnostics (test_cli.ScaffoldCommandTests.test_nonstring_requirement_owner_returns_diagnostics) ... ok\ntest_numeric_overflow_in_controls_is_rejected (test_cli.ScaffoldCommandTests.test_numeric_overflow_in_controls_is_rejected) ... ok\ntest_paid_or_networked_offline_defaults_are_rejected (test_cli.ScaffoldCommandTests.test_paid_or_networked_offline_defaults_are_rejected) ... ok\ntest_scaffold_receipt_cannot_complete_application_ticket (test_cli.ScaffoldCommandTests.test_scaffold_receipt_cannot_complete_application_ticket) ... ok\ntest_ticket_completion_requires_completed_dependencies (test_cli.ScaffoldCommandTests.test_ticket_completion_requires_completed_dependencies) ... ok\ntest_ticket_receipt_requires_a_successful_referenced_run (test_cli.ScaffoldCommandTests.test_ticket_receipt_requires_a_successful_referenced_run) ... ok\ntest_ticket_status_is_a_defined_enum (test_cli.ScaffoldCommandTests.test_ticket_status_is_a_defined_enum) ... ok\ntest_unexecuted_requirement_cannot_receive_a_pass (test_cli.ScaffoldCommandTests.test_unexecuted_requirement_cannot_receive_a_pass) ... ok\ntest_unknown_dependency_is_rejected (test_cli.ScaffoldCommandTests.test_unknown_dependency_is_rejected) ... ok\ntest_unknown_requirement_owner_is_rejected (test_cli.ScaffoldCommandTests.test_unknown_requirement_owner_is_rejected) ... ok\ntest_unrelated_receipt_and_missing_test_cannot_pass_requirement (test_cli.ScaffoldCommandTests.test_unrelated_receipt_and_missing_test_cannot_pass_requirement) ... ok\ntest_unverified_model_cannot_be_enabled (test_cli.ScaffoldCommandTests.test_unverified_model_cannot_be_enabled) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 1.804s\n\nOK\n"
+    },
+    {
+      "command": [
+        ".venv/bin/volterra",
+        "doctor",
+        "--profile",
+        "offline"
+      ],
+      "environment_overrides": {},
+      "exit_code": 0,
+      "stdout": "{\n  \"scope\": \"scaffold_controls_only\",\n  \"status\": \"SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED\",\n  \"canonical_goal\": \"GOAL_UPD.md\",\n  \"application_status\": \"NOT_IMPLEMENTED\",\n  \"application_acceptance_total\": 120,\n  \"application_acceptance_executed\": 0,\n  \"next_ticket\": \"VT00\",\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/volterra",
+        "scaffold",
+        "validate"
+      ],
+      "environment_overrides": {},
+      "exit_code": 0,
+      "stdout": "{\n  \"scope\": \"scaffold_controls_only\",\n  \"status\": \"PASSED\",\n  \"canonical_goal\": \"GOAL_UPD.md\",\n  \"application_status\": \"NOT_IMPLEMENTED\",\n  \"application_acceptance_total\": 120,\n  \"application_acceptance_executed\": 0,\n  \"next_ticket\": \"VT00\",\n  \"errors\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "review": {
+    "scope": "scaffold_only",
+    "findings": "ALL_ACCEPTED_AND_FIXED",
+    "final_recheck": "NO_REMAINING_MATERIAL_FINDING_FROM_PRIOR_REVIEW",
+    "adjudication": "docs/reviews/scaffold-review.md"
+  },
+  "limits": [
+    "No application forecast or application acceptance test executed",
+    "No model artifacts downloaded or inferred",
+    "No paid provider calls",
+    "No real-market, prospective or economic evaluation",
+    "Legacy validator defects remain archived; VT01 runtime work is pending"
+  ],
+  "scaffold_tests": {
+    "run": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "packaging": {
+    "locked_sync": {
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--python",
+        "/opt/homebrew/bin/python3.12",
+        "--cache-dir",
+        "/private/tmp/volterra-scaffold-uv-cache",
+        "--link-mode",
+        "copy"
+      ],
+      "exit_code": 0,
+      "stdout": "Resolved 7 packages in 0.56ms\nAudited 7 packages in 0.05ms\n"
+    },
+    "wheel_build": {
+      "command": [
+        "uv",
+        "build",
+        "--wheel",
+        "--out-dir",
+        "/private/tmp/volterra-scaffold-dist",
+        "--cache-dir",
+        "/private/tmp/volterra-scaffold-uv-cache"
+      ],
+      "exit_code": 0,
+      "artifact": "/private/tmp/volterra-scaffold-dist/volterra_research-0.0.0-py3-none-any.whl",
+      "sha256": "5de9c43058c04af1ad12e392ec05d640e8b80645cd83f200393829c58227b48e",
+      "members": [
+        "volterra/README.md",
+        "volterra/__init__.py",
+        "volterra/__main__.py",
+        "volterra/scaffold.py",
+        "volterra_research-0.0.0.dist-info/METADATA",
+        "volterra_research-0.0.0.dist-info/WHEEL",
+        "volterra_research-0.0.0.dist-info/entry_points.txt",
+        "volterra_research-0.0.0.dist-info/RECORD"
+      ],
+      "source_bytes_match": "PASSED"
+    },
+    "lock_sha256": "1ce4f57914f6a3598ce1e27306fea7feab66a45b0ef138ea0ef9dd5ed8918836"
+  },
+  "archive_integrity": {
+    "original_files_verified": 26,
+    "status": "PASSED",
+    "original_manifest_sha256": "6a4461a51e43d591b962efd668a8cc9ccdf85c68c98fd1f24758c1202a3a08ac"
+  },
+  "preserved_source_inputs": {
+    "GOALn.md": "fa4efc9e88c2336918cef58e0e8a7fa13bcc609ce12e17ee2aefa4e6f8636460",
+    "VOLTERRA GOAL v2.txt": "e2f307887e097b3d51a74ea24163996cc700efaad9d79399a93711f1ad5f075e",
+    "voltupd.md": "862dc9ab7a1e68295af86cd8d45f7795fc29ca975322c4fd5afead3226aea547"
+  },
+  "legacy_package_validation": {
+    "scope": "archived_v1_package_only",
+    "checks_passed": 28,
+    "checks_total": 28,
+    "application_acceptance_executed": 0,
+    "receipt": "reports/scaffold/legacy-package-validation.json"
+  },
+  "active_document_links": {
+    "documents_checked": 32,
+    "local_links_checked": 73,
+    "broken": []
+  },
+  "version_control": {
+    "boundary": "Isolated VOLTERRA Git repository initialized on main; read-only donor excluded",
+    "staged_files": 100,
+    "donor_environment_runtime_artifacts_staged": false,
+    "whitespace_check": {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)GOALn.md",
+        ":(exclude)voltupd.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "preserved_source_note": "Full initial check reported original whitespace in unchanged GOALn.md and voltupd.md; scoped check preserves their exact bytes."
+    }
+  }
+}

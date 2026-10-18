@@ -1,0 +1,73 @@
+{
+  "registry_version": "1",
+  "status": "CANDIDATE_LIST_NOT_INSTALLED_MODELS",
+  "default_allow_paid_calls": false,
+  "models": [
+    {
+      "candidate_id": "persistence_ewma_loghar_gjrgarch",
+      "role": "mandatory_controls",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "Resolve exact dependency licenses at T00.",
+      "capability_note": "Analytic/bootstrap/simulation distribution must be implemented and checked.",
+      "benchmarks_reproduced": false
+    },
+    {
+      "candidate_id": "ttm_loghar_equal_mix",
+      "role": "mandatory_research_control",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "Pin IBM checkpoint and artifact license at T00.",
+      "capability_note": "TTM alone may be point-only; residual distribution adapter is separate.",
+      "benchmarks_reproduced": false
+    },
+    {
+      "candidate_id": "amazon_chronos_2",
+      "role": "first_foundation_challenger",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "Pin exact model weights, dependency and applicable license.",
+      "capability_note": "Multivariate/covariate and quantile support; joint paths not assumed.",
+      "benchmarks_reproduced": false
+    },
+    {
+      "candidate_id": "nxai_tirex_2",
+      "role": "second_foundation_challenger",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "Public model card Apache-2.0; preserve notice and verify chosen artifact.",
+      "capability_note": "Public batch/zero-shot features only; incremental streaming is Pro, not assumed.",
+      "benchmarks_reproduced": false
+    },
+    {
+      "candidate_id": "datadog_toto_small",
+      "role": "optional_challenger",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "Resolve precise checkpoint license before use.",
+      "capability_note": "Model size and path capabilities require an adapter smoke test.",
+      "benchmarks_reproduced": false
+    },
+    {
+      "candidate_id": "google_timesfm_3",
+      "role": "research_only_optional",
+      "enabled": false,
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "availability_status": "PENDING_PIN_AND_SMOKE_TEST",
+      "license_note": "TimesFM Non-Commercial License v1.0 weights; no default commercial enablement.",
+      "capability_note": "Code license does not override weights license.",
+      "benchmarks_reproduced": false
+    }
+  ]
+}

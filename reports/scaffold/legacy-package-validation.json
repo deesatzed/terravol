@@ -1,0 +1,185 @@
+{
+  "scope": "archived_v1_package_only",
+  "checked_at_utc": "2026-10-18T14:16:07.016368+00:00",
+  "exit_code": 0,
+  "stdout": "PASSED: 28/28 package-only checks.\nApplication acceptance tests executed: 0. No forecasting or investment performance evaluated.\n",
+  "report": {
+    "scope": "Specification schemas and synthetic fixture invariants only. No application, real inference, backtest, posterior fit, calendar engine or profitability tests were run.",
+    "status": "PASSED",
+    "checked_at_utc": "2026-10-18T14:16:07.013912+00:00",
+    "checks_total": 28,
+    "checks_passed": 28,
+    "planned_application_acceptance_requirements": 78,
+    "planned_application_acceptance_requirements_executed": 0,
+    "checks": [
+      {
+        "name": "evidence: schema is well-formed",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "forecast: schema is well-formed",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "graph: schema is well-formed",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "decision: schema is well-formed",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "valid synthetic evidence",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "valid marginal synthetic forecast",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "valid beta-Bernoulli synthetic graph",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "valid zero-cost synthetic decision",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "reject evidence after origin",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Evidence was unavailable at the forecast origin."
+      },
+      {
+        "name": "reject over-budget dispatch",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Action exceeds available budget."
+      },
+      {
+        "name": "certified historical import may occur later",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "reject late received live observation",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Live evidence was not received before origin."
+      },
+      {
+        "name": "reject missing value presented as observed",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Observed numeric fixture requires a value."
+      },
+      {
+        "name": "reject missing status with numeric value",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValidationError: 0.00012 is not of type 'null'\n\nFailed validating 'type' in schema['allOf'][0]['then']['properties']['value']:\n    {'type': 'null'}\n\nOn instance['value']:\n    0.00012"
+      },
+      {
+        "name": "reject nonfinite JSON",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Non-finite JSON number is not permitted: NaN"
+      },
+      {
+        "name": "reject crossing quantiles",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Quantile values must be monotone."
+      },
+      {
+        "name": "reject wrong volatility unit conversion",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Quantile values must be monotone."
+      },
+      {
+        "name": "reject claimed joint paths without artifact",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Joint-path capability has no path artifact reference."
+      },
+      {
+        "name": "reject episode estimate on marginal-only output",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Episode output lacks the required supported capability."
+      },
+      {
+        "name": "reject failed-model credit",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: A failed model cannot receive credit as an actual producing model."
+      },
+      {
+        "name": "reject instantaneous cycle",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Instantaneous graph cycle."
+      },
+      {
+        "name": "lagged feedback passes structural cycle check only",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      },
+      {
+        "name": "reject negative beta shape",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Invalid numeric beta parameters in fixture subset."
+      },
+      {
+        "name": "reject bad beta support",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Beta support must be [0,1]."
+      },
+      {
+        "name": "reject unreferenced parameter",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Parameter reference has no declared dependency edge."
+      },
+      {
+        "name": "reject action outside allowed set",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Selected action is not allowed."
+      },
+      {
+        "name": "reject absent policy approval",
+        "expected": "reject",
+        "passed": true,
+        "diagnostic": "ValueError: Action lacks deterministic approval."
+      },
+      {
+        "name": "safe example defaults and disabled unpinned models",
+        "expected": "accept",
+        "passed": true,
+        "diagnostic": null
+      }
+    ]
+  }
+}

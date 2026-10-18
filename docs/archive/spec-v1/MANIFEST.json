@@ -1,0 +1,141 @@
+{
+  "package": "VOLTERRA design and build specification",
+  "version": "1.0",
+  "research_date": "2026-10-17",
+  "status": "SPECIFICATIONS_NOT_FORECASTING_APPLICATION",
+  "file_count_excluding_manifest": 26,
+  "planned_implementation_tickets": 23,
+  "planned_application_acceptance_requirements": 78,
+  "files": [
+    {
+      "path": "ACCEPTANCE_TESTS.md",
+      "bytes": 9029,
+      "sha256": "896a7d48b2057bb36b3d0734e3ba437311cd6915df2226ee5768855da06635da"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 3246,
+      "sha256": "aa853ef46bc1a3b0226d59d2afbc296856c90966e2537bc90c577abf22683404"
+    },
+    {
+      "path": "BUILD_PLAN.md",
+      "bytes": 8345,
+      "sha256": "14a0b1b7ee6bc5cdab31b4b009bd938160d8b6a3ed963998699c1cf5186e71b7"
+    },
+    {
+      "path": "DATA_CONTRACTS.md",
+      "bytes": 10095,
+      "sha256": "a427cb6c9da5ebbb60283c66c933b3317b9b00a67cc3e004998537720ae24345"
+    },
+    {
+      "path": "DESIGN_SPEC.md",
+      "bytes": 21623,
+      "sha256": "89bb72fda194a8feeb9a97815c5be59657714928dcea5e967c3cee73ac62cd5a"
+    },
+    {
+      "path": "GOAL.md",
+      "bytes": 9567,
+      "sha256": "424ca85c62c26212c72410827b0a6bbe63dd904d7bdc1b16db65809fc85ce02d"
+    },
+    {
+      "path": "PACKAGE_VALIDATION.json",
+      "bytes": 5358,
+      "sha256": "c13c780469fd2b7babffda1bced82653f37f7e95eb825a3e364b3e9b25a36c07"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3421,
+      "sha256": "42ed17b5b49a9de46e9908930b01a76ed535379ffda09e56474b8f0132a4aa44"
+    },
+    {
+      "path": "RESEARCH_NOTES.md",
+      "bytes": 7255,
+      "sha256": "43d671a06434df8f0094d4b655679b86e89ba99267f9de43c1018591859e995c"
+    },
+    {
+      "path": "REUSE_AUDIT.md",
+      "bytes": 6125,
+      "sha256": "e0623542c2e1ca9d88062a55e9345f7e5a3369d7eaa54d9ca93565945453d3e5"
+    },
+    {
+      "path": "SCIENCE_AND_EVALUATION.md",
+      "bytes": 16198,
+      "sha256": "f79c5f1e8159617188f0c0b3933016df7b618e794f5fad8af3e3edeaa867f9d8"
+    },
+    {
+      "path": "config/model_registry.json",
+      "bytes": 2927,
+      "sha256": "1a4ba780c710b823c44ef3f4accb1d675b31f1b77d3aa67c0e8063fbe8e54d49"
+    },
+    {
+      "path": "config/research.yaml",
+      "bytes": 1843,
+      "sha256": "bd7c3d087561e12d77a50b3c4acc877b4c8903e972161c3be3d336e7f1ff2d14"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 986,
+      "sha256": "30f9d99b7b467c7494494ea8b1d0084d15689458ebcea2283fbb241196a17d97"
+    },
+    {
+      "path": "examples/decision.synthetic.json",
+      "bytes": 580,
+      "sha256": "0981d50ec0ef7d56b2b05dc7bdabf85ccfac08e7e4e1e14077528ff63137d586"
+    },
+    {
+      "path": "examples/evidence.synthetic.json",
+      "bytes": 776,
+      "sha256": "3d8bed2cfe8184b93585a4217a68cfeae813e76d89f655f5d1cfa495a8d836ad"
+    },
+    {
+      "path": "examples/forecast.synthetic.json",
+      "bytes": 3982,
+      "sha256": "08238201679f94e64cc29bc5d60ef595c2a89fc5a1951709b94e9d2ad76d1f20"
+    },
+    {
+      "path": "examples/graph.synthetic.json",
+      "bytes": 1523,
+      "sha256": "ff1b668e07360269f27ab5636fae2af34037dc1cd427fb5b4e06ce8932be4f50"
+    },
+    {
+      "path": "examples/invalid/decision_over_budget.json",
+      "bytes": 583,
+      "sha256": "b88d6fdfe8b484f8f2e5016a3986cf0f9cc78e879f3ca07716d5f56b5c20fa98"
+    },
+    {
+      "path": "examples/invalid/evidence_after_origin.json",
+      "bytes": 776,
+      "sha256": "e0cb0d2b2ab1bdf2a440961eb67cf6e1bdd2ef5c3ae3baa68099c96cdca4b65e"
+    },
+    {
+      "path": "requirements-spec-validation.txt",
+      "bytes": 20,
+      "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
+    },
+    {
+      "path": "schemas/decision.schema.json",
+      "bytes": 2066,
+      "sha256": "e63ab06036440aca13d8c7af7e79d0e66750c4982f94d312e264ac56bacc7f5d"
+    },
+    {
+      "path": "schemas/evidence.schema.json",
+      "bytes": 2831,
+      "sha256": "163ce4fd265472a43815df7c66dd8ee40ee571675db98c085cb2ca336d66f35b"
+    },
+    {
+      "path": "schemas/forecast.schema.json",
+      "bytes": 6292,
+      "sha256": "0ffff6b32cb07d012fa0d3d20725f4ea50df340bdf962ed2a0d27009919e5909"
+    },
+    {
+      "path": "schemas/graph.schema.json",
+      "bytes": 5371,
+      "sha256": "015ea955fe11dd0a5c5db939cb5e77c0af5bf73ea034a18de9679a04d051f74a"
+    },
+    {
+      "path": "tools/validate_specs.py",
+      "bytes": 14525,
+      "sha256": "5336f92b9f1731969e393cc9bb461c4b3e9b3a8598ded77493d383527f963e5b"
+    }
+  ]
+}

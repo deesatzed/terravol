@@ -1,0 +1,513 @@
+{
+  "package": "VOLTERRA consolidated goal and executable project scaffold",
+  "version": "2.1",
+  "created_at_utc": "2026-10-18T14:27:58.805915+00:00",
+  "status": "SCAFFOLD_VALIDATED_APPLICATION_NOT_IMPLEMENTED",
+  "canonical_goal": "GOAL_UPD.md",
+  "file_count_excluding_manifest": 99,
+  "planned_implementation_tickets": 24,
+  "planned_application_acceptance_requirements": 120,
+  "application_acceptance_executed": 0,
+  "scaffold_tests_passed": 30,
+  "archived_v1_package_checks_passed": 28,
+  "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
+  "verification": "reports/scaffold/verification.json",
+  "integrity_note": "Snapshot hashes cover this scaffold increment, not future edits or implementation claims. Original v1 hashes remain in the archived manifest.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 229,
+      "sha256": "5c28139ec492187751fe58b32ad417e7fcb948581e88daa7cf4cf0e1364d8d0c"
+    },
+    {
+      "path": ".python-version",
+      "bytes": 8,
+      "sha256": "845c494b4a7e1a741db19fd42eda239d3ee03b65f08276008943349a3055c9cc"
+    },
+    {
+      "path": "ACCEPTANCE_TESTS.md",
+      "bytes": 427,
+      "sha256": "fda70e536606c2cfad21a8403b1d3de03f8046ea6f5bcd8f6464fa7ebf86e65e"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 4699,
+      "sha256": "13b4a53f354f16aa88f681507f7011ae6353fe0ff8797d37c44064358fae8d97"
+    },
+    {
+      "path": "BUILD_PLAN.md",
+      "bytes": 445,
+      "sha256": "59566003ff436e2b8e24b72c37421d4716e618a7be1af7573b6b4ac48d75a395"
+    },
+    {
+      "path": "DATA_CONTRACTS.md",
+      "bytes": 374,
+      "sha256": "75e13498972767fb8e998bc3f7c12c3c53f0bcd2753ca3c23ed8a2a6c08ff6c7"
+    },
+    {
+      "path": "DECISIONS.md",
+      "bytes": 4603,
+      "sha256": "a58daa20389554c64957dc3a69df4cd94d29f5811085332a8da7f3c9fb56d272"
+    },
+    {
+      "path": "DESIGN_SPEC.md",
+      "bytes": 406,
+      "sha256": "6a7ca6081310b2c9888ffe0f93427a5a7e60bdbcb8745c7e3d5a3f9193876be6"
+    },
+    {
+      "path": "GOAL.md",
+      "bytes": 625,
+      "sha256": "d45380606cfe5ae3c5d68d40e5750e60f5ea19207b2852d5cd722f104bc06306"
+    },
+    {
+      "path": "GOAL_UPD.md",
+      "bytes": 113139,
+      "sha256": "327934bb0d78f88d77477d2cb13017608c792e7482a9e5c6873a97a5bff0674c"
+    },
+    {
+      "path": "GOAL_V2_ASSESSMENT.md",
+      "bytes": 18142,
+      "sha256": "f6be072716d6397592a3e4675143312a4d70a7e947e9a0f928dec96159427d45"
+    },
+    {
+      "path": "GOALn.md",
+      "bytes": 103579,
+      "sha256": "fa4efc9e88c2336918cef58e0e8a7fa13bcc609ce12e17ee2aefa4e6f8636460"
+    },
+    {
+      "path": "IMPLEMENT.md",
+      "bytes": 5851,
+      "sha256": "7afae5a4e8777bee08a9c962fa3464f42d8adaa3f3bbfead519c91cc4f5ae552"
+    },
+    {
+      "path": "PACKAGE_VALIDATION.json",
+      "bytes": 5358,
+      "sha256": "c13c780469fd2b7babffda1bced82653f37f7e95eb825a3e364b3e9b25a36c07"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 9813,
+      "sha256": "043b8957718018b7a3d98158f352857cc4257e78b7e6e8d873ef5d82f00f717f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3114,
+      "sha256": "e3b8654a7c4c1f832543f60b2dc3a8a1d954a66ff606edb124acc8b69be884b8"
+    },
+    {
+      "path": "RESEARCH_NOTES.md",
+      "bytes": 7255,
+      "sha256": "43d671a06434df8f0094d4b655679b86e89ba99267f9de43c1018591859e995c"
+    },
+    {
+      "path": "REUSE_AUDIT.md",
+      "bytes": 6125,
+      "sha256": "e0623542c2e1ca9d88062a55e9345f7e5a3369d7eaa54d9ca93565945453d3e5"
+    },
+    {
+      "path": "SCIENCE_AND_EVALUATION.md",
+      "bytes": 393,
+      "sha256": "41ea66751341e902c848c0f44389f42f77e885853369b00ee58129daba93d10f"
+    },
+    {
+      "path": "STANDARDS.md",
+      "bytes": 4544,
+      "sha256": "3418136271bdcf396570308f511ab1a8004dbee2b11d4159a4b4b8de69debd20"
+    },
+    {
+      "path": "TASK_QUEUE.md",
+      "bytes": 2922,
+      "sha256": "09950da7c0d3a3252c325dec60d2f075b81edd806cc153cfe915f1204a3244d4"
+    },
+    {
+      "path": "VOLTERRA GOAL v2.txt",
+      "bytes": 3899,
+      "sha256": "e2f307887e097b3d51a74ea24163996cc700efaad9d79399a93711f1ad5f075e"
+    },
+    {
+      "path": "VOLTUPD_GAP_ANALYSIS.md",
+      "bytes": 45925,
+      "sha256": "896f665c15081df4670e8eb6ae012b3d67f8c0baf971f1fb7284ccfbd0aab55a"
+    },
+    {
+      "path": "aXcupd.md",
+      "bytes": 9624,
+      "sha256": "201fb5668c5f20cccb229c81b917826c824759102d75cc80eec1c4086706bcdb"
+    },
+    {
+      "path": "config/README.md",
+      "bytes": 1067,
+      "sha256": "476cabed5983b74fe5dc6840cdc71588cada5c527ac995b4bbe7a92f67f1fd56"
+    },
+    {
+      "path": "config/acceptance_matrix.json",
+      "bytes": 43827,
+      "sha256": "bcf56b38d5cc2cc4042a8a8daec3b342fbdb845bfd591ee82320f675f36c60c0"
+    },
+    {
+      "path": "config/implementation_queue.json",
+      "bytes": 11180,
+      "sha256": "6f4e0bbb6e92f2d3efd176aabd780925605a235b92e461ccdbbd39412b89d43e"
+    },
+    {
+      "path": "config/model_registry.json",
+      "bytes": 4714,
+      "sha256": "070bb1b81808beaf0713c15186abdb7b7c9727222d1db657fe61262908eb49fa"
+    },
+    {
+      "path": "config/offline.json",
+      "bytes": 1651,
+      "sha256": "b3ce790ace4035979e2670f5770082d01432c5dc841017f02f417e48c8250e0e"
+    },
+    {
+      "path": "config/project.json",
+      "bytes": 995,
+      "sha256": "a9751c39ec5416513519e5e2b1e45f69e43a8f963407b7093c48fe449d249205"
+    },
+    {
+      "path": "config/research.yaml",
+      "bytes": 1843,
+      "sha256": "bd7c3d087561e12d77a50b3c4acc877b4c8903e972161c3be3d336e7f1ff2d14"
+    },
+    {
+      "path": "config/source_registry.json",
+      "bytes": 383,
+      "sha256": "58b480c5056b94a3f74779b2cd5d824a0718f29d91a7ba2c1e36e946b5d9e5d1"
+    },
+    {
+      "path": "docs/ACCEPTANCE_MATRIX.md",
+      "bytes": 24354,
+      "sha256": "e388d5f42e3146fb9a1037925a9466fae55d719965efb3e4f7732a33a1f98773"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 3989,
+      "sha256": "fd5bdb68a7ed765035a00631f88041b11224983f9574613a0f331a301da11ba4"
+    },
+    {
+      "path": "docs/BENCHMARK_PROTOCOL.md",
+      "bytes": 3179,
+      "sha256": "9e08a41c04a838655049db413e5fbe0a6d4ce10b30acf6f81111a4c7b9b9261c"
+    },
+    {
+      "path": "docs/DATA_CONTRACTS.md",
+      "bytes": 5170,
+      "sha256": "c83d2d7fa90c0da5ebd8548cf770523227fe2c2e22f5ef41fdb29a6c7477cb6a"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "bytes": 131,
+      "sha256": "f1134e38263e3a9c0bad1f6523e692f01793755d88f70745f8a5afe260d5a015"
+    },
+    {
+      "path": "docs/MODEL_REGISTRY.md",
+      "bytes": 1305,
+      "sha256": "4d7d3c1987bf1151db5f7142070f8b517b05d8116a1223e67995eab24b20793e"
+    },
+    {
+      "path": "docs/PROBABILITY_SEMANTICS.md",
+      "bytes": 3911,
+      "sha256": "c6adda8ea3d3ddbbb8d4eb86aa441223d2c85fe5931ccdda2802e02f046bcffd"
+    },
+    {
+      "path": "docs/RELEASE_REPORT.md",
+      "bytes": 359,
+      "sha256": "253500c3810235c176d983bbd8a082e8b6bba289f0369c935fecf0165a0aa336"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 1088,
+      "sha256": "b15b7c27fa50111e47088293ff179552a795f48ae609a97a2f8a0021b84fcd78"
+    },
+    {
+      "path": "docs/TRANSFORMATION_AUDIT.md",
+      "bytes": 3154,
+      "sha256": "847bc47f1e357469333e4d7af508bbc9371335590973b51ddbd4070c69c614fc"
+    },
+    {
+      "path": "docs/WORKFLOWS.md",
+      "bytes": 2189,
+      "sha256": "787bae9248d303f173a778b5a25e1500b3d9f69074f4c43a1b5f67dfe4dc72d8"
+    },
+    {
+      "path": "docs/archive/spec-v1/ACCEPTANCE_TESTS.md",
+      "bytes": 9029,
+      "sha256": "896a7d48b2057bb36b3d0734e3ba437311cd6915df2226ee5768855da06635da"
+    },
+    {
+      "path": "docs/archive/spec-v1/AGENTS.md",
+      "bytes": 3246,
+      "sha256": "aa853ef46bc1a3b0226d59d2afbc296856c90966e2537bc90c577abf22683404"
+    },
+    {
+      "path": "docs/archive/spec-v1/BUILD_PLAN.md",
+      "bytes": 8345,
+      "sha256": "14a0b1b7ee6bc5cdab31b4b009bd938160d8b6a3ed963998699c1cf5186e71b7"
+    },
+    {
+      "path": "docs/archive/spec-v1/DATA_CONTRACTS.md",
+      "bytes": 10095,
+      "sha256": "a427cb6c9da5ebbb60283c66c933b3317b9b00a67cc3e004998537720ae24345"
+    },
+    {
+      "path": "docs/archive/spec-v1/DESIGN_SPEC.md",
+      "bytes": 21623,
+      "sha256": "89bb72fda194a8feeb9a97815c5be59657714928dcea5e967c3cee73ac62cd5a"
+    },
+    {
+      "path": "docs/archive/spec-v1/GOAL.md",
+      "bytes": 9567,
+      "sha256": "424ca85c62c26212c72410827b0a6bbe63dd904d7bdc1b16db65809fc85ce02d"
+    },
+    {
+      "path": "docs/archive/spec-v1/MANIFEST.json",
+      "bytes": 4431,
+      "sha256": "6a4461a51e43d591b962efd668a8cc9ccdf85c68c98fd1f24758c1202a3a08ac"
+    },
+    {
+      "path": "docs/archive/spec-v1/PACKAGE_VALIDATION.json",
+      "bytes": 5358,
+      "sha256": "c13c780469fd2b7babffda1bced82653f37f7e95eb825a3e364b3e9b25a36c07"
+    },
+    {
+      "path": "docs/archive/spec-v1/README.md",
+      "bytes": 3421,
+      "sha256": "42ed17b5b49a9de46e9908930b01a76ed535379ffda09e56474b8f0132a4aa44"
+    },
+    {
+      "path": "docs/archive/spec-v1/RESEARCH_NOTES.md",
+      "bytes": 7255,
+      "sha256": "43d671a06434df8f0094d4b655679b86e89ba99267f9de43c1018591859e995c"
+    },
+    {
+      "path": "docs/archive/spec-v1/REUSE_AUDIT.md",
+      "bytes": 6125,
+      "sha256": "e0623542c2e1ca9d88062a55e9345f7e5a3369d7eaa54d9ca93565945453d3e5"
+    },
+    {
+      "path": "docs/archive/spec-v1/SCIENCE_AND_EVALUATION.md",
+      "bytes": 16198,
+      "sha256": "f79c5f1e8159617188f0c0b3933016df7b618e794f5fad8af3e3edeaa867f9d8"
+    },
+    {
+      "path": "docs/archive/spec-v1/config/model_registry.json",
+      "bytes": 2927,
+      "sha256": "1a4ba780c710b823c44ef3f4accb1d675b31f1b77d3aa67c0e8063fbe8e54d49"
+    },
+    {
+      "path": "docs/archive/spec-v1/config/research.yaml",
+      "bytes": 1843,
+      "sha256": "bd7c3d087561e12d77a50b3c4acc877b4c8903e972161c3be3d336e7f1ff2d14"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/README.md",
+      "bytes": 986,
+      "sha256": "30f9d99b7b467c7494494ea8b1d0084d15689458ebcea2283fbb241196a17d97"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/decision.synthetic.json",
+      "bytes": 580,
+      "sha256": "0981d50ec0ef7d56b2b05dc7bdabf85ccfac08e7e4e1e14077528ff63137d586"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/evidence.synthetic.json",
+      "bytes": 776,
+      "sha256": "3d8bed2cfe8184b93585a4217a68cfeae813e76d89f655f5d1cfa495a8d836ad"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/forecast.synthetic.json",
+      "bytes": 3982,
+      "sha256": "08238201679f94e64cc29bc5d60ef595c2a89fc5a1951709b94e9d2ad76d1f20"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/graph.synthetic.json",
+      "bytes": 1523,
+      "sha256": "ff1b668e07360269f27ab5636fae2af34037dc1cd427fb5b4e06ce8932be4f50"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/invalid/decision_over_budget.json",
+      "bytes": 583,
+      "sha256": "b88d6fdfe8b484f8f2e5016a3986cf0f9cc78e879f3ca07716d5f56b5c20fa98"
+    },
+    {
+      "path": "docs/archive/spec-v1/examples/invalid/evidence_after_origin.json",
+      "bytes": 776,
+      "sha256": "e0cb0d2b2ab1bdf2a440961eb67cf6e1bdd2ef5c3ae3baa68099c96cdca4b65e"
+    },
+    {
+      "path": "docs/archive/spec-v1/requirements-spec-validation.txt",
+      "bytes": 20,
+      "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
+    },
+    {
+      "path": "docs/archive/spec-v1/schemas/decision.schema.json",
+      "bytes": 2066,
+      "sha256": "e63ab06036440aca13d8c7af7e79d0e66750c4982f94d312e264ac56bacc7f5d"
+    },
+    {
+      "path": "docs/archive/spec-v1/schemas/evidence.schema.json",
+      "bytes": 2831,
+      "sha256": "163ce4fd265472a43815df7c66dd8ee40ee571675db98c085cb2ca336d66f35b"
+    },
+    {
+      "path": "docs/archive/spec-v1/schemas/forecast.schema.json",
+      "bytes": 6292,
+      "sha256": "0ffff6b32cb07d012fa0d3d20725f4ea50df340bdf962ed2a0d27009919e5909"
+    },
+    {
+      "path": "docs/archive/spec-v1/schemas/graph.schema.json",
+      "bytes": 5371,
+      "sha256": "015ea955fe11dd0a5c5db939cb5e77c0af5bf73ea034a18de9679a04d051f74a"
+    },
+    {
+      "path": "docs/archive/spec-v1/tools/validate_specs.py",
+      "bytes": 14525,
+      "sha256": "5336f92b9f1731969e393cc9bb461c4b3e9b3a8598ded77493d383527f963e5b"
+    },
+    {
+      "path": "docs/plans/2026-10-18-consolidated-scaffold-design.md",
+      "bytes": 3417,
+      "sha256": "0dcd1a28facf02371bb4a7e4c306bb0791174bcd2df2ac7f3f762dcc2abbe7b7"
+    },
+    {
+      "path": "docs/plans/2026-10-18-updated-scaffold-implementation.md",
+      "bytes": 3823,
+      "sha256": "846d37cf1e3b07e3050d514a73bd9555848f620f1dd5bd0e8c7c6a5d998de36c"
+    },
+    {
+      "path": "docs/reviews/scaffold-review.md",
+      "bytes": 2827,
+      "sha256": "59e0c5caf1382e4d11bf1d6026e5bd39805e0b434d4319d5fcddc20971e6068b"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 986,
+      "sha256": "30f9d99b7b467c7494494ea8b1d0084d15689458ebcea2283fbb241196a17d97"
+    },
+    {
+      "path": "examples/decision.synthetic.json",
+      "bytes": 580,
+      "sha256": "0981d50ec0ef7d56b2b05dc7bdabf85ccfac08e7e4e1e14077528ff63137d586"
+    },
+    {
+      "path": "examples/evidence.synthetic.json",
+      "bytes": 776,
+      "sha256": "3d8bed2cfe8184b93585a4217a68cfeae813e76d89f655f5d1cfa495a8d836ad"
+    },
+    {
+      "path": "examples/forecast.synthetic.json",
+      "bytes": 3982,
+      "sha256": "08238201679f94e64cc29bc5d60ef595c2a89fc5a1951709b94e9d2ad76d1f20"
+    },
+    {
+      "path": "examples/graph.synthetic.json",
+      "bytes": 1523,
+      "sha256": "ff1b668e07360269f27ab5636fae2af34037dc1cd427fb5b4e06ce8932be4f50"
+    },
+    {
+      "path": "examples/invalid/decision_over_budget.json",
+      "bytes": 583,
+      "sha256": "b88d6fdfe8b484f8f2e5016a3986cf0f9cc78e879f3ca07716d5f56b5c20fa98"
+    },
+    {
+      "path": "examples/invalid/evidence_after_origin.json",
+      "bytes": 776,
+      "sha256": "e0cb0d2b2ab1bdf2a440961eb67cf6e1bdd2ef5c3ae3baa68099c96cdca4b65e"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 462,
+      "sha256": "a246915e8877062e8e54be93347b7e0cc6c9020de17c8f7bcf00a792b4284064"
+    },
+    {
+      "path": "reports/scaffold/legacy-package-validation.json",
+      "bytes": 5990,
+      "sha256": "67d27884b96d2334cc0a6c1a29d459e0fa0ede68527b9f05d986d20759f765fe"
+    },
+    {
+      "path": "reports/scaffold/verification.json",
+      "bytes": 9821,
+      "sha256": "49d0706ba8684f72e1277b62f7c3d7416d34e0f855809a6d5422fdd091fe863d"
+    },
+    {
+      "path": "reports/voltupd-gap-analysis/verification.json",
+      "bytes": 18064,
+      "sha256": "3e9dc04ecb8ffe1a350fd708265b79033bbf9fb1be5a834c1aea8ade986e0d1d"
+    },
+    {
+      "path": "requirements-spec-validation.txt",
+      "bytes": 20,
+      "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
+    },
+    {
+      "path": "schemas/decision.schema.json",
+      "bytes": 2066,
+      "sha256": "e63ab06036440aca13d8c7af7e79d0e66750c4982f94d312e264ac56bacc7f5d"
+    },
+    {
+      "path": "schemas/evidence.schema.json",
+      "bytes": 2831,
+      "sha256": "163ce4fd265472a43815df7c66dd8ee40ee571675db98c085cb2ca336d66f35b"
+    },
+    {
+      "path": "schemas/forecast.schema.json",
+      "bytes": 6292,
+      "sha256": "0ffff6b32cb07d012fa0d3d20725f4ea50df340bdf962ed2a0d27009919e5909"
+    },
+    {
+      "path": "schemas/graph.schema.json",
+      "bytes": 5371,
+      "sha256": "015ea955fe11dd0a5c5db939cb5e77c0af5bf73ea034a18de9679a04d051f74a"
+    },
+    {
+      "path": "src/volterra/README.md",
+      "bytes": 670,
+      "sha256": "6c7561effde1b1492fd6baf1c522d4c20d05bfb2724b40362cfcc1a18f128f25"
+    },
+    {
+      "path": "src/volterra/__init__.py",
+      "bytes": 83,
+      "sha256": "474c3eea1f27501fee61e1ce32c843660fb3f9018fe99ff4103f9c7f42964bc6"
+    },
+    {
+      "path": "src/volterra/__main__.py",
+      "bytes": 1370,
+      "sha256": "afe2955a8bb32bd08967f6f801804c480258e6003aa1e58f73801e10ba92c976"
+    },
+    {
+      "path": "src/volterra/scaffold.py",
+      "bytes": 16941,
+      "sha256": "077b0b49fe52cd1ada3df9ccb4498e798cfdff85f193ca1ed695a085f8679381"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 740,
+      "sha256": "d6f0567c70870564b3f68f9e897653d1208e73253ab55516b8400e9a7bad6f4a"
+    },
+    {
+      "path": "tests/scaffold/test_cli.py",
+      "bytes": 14293,
+      "sha256": "5285e81ad7c675ad1c04d2a03999c18bc3fe2d0846cfe167bd5dc5935c7ed108"
+    },
+    {
+      "path": "tools/validate_specs.py",
+      "bytes": 14525,
+      "sha256": "5336f92b9f1731969e393cc9bb461c4b3e9b3a8598ded77493d383527f963e5b"
+    },
+    {
+      "path": "ui/README.md",
+      "bytes": 399,
+      "sha256": "5179bc32d8ec1639671da8bfea91de4b49fff097cee222e897d41e23405c1307"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 13434,
+      "sha256": "1ce4f57914f6a3598ce1e27306fea7feab66a45b0ef138ea0ef9dd5ed8918836"
+    },
+    {
+      "path": "voltupd.md",
+      "bytes": 39112,
+      "sha256": "862dc9ab7a1e68295af86cd8d45f7795fc29ca975322c4fd5afead3226aea547"
+    }
+  ]
+}

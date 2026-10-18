@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:volterra:schema:ForecastDistribution:1",
+  "title": "ForecastDistribution",
+  "type": "object",
+  "properties": {
+    "forecast_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instrument_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "graph_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "calibration_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "OK",
+        "DEGRADED",
+        "ABSTAINED",
+        "INSUFFICIENT_DATA",
+        "FAILED"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "horizon_forecasts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sessions": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "target_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "target_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "annualization_sessions": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "variance_unit": {
+            "const": "decimal_return_squared"
+          },
+          "volatility_unit": {
+            "const": "annualized_decimal"
+          },
+          "variance_quantiles": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "exclusiveMaximum": 1
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "level",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "variance_mean": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "mean_unavailable_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "volatility_quantiles": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "exclusiveMaximum": 1
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "level",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "representation": {
+            "enum": [
+              "marginal_only",
+              "joint_native",
+              "joint_coupled_validated"
+            ]
+          },
+          "missing_capability_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "sessions",
+          "target_start",
+          "target_end",
+          "annualization_sessions",
+          "variance_unit",
+          "volatility_unit",
+          "variance_quantiles",
+          "variance_mean",
+          "mean_unavailable_reason",
+          "volatility_quantiles",
+          "representation",
+          "missing_capability_reasons"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "joint_path_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "marginal_quantiles",
+          "variance_mean",
+          "joint_paths",
+          "path_episode_forecast",
+          "validated_survival_head"
+        ]
+      }
+    },
+    "actual_model_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "failed_model_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "revision_parent_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "episode_forecast": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "enum": [
+                "joint_paths",
+                "validated_survival_head"
+              ]
+            },
+            "definition_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "artifact_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "method",
+            "definition_id",
+            "artifact_ref"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "forecast_id",
+    "instrument_id",
+    "origin",
+    "issued_at",
+    "snapshot_id",
+    "model_manifest_id",
+    "graph_version",
+    "calibration_id",
+    "target_version",
+    "status",
+    "synthetic",
+    "horizon_forecasts",
+    "joint_path_ref",
+    "capabilities",
+    "actual_model_ids",
+    "failed_model_ids",
+    "quality_flags",
+    "revision_parent_id",
+    "episode_forecast"
+  ],
+  "additionalProperties": false
+}

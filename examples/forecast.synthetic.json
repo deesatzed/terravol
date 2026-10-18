@@ -1,0 +1,157 @@
+{
+  "forecast_id": "F-SYN-001",
+  "instrument_id": "SYNTH-01",
+  "origin": "2026-10-01T20:15:00Z",
+  "issued_at": "2026-10-01T20:15:01Z",
+  "snapshot_id": "SNAP-SYN-001",
+  "model_manifest_id": "MANIFEST-SYN-001",
+  "graph_version": null,
+  "calibration_id": null,
+  "target_version": "variance_fixture_v1",
+  "status": "OK",
+  "synthetic": true,
+  "horizon_forecasts": [
+    {
+      "sessions": 1,
+      "target_start": "2026-10-01T20:15:00Z",
+      "target_end": "2026-10-02T20:00:00Z",
+      "annualization_sessions": 252,
+      "variance_unit": "decimal_return_squared",
+      "volatility_unit": "annualized_decimal",
+      "variance_quantiles": [
+        {
+          "level": 0.05,
+          "value": 5e-05
+        },
+        {
+          "level": 0.5,
+          "value": 0.0001
+        },
+        {
+          "level": 0.95,
+          "value": 0.0003
+        }
+      ],
+      "variance_mean": 0.00014,
+      "mean_unavailable_reason": null,
+      "volatility_quantiles": [
+        {
+          "level": 0.05,
+          "value": 0.11224972160321824
+        },
+        {
+          "level": 0.5,
+          "value": 0.15874507866387544
+        },
+        {
+          "level": 0.95,
+          "value": 0.2749545416973504
+        }
+      ],
+      "representation": "marginal_only",
+      "missing_capability_reasons": [
+        "Joint dependence has not been fitted or validated; no onset or duration estimate."
+      ]
+    },
+    {
+      "sessions": 5,
+      "target_start": "2026-10-01T20:15:00Z",
+      "target_end": "2026-10-08T20:00:00Z",
+      "annualization_sessions": 252,
+      "variance_unit": "decimal_return_squared",
+      "volatility_unit": "annualized_decimal",
+      "variance_quantiles": [
+        {
+          "level": 0.05,
+          "value": 0.00025
+        },
+        {
+          "level": 0.5,
+          "value": 0.0005
+        },
+        {
+          "level": 0.95,
+          "value": 0.0014999999999999998
+        }
+      ],
+      "variance_mean": 0.0006999999999999999,
+      "mean_unavailable_reason": null,
+      "volatility_quantiles": [
+        {
+          "level": 0.05,
+          "value": 0.11224972160321824
+        },
+        {
+          "level": 0.5,
+          "value": 0.15874507866387544
+        },
+        {
+          "level": 0.95,
+          "value": 0.2749545416973504
+        }
+      ],
+      "representation": "marginal_only",
+      "missing_capability_reasons": [
+        "Joint dependence has not been fitted or validated; no onset or duration estimate."
+      ]
+    },
+    {
+      "sessions": 20,
+      "target_start": "2026-10-01T20:15:00Z",
+      "target_end": "2026-10-29T20:00:00Z",
+      "annualization_sessions": 252,
+      "variance_unit": "decimal_return_squared",
+      "volatility_unit": "annualized_decimal",
+      "variance_quantiles": [
+        {
+          "level": 0.05,
+          "value": 0.001
+        },
+        {
+          "level": 0.5,
+          "value": 0.002
+        },
+        {
+          "level": 0.95,
+          "value": 0.005999999999999999
+        }
+      ],
+      "variance_mean": 0.0027999999999999995,
+      "mean_unavailable_reason": null,
+      "volatility_quantiles": [
+        {
+          "level": 0.05,
+          "value": 0.11224972160321824
+        },
+        {
+          "level": 0.5,
+          "value": 0.15874507866387544
+        },
+        {
+          "level": 0.95,
+          "value": 0.2749545416973504
+        }
+      ],
+      "representation": "marginal_only",
+      "missing_capability_reasons": [
+        "Joint dependence has not been fitted or validated; no onset or duration estimate."
+      ]
+    }
+  ],
+  "joint_path_ref": null,
+  "capabilities": [
+    "marginal_quantiles",
+    "variance_mean"
+  ],
+  "actual_model_ids": [
+    "hand_authored_fixture_not_model"
+  ],
+  "failed_model_ids": [],
+  "quality_flags": [
+    "SYNTHETIC_NOT_A_MARKET_FORECAST",
+    "UNVALIDATED_CALIBRATION",
+    "TARGET_ENDS_ARE_FIXTURE_CALENDAR_VALUES"
+  ],
+  "revision_parent_id": null,
+  "episode_forecast": null
+}

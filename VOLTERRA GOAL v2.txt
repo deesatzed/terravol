@@ -1,0 +1,49 @@
+Created **VOLTERRA GOAL.md v2.0**, consolidating the earlier specifications with the external-event, linked-cascade, and adaptive-ensemble workflows.
+
+## :chatgpt-content-reference{index="1"}[Download GOAL.md](sandbox:/mnt/data/GOAL.md)
+
+The document is a self-contained implementation contract for transforming an existing VOLTERRA project. It directs the coding agent to **audit the repository first, preserve verified working code, and implement only the missing or defective capabilities**.
+
+### What it includes
+
+| Capability | What the implementation must deliver |
+|---|---|
+| **External-event forecasting** | Occurrence, timing, severity, cancellation, and resolution forecasts—with separate physical-event, information-arrival, and market-response clocks. |
+| **Dependency-aware cascades** | Shared causes, shared downstream outcomes, conditional relationships, delays, buffering, and non-propagation. Includes exact tests for your **30% precursor → 85% downstream probability** examples. |
+| **Scenario Coverage Planner** | Forward and reverse searches for precursor opportunities, ranked by incremental coverage, useful lead time, redundancy, and monitoring cost—not simply individual probability. |
+| **Adaptive forecasting ensemble** | Classical controls, TTM, Chronos-2, and TimesFM 2.5; comparisons of equal, global, rolling, FFORMA-inspired, and event/cascade-conditioned weighting. |
+| **Selective model execution** | A cheap pre-inference selector decides which specialists are worth running; a separate arbitrator combines their actual outputs. |
+| **Editable expert system** | Validated probability graphs, conditional scenarios, numerical inference, and immutable branches when assumptions change. |
+| **Outcome-grounded learning** | Delayed-label scoring, strategy memory, forecast-revision contracts, bounded investigation, and controlled challenger promotion and rollback. |
+| **Scientific evaluation** | Chronological replay, cross-fitting throughout the pipeline, same-information comparisons, joint-outcome scoring, calibration, and prospective confirmation. |
+
+### Build structure
+
+The handoff contains **24 dependency-ordered implementation tickets, 10 end-to-end workflows, and 100 acceptance requirements**, along with proposed command-line interfaces, an offline configuration, data contracts, and a primary-source research register.
+
+It explicitly prevents several failure modes we identified: counting related scenarios as independent opportunities, treating a predicted precursor as confirmed, confusing ensemble weights with event probabilities, learning from simulated consensus as though it were reality, and presenting marginal forecasts as validated joint paths.
+
+The **options-research module remains separate**. A strong volatility forecast can legitimately produce `NO_SUPPORTED_EDGE` or `NOT_ASSESSED`.
+
+### Starting instruction for the coding agent
+
+Place the file at the project root and use:
+
+```text
+Read GOAL.md as the authoritative transformation contract.
+
+Inspect the existing repository and create the transformation audit.
+Preserve verified working implementations and unrelated user changes.
+Map existing capabilities to the requirements, then implement the first
+unmet dependency.
+
+Begin with the offline known-answer vertical slice. Continue through the
+event, cascade, arbitration, investigation, and evaluation workflows.
+Do not stop at documentation, scaffolding, mock interfaces, or adapter stubs.
+
+Report actual tests executed, their results, blocked capabilities, and
+the next unmet dependency. Do not claim forecasting superiority or
+profitability without the specified evidence.
+```
+
+I checked the document structure, configuration example, synthetic cascade arithmetic, and proposed mixture-score formula. **This delivery is the implementation specification—not an executed application build or a validated market strategy.**

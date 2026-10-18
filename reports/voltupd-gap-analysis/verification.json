@@ -1,0 +1,459 @@
+{
+  "scope": "Gap-analysis audit; no application implementation, market model, paid API or financial strategy executed.",
+  "checked_at_utc": "2026-10-18T12:43:55.604034+00:00",
+  "environment": {
+    "python": "3.12.15",
+    "python_executable": "/Volumes/WS4TB/SmartMover_Data/uv/archive-v0/ffaSETqdG0Eyku78_uI7v/bin/python3",
+    "machine": "arm64",
+    "packages": {
+      "jsonschema": "4.25.1",
+      "referencing": "0.37.0",
+      "jsonschema-specifications": "2025.9.1",
+      "attrs": "26.1.0",
+      "rpds-py": "2026.9.1"
+    }
+  },
+  "input_voltupd_sha256": "862dc9ab7a1e68295af86cd8d45f7795fc29ca975322c4fd5afead3226aea547",
+  "baseline": {
+    "exit_code": 0,
+    "stdout": "PASSED: 28/28 package-only checks.\nApplication acceptance tests executed: 0. No forecasting or investment performance evaluated.\n",
+    "report": {
+      "scope": "Specification schemas and synthetic fixture invariants only. No application, real inference, backtest, posterior fit, calendar engine or profitability tests were run.",
+      "status": "PASSED",
+      "checked_at_utc": "2026-10-18T12:43:55.563119+00:00",
+      "checks_total": 28,
+      "checks_passed": 28,
+      "planned_application_acceptance_requirements": 78,
+      "planned_application_acceptance_requirements_executed": 0,
+      "checks": [
+        {
+          "name": "evidence: schema is well-formed",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "forecast: schema is well-formed",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "graph: schema is well-formed",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "decision: schema is well-formed",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "valid synthetic evidence",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "valid marginal synthetic forecast",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "valid beta-Bernoulli synthetic graph",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "valid zero-cost synthetic decision",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "reject evidence after origin",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Evidence was unavailable at the forecast origin."
+        },
+        {
+          "name": "reject over-budget dispatch",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Action exceeds available budget."
+        },
+        {
+          "name": "certified historical import may occur later",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "reject late received live observation",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Live evidence was not received before origin."
+        },
+        {
+          "name": "reject missing value presented as observed",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Observed numeric fixture requires a value."
+        },
+        {
+          "name": "reject missing status with numeric value",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValidationError: 0.00012 is not of type 'null'\n\nFailed validating 'type' in schema['allOf'][0]['then']['properties']['value']:\n    {'type': 'null'}\n\nOn instance['value']:\n    0.00012"
+        },
+        {
+          "name": "reject nonfinite JSON",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Non-finite JSON number is not permitted: NaN"
+        },
+        {
+          "name": "reject crossing quantiles",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Quantile values must be monotone."
+        },
+        {
+          "name": "reject wrong volatility unit conversion",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Quantile values must be monotone."
+        },
+        {
+          "name": "reject claimed joint paths without artifact",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Joint-path capability has no path artifact reference."
+        },
+        {
+          "name": "reject episode estimate on marginal-only output",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Episode output lacks the required supported capability."
+        },
+        {
+          "name": "reject failed-model credit",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: A failed model cannot receive credit as an actual producing model."
+        },
+        {
+          "name": "reject instantaneous cycle",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Instantaneous graph cycle."
+        },
+        {
+          "name": "lagged feedback passes structural cycle check only",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        },
+        {
+          "name": "reject negative beta shape",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Invalid numeric beta parameters in fixture subset."
+        },
+        {
+          "name": "reject bad beta support",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Beta support must be [0,1]."
+        },
+        {
+          "name": "reject unreferenced parameter",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Parameter reference has no declared dependency edge."
+        },
+        {
+          "name": "reject action outside allowed set",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Selected action is not allowed."
+        },
+        {
+          "name": "reject absent policy approval",
+          "expected": "reject",
+          "passed": true,
+          "diagnostic": "ValueError: Action lacks deterministic approval."
+        },
+        {
+          "name": "safe example defaults and disabled unpinned models",
+          "expected": "accept",
+          "passed": true,
+          "diagnostic": null
+        }
+      ]
+    }
+  },
+  "focused_probes": [
+    {
+      "name": "Nonexistent joint-path and episode artifact declarations",
+      "category": "declared_runtime_gap",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "Declaration accepted; this does not verify artifacts or joint dependence."
+    },
+    {
+      "name": "Nonexistent snapshot/model/calibration references",
+      "category": "declared_runtime_gap",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "Referential integrity has no persistent registry to query."
+    },
+    {
+      "name": "Synthetic forecast relabeled as non-synthetic",
+      "category": "cross_record_gap",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "No cross-record lineage check propagates the synthetic evidence flag."
+    },
+    {
+      "name": "Lagged probability reference without time-bound inference",
+      "category": "declared_runtime_gap",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "Structural validation accepts lag metadata; no time-unrolled inference is executed."
+    },
+    {
+      "name": "Student-t distribution with negative scale",
+      "category": "validator_defect",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "Student-t validator checks df > 2, but does not reject a negative scale."
+    },
+    {
+      "name": "Numeric JSON exponent overflow 1e999",
+      "category": "validator_defect",
+      "accepted": true,
+      "diagnostic": null,
+      "detail": "JSON exponent overflow becomes float infinity and passes the evidence checker."
+    },
+    {
+      "name": "Ordered quantiles with percent-versus-decimal error",
+      "category": "focused_positive_control",
+      "accepted": false,
+      "diagnostic": "ValueError: Variance-to-volatility units or transformation mismatch.",
+      "detail": null
+    },
+    {
+      "name": "Explicit event node role from design prose",
+      "category": "schema_design_gap",
+      "accepted": false,
+      "diagnostic": "ValidationError: 'event' is not one of ['observation', 'parameter', 'latent', 'target', 'deterministic']\n\nFailed validating 'enum' in schema['properties']['nodes']['items']['properties']['role']:\n    {'enum': ['observation',\n              'parameter',\n              'latent',\n              'target',\n              'deterministic']}\n\nOn instance['nodes'][1]['role']:\n    'event'",
+      "detail": null
+    }
+  ],
+  "arithmetic_reference": {
+    "scenario_mixture": 0.4125,
+    "independent_any_trigger": 0.657,
+    "independent_any_trigger_and_B": 0.586506375,
+    "independent_any_full_cascade": 0.5194913494218749,
+    "shared_downstream_outcome": 0.55845,
+    "perfectly_shared_triggers": 0.3,
+    "mutually_exclusive_triggers": 0.9,
+    "B_including_background": 0.325
+  },
+  "original_manifest_entries": 26,
+  "manifest_integrity": [
+    {
+      "path": "ACCEPTANCE_TESTS.md",
+      "manifest_sha256": "896a7d48b2057bb36b3d0734e3ba437311cd6915df2226ee5768855da06635da",
+      "observed_sha256": "896a7d48b2057bb36b3d0734e3ba437311cd6915df2226ee5768855da06635da",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "AGENTS.md",
+      "manifest_sha256": "aa853ef46bc1a3b0226d59d2afbc296856c90966e2537bc90c577abf22683404",
+      "observed_sha256": "aa853ef46bc1a3b0226d59d2afbc296856c90966e2537bc90c577abf22683404",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "BUILD_PLAN.md",
+      "manifest_sha256": "14a0b1b7ee6bc5cdab31b4b009bd938160d8b6a3ed963998699c1cf5186e71b7",
+      "observed_sha256": "14a0b1b7ee6bc5cdab31b4b009bd938160d8b6a3ed963998699c1cf5186e71b7",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "DATA_CONTRACTS.md",
+      "manifest_sha256": "a427cb6c9da5ebbb60283c66c933b3317b9b00a67cc3e004998537720ae24345",
+      "observed_sha256": "a427cb6c9da5ebbb60283c66c933b3317b9b00a67cc3e004998537720ae24345",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "DESIGN_SPEC.md",
+      "manifest_sha256": "89bb72fda194a8feeb9a97815c5be59657714928dcea5e967c3cee73ac62cd5a",
+      "observed_sha256": "89bb72fda194a8feeb9a97815c5be59657714928dcea5e967c3cee73ac62cd5a",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "GOAL.md",
+      "manifest_sha256": "424ca85c62c26212c72410827b0a6bbe63dd904d7bdc1b16db65809fc85ce02d",
+      "observed_sha256": "424ca85c62c26212c72410827b0a6bbe63dd904d7bdc1b16db65809fc85ce02d",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "PACKAGE_VALIDATION.json",
+      "manifest_sha256": "c13c780469fd2b7babffda1bced82653f37f7e95eb825a3e364b3e9b25a36c07",
+      "observed_sha256": "c13c780469fd2b7babffda1bced82653f37f7e95eb825a3e364b3e9b25a36c07",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "README.md",
+      "manifest_sha256": "42ed17b5b49a9de46e9908930b01a76ed535379ffda09e56474b8f0132a4aa44",
+      "observed_sha256": "42ed17b5b49a9de46e9908930b01a76ed535379ffda09e56474b8f0132a4aa44",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "RESEARCH_NOTES.md",
+      "manifest_sha256": "43d671a06434df8f0094d4b655679b86e89ba99267f9de43c1018591859e995c",
+      "observed_sha256": "43d671a06434df8f0094d4b655679b86e89ba99267f9de43c1018591859e995c",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "REUSE_AUDIT.md",
+      "manifest_sha256": "e0623542c2e1ca9d88062a55e9345f7e5a3369d7eaa54d9ca93565945453d3e5",
+      "observed_sha256": "e0623542c2e1ca9d88062a55e9345f7e5a3369d7eaa54d9ca93565945453d3e5",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "SCIENCE_AND_EVALUATION.md",
+      "manifest_sha256": "f79c5f1e8159617188f0c0b3933016df7b618e794f5fad8af3e3edeaa867f9d8",
+      "observed_sha256": "f79c5f1e8159617188f0c0b3933016df7b618e794f5fad8af3e3edeaa867f9d8",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "config/model_registry.json",
+      "manifest_sha256": "1a4ba780c710b823c44ef3f4accb1d675b31f1b77d3aa67c0e8063fbe8e54d49",
+      "observed_sha256": "1a4ba780c710b823c44ef3f4accb1d675b31f1b77d3aa67c0e8063fbe8e54d49",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "config/research.yaml",
+      "manifest_sha256": "bd7c3d087561e12d77a50b3c4acc877b4c8903e972161c3be3d336e7f1ff2d14",
+      "observed_sha256": "bd7c3d087561e12d77a50b3c4acc877b4c8903e972161c3be3d336e7f1ff2d14",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/README.md",
+      "manifest_sha256": "30f9d99b7b467c7494494ea8b1d0084d15689458ebcea2283fbb241196a17d97",
+      "observed_sha256": "30f9d99b7b467c7494494ea8b1d0084d15689458ebcea2283fbb241196a17d97",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/decision.synthetic.json",
+      "manifest_sha256": "0981d50ec0ef7d56b2b05dc7bdabf85ccfac08e7e4e1e14077528ff63137d586",
+      "observed_sha256": "0981d50ec0ef7d56b2b05dc7bdabf85ccfac08e7e4e1e14077528ff63137d586",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/evidence.synthetic.json",
+      "manifest_sha256": "3d8bed2cfe8184b93585a4217a68cfeae813e76d89f655f5d1cfa495a8d836ad",
+      "observed_sha256": "3d8bed2cfe8184b93585a4217a68cfeae813e76d89f655f5d1cfa495a8d836ad",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/forecast.synthetic.json",
+      "manifest_sha256": "08238201679f94e64cc29bc5d60ef595c2a89fc5a1951709b94e9d2ad76d1f20",
+      "observed_sha256": "08238201679f94e64cc29bc5d60ef595c2a89fc5a1951709b94e9d2ad76d1f20",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/graph.synthetic.json",
+      "manifest_sha256": "ff1b668e07360269f27ab5636fae2af34037dc1cd427fb5b4e06ce8932be4f50",
+      "observed_sha256": "ff1b668e07360269f27ab5636fae2af34037dc1cd427fb5b4e06ce8932be4f50",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/invalid/decision_over_budget.json",
+      "manifest_sha256": "b88d6fdfe8b484f8f2e5016a3986cf0f9cc78e879f3ca07716d5f56b5c20fa98",
+      "observed_sha256": "b88d6fdfe8b484f8f2e5016a3986cf0f9cc78e879f3ca07716d5f56b5c20fa98",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "examples/invalid/evidence_after_origin.json",
+      "manifest_sha256": "e0cb0d2b2ab1bdf2a440961eb67cf6e1bdd2ef5c3ae3baa68099c96cdca4b65e",
+      "observed_sha256": "e0cb0d2b2ab1bdf2a440961eb67cf6e1bdd2ef5c3ae3baa68099c96cdca4b65e",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "requirements-spec-validation.txt",
+      "manifest_sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0",
+      "observed_sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "schemas/decision.schema.json",
+      "manifest_sha256": "e63ab06036440aca13d8c7af7e79d0e66750c4982f94d312e264ac56bacc7f5d",
+      "observed_sha256": "e63ab06036440aca13d8c7af7e79d0e66750c4982f94d312e264ac56bacc7f5d",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "schemas/evidence.schema.json",
+      "manifest_sha256": "163ce4fd265472a43815df7c66dd8ee40ee571675db98c085cb2ca336d66f35b",
+      "observed_sha256": "163ce4fd265472a43815df7c66dd8ee40ee571675db98c085cb2ca336d66f35b",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "schemas/forecast.schema.json",
+      "manifest_sha256": "0ffff6b32cb07d012fa0d3d20725f4ea50df340bdf962ed2a0d27009919e5909",
+      "observed_sha256": "0ffff6b32cb07d012fa0d3d20725f4ea50df340bdf962ed2a0d27009919e5909",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "schemas/graph.schema.json",
+      "manifest_sha256": "015ea955fe11dd0a5c5db939cb5e77c0af5bf73ea034a18de9679a04d051f74a",
+      "observed_sha256": "015ea955fe11dd0a5c5db939cb5e77c0af5bf73ea034a18de9679a04d051f74a",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    },
+    {
+      "path": "tools/validate_specs.py",
+      "manifest_sha256": "5336f92b9f1731969e393cc9bb461c4b3e9b3a8598ded77493d383527f963e5b",
+      "observed_sha256": "5336f92b9f1731969e393cc9bb461c4b3e9b3a8598ded77493d383527f963e5b",
+      "matches_manifest": true,
+      "unchanged_by_audit": true
+    }
+  ],
+  "planned_application_acceptance_requirements_executed": 0,
+  "notes": [
+    "Baseline ran against temporary copies; original PACKAGE_VALIDATION.json was preserved.",
+    "Probe acceptance exposes a limitation or defect, not successful application behavior.",
+    "Arithmetic references are direct calculations, not a cascade engine or learned probabilities."
+  ]
+}

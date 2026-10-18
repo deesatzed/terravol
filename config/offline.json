@@ -1,0 +1,70 @@
+{
+  "schema_version": "2.1",
+  "profile": "offline",
+  "runtime_status": "NOT_IMPLEMENTED",
+  "execution": {
+    "device": "cpu",
+    "allow_network": false,
+    "allow_model_downloads": false,
+    "max_external_usd": 0,
+    "max_parallel_model_workers": 1,
+    "max_acquisition_steps_per_forecast": 3,
+    "seed": 17
+  },
+  "targets": {
+    "horizons_sessions": [
+      1,
+      5,
+      20
+    ],
+    "equity_annualization_sessions": 252,
+    "primary": "intraday_plus_overnight_realized_variance",
+    "daily_close_alternative": "daily_return_variance_proxy",
+    "allow_silent_proxy_substitution": false
+  },
+  "models": {
+    "enabled": [],
+    "planned_classical": [
+      "persistence",
+      "ewma",
+      "log_har",
+      "gjr_garch"
+    ],
+    "committed_foundation_candidates": [
+      "ttm",
+      "chronos_2",
+      "timesfm_2_5"
+    ]
+  },
+  "arbitration": {
+    "planned_incumbent": "equal_mixture",
+    "allow_consensus_as_outcome": false,
+    "fusion_modes": [
+      "unconditional_stack",
+      "conditional_world"
+    ]
+  },
+  "external_policy": {
+    "allowed_domains": [],
+    "allowed_providers": [],
+    "allowed_purposes": [],
+    "reservation_required": true,
+    "completion_log_required": true,
+    "unknown_price_policy": "DENY"
+  },
+  "monitoring": {
+    "enabled": false,
+    "utility_definition": null,
+    "minimum_useful_lead_time": null,
+    "unknown_observation_law_policy": "UNASSESSED"
+  },
+  "learning": {
+    "label_source": "matured_observations",
+    "structural_changes": "shadow_only",
+    "require_approval_for_promotion": true
+  },
+  "options": {
+    "enabled": false,
+    "execution_enabled": false
+  }
+}

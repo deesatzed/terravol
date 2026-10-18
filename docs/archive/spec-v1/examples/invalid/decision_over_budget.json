@@ -1,0 +1,22 @@
+{
+  "decision_id": "D-SYN-001",
+  "origin": "2026-10-01T20:15:00Z",
+  "forecast_id": "F-SYN-001",
+  "synthetic": true,
+  "criterion": "Resolve input quality before dispatching any specialist.",
+  "allowed_actions": [
+    "CHECK_DATA",
+    "ABSTAIN",
+    "STOP"
+  ],
+  "selected_action": "CHECK_DATA",
+  "reason_codes": [
+    "VERIFY_AVAILABILITY_AND_UNITS"
+  ],
+  "decision_model_id": "deterministic_fixture_not_ai_inference",
+  "calibration_status": "not_applicable",
+  "raw_model_score": null,
+  "estimated_cost_usd": 0.01,
+  "available_budget_usd": 0,
+  "policy_approved": true
+}
