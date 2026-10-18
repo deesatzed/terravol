@@ -51,10 +51,12 @@ class MeasurementSpec:
     coverage_policy: str
     proxy_label: str
     adjustment_policy: str
+    nonpositive_price_policy: str
 
     def __post_init__(self) -> None:
-        if not all((self.units, self.session_calendar_id, self.coverage_policy, self.proxy_label, self.adjustment_policy)):
-            raise LedgerError("measurement units, calendar, coverage, proxy label, and adjustment policy are required")
+        if not all((self.units, self.session_calendar_id, self.coverage_policy, self.proxy_label,
+                    self.adjustment_policy, self.nonpositive_price_policy)):
+            raise LedgerError("measurement units, calendar, coverage, proxy, adjustment, and nonpositive-price policies are required")
         if (isinstance(self.annualization_sessions, bool)
                 or not isinstance(self.annualization_sessions, int)
                 or self.annualization_sessions <= 0):
@@ -68,6 +70,7 @@ class MeasurementSpec:
             "coverage_policy": self.coverage_policy,
             "proxy_label": self.proxy_label,
             "adjustment_policy": self.adjustment_policy,
+            "nonpositive_price_policy": self.nonpositive_price_policy,
         })
 
 

@@ -71,9 +71,9 @@ class EvidenceTimeTests(unittest.TestCase):
         except ImportError as exc:
             self.fail(f"VT02 target maturity is not implemented: {exc}")
         targets = (
-            TargetDefinition("one", 1, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED")),
-            TargetDefinition("five", 5, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED")),
-            TargetDefinition("twenty", 20, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED")),
+            TargetDefinition("one", 1, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED", "NOT_APPLICABLE")),
+            TargetDefinition("five", 5, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED", "NOT_APPLICABLE")),
+            TargetDefinition("twenty", 20, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close", "SYNTHETIC_UNADJUSTED", "NOT_APPLICABLE")),
         )
         for target in targets:
             self.ledger.register_target(target)

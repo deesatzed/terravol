@@ -17,9 +17,9 @@ class DataContractTests(unittest.TestCase):
         except ImportError as exc:
             self.fail(f"VT02 measurement contracts are not implemented: {exc}")
         with self.assertRaises(LedgerError):
-            MeasurementSpec("squared_decimal_return", 0, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED")
+            MeasurementSpec("squared_decimal_return", 0, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED", "NOT_APPLICABLE")
         measurement = MeasurementSpec(
-            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED",
+            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED", "NOT_APPLICABLE",
         )
         target = TargetDefinition("rv-1", 1, "realized_variance_v1", measurement)
         with tempfile.TemporaryDirectory(prefix="volterra-measurement-") as directory:
@@ -29,7 +29,7 @@ class DataContractTests(unittest.TestCase):
             with self.assertRaises(LedgerError):
                 ledger.register_target(TargetDefinition(
                     "rv-1", 1, "realized_variance_v1",
-                    MeasurementSpec("squared_decimal_return", 365, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED"),
+                    MeasurementSpec("squared_decimal_return", 365, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED", "NOT_APPLICABLE"),
                 ))
 
     def test_ac_data_02_missing_or_stale_is_not_zero_observation(self) -> None:
@@ -57,14 +57,29 @@ class DataContractTests(unittest.TestCase):
         except ImportError as exc:
             self.fail(f"VT02 adjustment contract is not implemented: {exc}")
         with self.assertRaises(LedgerError):
-            MeasurementSpec("squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "")
+            MeasurementSpec("squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "", "NOT_APPLICABLE")
         adjusted = MeasurementSpec(
-            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED",
+            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED", "NOT_APPLICABLE",
         )
         rolled = MeasurementSpec(
-            "squared_decimal_return", 252, "CME", "FULL_SESSION", "close_to_close", "BACK_ADJUSTED_ROLL",
+            "squared_decimal_return", 252, "CME", "FULL_SESSION", "close_to_close", "BACK_ADJUSTED_ROLL", "NOT_APPLICABLE",
         )
         self.assertNotEqual(adjusted.canonical(), rolled.canonical())
+
+    def test_ac_data_04_nonpositive_price_policy_is_explicit(self) -> None:
+        try:
+            from volterra.storage import LedgerError, MeasurementSpec
+        except ImportError as exc:
+            self.fail(f"VT02 nonpositive-price contract is not implemented: {exc}")
+        with self.assertRaises(LedgerError):
+            MeasurementSpec("log_return", 252, "CME", "FULL_SESSION", "settlement", "BACK_ADJUSTED_ROLL", "")
+        unsupported = MeasurementSpec(
+            "log_return", 252, "CME", "FULL_SESSION", "settlement", "BACK_ADJUSTED_ROLL", "UNSUPPORTED",
+        )
+        alternative = MeasurementSpec(
+            "arithmetic_return", 252, "CME", "FULL_SESSION", "settlement", "BACK_ADJUSTED_ROLL", "ARITHMETIC_RETURN",
+        )
+        self.assertNotEqual(unsupported.canonical(), alternative.canonical())
 
     def test_synthetic_lineage_cannot_be_cleared_by_a_derived_record(self) -> None:
         try:
