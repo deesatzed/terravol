@@ -11,6 +11,25 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class OperationsAcceptanceTests(unittest.TestCase):
+    def test_ac_ops_06_dispatch_requires_pinned_capability_and_license_authorization(self) -> None:
+        try:
+            from volterra.policy import Authorization, DispatchPolicy, DispatchRequest, ReservationLedger
+        except ImportError as exc:
+            self.fail(f"VT02 authorization registry is not implemented: {exc}")
+        from datetime import datetime, timedelta, timezone
+        now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        approved = Authorization("forecast-adapter", "1.2.0", "provider-terms", "2026-01")
+        policy = DispatchPolicy(True, ("api.example.test",), ("forecast",), 1.0, 1, (approved,))
+        denied = ReservationLedger(policy).reserve(DispatchRequest(
+            "unapproved", "api.example.test", "forecast", 0.1, now + timedelta(minutes=1), authorization=None,
+        ), now=now)
+        allowed = ReservationLedger(policy).reserve(DispatchRequest(
+            "approved", "api.example.test", "forecast", 0.1, now + timedelta(minutes=1),
+            capability_verified=True, license_verified=True, authorization=approved,
+        ), now=now)
+        self.assertEqual(denied.reason, "AUTHORIZATION_UNVERIFIED")
+        self.assertEqual(allowed.status, "RESERVED")
+
     def test_ac_ops_05_donor_and_sensitive_runtime_paths_are_excluded(self) -> None:
         ignored = (ROOT / ".gitignore").read_text().splitlines()
         self.assertIn("/aXc-ace-forecaster/", ignored)

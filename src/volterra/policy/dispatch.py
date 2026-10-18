@@ -20,6 +20,20 @@ class DispatchPolicy:
     allowed_purposes: tuple[str, ...]
     max_external_usd: float
     action_limit: int
+    approved_authorizations: tuple["Authorization", ...] = ()
+
+
+@dataclass(frozen=True)
+class Authorization:
+    """Pinned capability and license terms that a policy may admit."""
+    capability_id: str
+    capability_version: str
+    license_id: str
+    license_version: str
+
+    def __post_init__(self) -> None:
+        if not all((self.capability_id, self.capability_version, self.license_id, self.license_version)):
+            raise ValueError("authorization identities and versions are required")
 
 
 @dataclass(frozen=True)
@@ -29,8 +43,9 @@ class DispatchRequest:
     purpose: str
     worst_case_usd: float
     deadline_at: datetime
-    capability_verified: bool
-    license_verified: bool
+    capability_verified: bool | None = None
+    license_verified: bool | None = None
+    authorization: Authorization | None = None
 
 
 @dataclass(frozen=True)
@@ -83,6 +98,9 @@ class ReservationLedger:
             return DispatchDecision("DENIED", "DOMAIN_NOT_ALLOWED")
         if request.purpose not in self.policy.allowed_purposes:
             return DispatchDecision("DENIED", "PURPOSE_NOT_ALLOWED")
+        if self.policy.approved_authorizations:
+            if request.authorization is None or request.authorization not in self.policy.approved_authorizations:
+                return DispatchDecision("DENIED", "AUTHORIZATION_UNVERIFIED")
         if not request.capability_verified:
             return DispatchDecision("DENIED", "CAPABILITY_UNVERIFIED")
         if not request.license_verified:
