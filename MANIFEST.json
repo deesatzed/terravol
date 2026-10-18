@@ -1,15 +1,16 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T17:45:33.931787+00:00",
-  "status": "VT00_VT03_VALIDATED_VT04_IN_PROGRESS",
+  "updated_at_utc": "2026-10-18T17:46:43.601701+00:00",
+  "status": "VT00_VT04_VALIDATED_VT05_NEXT",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 137,
+  "file_count_excluding_manifest": 138,
   "completed_implementation_tickets": [
     "VT00",
     "VT01",
     "VT02",
-    "VT03"
+    "VT03",
+    "VT04"
   ],
   "planned_implementation_tickets": 24,
   "planned_application_acceptance_requirements": 120,
@@ -22,7 +23,8 @@
     "reports/vt01/ticket-verification.json",
     "reports/vt02/ticket-verification.json",
     "reports/vt03/ticket-verification.json",
-    "reports/vt04/application-acceptance.json"
+    "reports/vt04/application-acceptance.json",
+    "reports/vt04/ticket-verification.json"
   ],
   "integrity_note": "Snapshot hashes cover this state. Original v1 hashes remain in the archived manifest; no real-data/model availability is claimed.",
   "files": [
@@ -98,8 +100,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 18234,
-      "sha256": "e7a34670f5673a5578b428cfd2c78f5aa46da5966efdb164730efa7bec9e7091"
+      "bytes": 18238,
+      "sha256": "c18d6a1e8602225521c8394f14da7db695a0465ea6150403244f7f85229b50b5"
     },
     {
       "path": "README.md",
@@ -128,8 +130,8 @@
     },
     {
       "path": "TASK_QUEUE.md",
-      "bytes": 3024,
-      "sha256": "21c4aced690ff779273612c65af69d15cfb26a83059f36dc932e2719621c5b73"
+      "bytes": 2997,
+      "sha256": "9a4808a01f99a6cc79349e55330812fd8c73a96e285b17f05c85e52334b19432"
     },
     {
       "path": "VOLTERRA GOAL v2.txt",
@@ -163,8 +165,8 @@
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11380,
-      "sha256": "b72bdda4f01b519f3fff0fad87d1654a43273aecf2605260bfe2f761fcc26819"
+      "bytes": 11428,
+      "sha256": "f61324d61b4e1b1e7f846b1a3f376c871d5180ad90d32fc0e31bbdcb74c3e3ee"
     },
     {
       "path": "config/model_registry.json",
@@ -512,6 +514,11 @@
       "sha256": "235120c305fb8cd8a584732ed4bfd8dd32e41465297b70cfa2ba0d88178ca814"
     },
     {
+      "path": "reports/vt04/ticket-verification.json",
+      "bytes": 759,
+      "sha256": "886a8d51f9ad2b51ca9799efbfde873d265c52d94271adb24fda753b125b1d46"
+    },
+    {
       "path": "requirements-spec-validation.txt",
       "bytes": 20,
       "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
@@ -689,7 +696,7 @@
     {
       "path": "tests/scaffold/test_cli.py",
       "bytes": 15001,
-      "sha256": "660c4c427df174507b6c92a40acb15b111ba31b5b250f3b58125513886af5587"
+      "sha256": "b1ffc7d94d1e17d60d1777eaf64f69a184201491f65c2b610eb4b014d8fec4c6"
     },
     {
       "path": "tools/validate_specs.py",

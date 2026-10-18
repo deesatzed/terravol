@@ -83,9 +83,11 @@
         "models",
         "distributions"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Persistence, EWMA, Log-HAR, GJR-GARCH and residual/measurement links with valid moments.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt04/ticket-verification.json"
+      ],
       "optional": false
     },
     {

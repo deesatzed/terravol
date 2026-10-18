@@ -1,6 +1,6 @@
 # VOLTERRA progress
 
-**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. The entries below retain earlier observations and scope as history. The consolidated scaffold is validated; the forecasting application remains NOT_IMPLEMENTED, with 41/120 application acceptance requirements executed. VT04 is the next application ticket for the first scored offline slice.
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. The entries below retain earlier observations and scope as history. The consolidated scaffold is validated; the forecasting application remains NOT_IMPLEMENTED, with 41/120 application acceptance requirements executed. VT05 is the next application ticket for the first scored offline slice.
 
 ## 2026-10-18 — ANALYSIS-VOLTUPD
 
@@ -90,8 +90,8 @@
 
 **Verification:** 68 total tests passed at completion. The 38-test application suite produced [application evidence](reports/vt03/application-acceptance.json) for 11 requirements and a [VT03 ticket receipt](reports/vt03/ticket-verification.json); scaffold validation selected VT04 next.
 
-## 2026-10-18 — VT04 in progress: measurement-bound classical baselines
+## 2026-10-18 — VT04 complete: measurement-bound classical baselines
 
 **Implemented so far:** Persistence, EWMA, configured Log-HAR, and configured GJR-GARCH produce explicit point-variance forecasts from supplied pre-origin synthetic histories. A residual Normal outcome distribution binds to the immutable target measurement identity, and named consumers reject Student-t distributions without the required finite moment. The classical primitives do not fit parameters, infer intraday realized-variance distributions, retrieve external data, or score forecasts.
 
-**Verification:** the 46-test application suite passed; [application evidence](reports/vt04/application-acceptance.json) binds AC-TIME-02, AC-DIST-01, AC-DIST-08, and AC-DIST-09. Scaffold validation reports 41/120 requirements executed and retains VT04 as the next ticket. The remaining VT04 work is sealed-origin baseline assembly and distribution/measurement validation needed before VT05 delayed scoring.
+**Verification:** the 46-test application suite passed; [application evidence](reports/vt04/application-acceptance.json) binds AC-TIME-02, AC-DIST-01, AC-DIST-08, and AC-DIST-09. The 76-test full suite and [ticket receipt](reports/vt04/ticket-verification.json) close VT04. Scaffold validation reports 41/120 requirements executed and selects VT05 for sealed forecasts, mature outcomes, and delayed proper scoring.

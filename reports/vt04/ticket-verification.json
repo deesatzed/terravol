@@ -1,0 +1,16 @@
+{
+  "scope": "ticket_verification",
+  "status": "PASSED",
+  "ticket_ids": [
+    "VT04"
+  ],
+  "test_refs": [
+    "tests/application/test_baselines.py"
+  ],
+  "tests_run": 76,
+  "run_id": "vt04-classical-baselines-20261018-full",
+  "executed_at": "2026-10-18T17:46:11+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT04 complete within the local synthetic scope: point-variance persistence, EWMA, configured Log-HAR, and configured GJR-GARCH baselines; origin-bound no-target-leakage input; target-measurement-bound residual uncertainty; and named finite-moment rejection. No fitted model, data retrieval, model artifact, delayed score, or market result is claimed."
+}
