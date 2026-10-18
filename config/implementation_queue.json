@@ -100,9 +100,11 @@
         "forecast_store",
         "evaluation"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Reproduce seeded load/snapshot/baseline/exact-cascade/seal/advance/mature/score; no downloaded weights required.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt05/ticket-verification.json"
+      ],
       "optional": false
     },
     {

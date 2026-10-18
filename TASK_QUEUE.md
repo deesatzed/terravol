@@ -1,6 +1,6 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT04 are closed within their bounded local/synthetic scopes; VT05 is the next ticket. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT05 are closed within their bounded local/synthetic scopes; VT06 is the next ticket. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
@@ -9,7 +9,7 @@ Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_que
 | VT02 | VT01 | COMPLETE | As-of evidence, targets, maturity and early deterministic call controls |
 | VT03 | VT01, VT02 | COMPLETE | Seeded market/event worlds and exact cascade reference |
 | VT04 | VT02, VT03 | COMPLETE | Classical forecasts and measurement-compatible distributions |
-| VT05 | VT04 | NOT_IMPLEMENTED | Sealed forecasts, delayed proper scoring and first offline slice |
+| VT05 | VT04 | COMPLETE | Sealed forecasts, delayed proper scoring and first offline slice |
 | VT06 | VT02, VT05 | NOT_IMPLEMENTED | TTM, Chronos-2 and TimesFM 2.5 adapters |
 | VT07 | VT05 | NOT_IMPLEMENTED | Joint paths and episode derivation |
 | VT08 | VT05, VT07 | NOT_IMPLEMENTED | Numerical CLI replay and chronological benchmark |

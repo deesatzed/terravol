@@ -257,11 +257,20 @@
       "id": "AC-PROB-09",
       "requirement": "Intervals over parameters and Monte Carlo error are not mislabeled as predictive outcome intervals.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_uncertainty.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-01",
@@ -497,21 +506,39 @@
       "id": "AC-DIST-03",
       "requirement": "A CDF mixture and a weighted-quantile average are distinguished on a known counterexample.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_mixtures.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-04",
       "requirement": "The empirical/analytic mixture CRPS identity matches a direct reference calculation.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_mixtures.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-05",
@@ -675,11 +702,20 @@
       "id": "AC-ARB-09",
       "requirement": "Consensus or simulated ensemble medians cannot enter real performance updates.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_provenance.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-10",
@@ -891,11 +927,20 @@
       "id": "AC-LEARN-01",
       "requirement": "Actual matured observations, simulated outcomes, critic scores, and assumptions are isolated in storage.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_provenance.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-02",
@@ -1146,11 +1191,20 @@
       "id": "AC-OPS-01",
       "requirement": "Clean offline setup and a full synthetic vertical slice run without model downloads or external accounts.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_demo.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-02",
@@ -1350,21 +1404,39 @@
       "id": "AC-CTRL-03",
       "requirement": "A blocked external checkpoint cannot prevent a verified offline classical slice or be credited as tested.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_demo.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-04",
       "requirement": "The first scored offline slice includes genuine baseline inference, sealed predictions, matured outcomes and proper scores.",
       "ticket": "VT05",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_offline_slice.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt05-offline-slice-20261018",
+        "executed_at": "2026-10-18T18:04:52+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt05/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-05",
