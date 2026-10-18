@@ -151,11 +151,20 @@
       "id": "AC-PROB-02",
       "requirement": "Invalid conditional tables, non-normalized exclusive branches, and probabilities outside [0,1] fail validation.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_prob.py::test_ac_prob_02",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
+      "planned_test": "tests/application/test_casc.py",
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-03",
@@ -171,11 +180,20 @@
       "id": "AC-PROB-04",
       "requirement": "Background B risk when A is absent is included in total probability calculations.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_prob.py::test_ac_prob_04",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
+      "planned_test": "tests/application/test_casc.py",
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-05",
@@ -201,11 +219,20 @@
       "id": "AC-PROB-07",
       "requirement": "Unknown dependence yields declared assumptions, bounds, or an unsupported result\u2014not silent independence.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
-      "planned_test": "tests/application/test_prob.py::test_ac_prob_07",
-      "last_run": null,
-      "evidence_refs": []
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
+      "planned_test": "tests/application/test_casc.py",
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-08",
@@ -231,81 +258,153 @@
       "id": "AC-CASC-01",
       "requirement": "Three independent 30% precursors produce P(any A)=0.657 in the reference graph.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-02",
       "requirement": "The independent complete-set and A-and-B arithmetic in Section 10.3 matches exact enumeration.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-03",
       "requirement": "Three perfectly coincident 30% triggers produce 0.30, not 0.657.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-04",
       "requirement": "Three mutually exclusive 30% triggers produce 0.90.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-05",
       "requirement": "A shared downstream B under the specified assumptions produces 0.55845 and is counted once.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-06",
       "requirement": "Two conditional 85% marginals preserve joint bounds [0.70,0.85] without an independence assumption.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-07",
       "requirement": "Both B-and-C and either B-or-C queries are distinct and independently tested.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-08",
       "requirement": "Duplicating or renaming a source/scenario does not increase world probability or coverage.",
       "ticket": "VT03",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_casc.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt03-exact-cascade-20261018",
+        "executed_at": "2026-10-18T17:26:16.795597+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt03/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-09",

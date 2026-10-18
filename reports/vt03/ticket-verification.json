@@ -1,0 +1,16 @@
+{
+  "scope": "ticket_verification",
+  "status": "PASSED",
+  "ticket_ids": [
+    "VT03"
+  ],
+  "test_refs": [
+    "tests/application/test_casc.py"
+  ],
+  "tests_run": 38,
+  "run_id": "vt03-exact-cascade-20261018",
+  "executed_at": "2026-10-18T17:26:16.795597+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT03 supplies only seeded/exact finite-state cascade reference behavior and explicit assumption checks. It does not fit, retrieve, or validate a real-world graph."
+}

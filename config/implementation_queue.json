@@ -65,9 +65,11 @@
         "fixtures",
         "cascades"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Exact known-answer enumeration, explicit assumptions, no-event/background mass and future-mutation invariance.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt03/ticket-verification.json"
+      ],
       "optional": false
     },
     {

@@ -1,0 +1,26 @@
+{
+  "scope": "application_acceptance",
+  "status": "PASSED",
+  "requirement_ids": [
+    "AC-PROB-02",
+    "AC-PROB-04",
+    "AC-PROB-07",
+    "AC-CASC-01",
+    "AC-CASC-02",
+    "AC-CASC-03",
+    "AC-CASC-04",
+    "AC-CASC-05",
+    "AC-CASC-06",
+    "AC-CASC-07",
+    "AC-CASC-08"
+  ],
+  "test_refs": [
+    "tests/application/test_casc.py"
+  ],
+  "tests_run": 38,
+  "run_id": "vt03-exact-cascade-20261018",
+  "executed_at": "2026-10-18T17:26:16.795597+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT03 exact synthetic cascade references passed: branch validation, explicit dependence semantics, background mass, shared-outcome deduplication, logical queries, and source identity controls. No model, data retrieval, or market claim is included."
+}
