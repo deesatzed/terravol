@@ -20,3 +20,9 @@ class MonitorContract:
  failure_law:str
  def __post_init__(self):
   if not self.coverage or self.cadence_minutes<=0 or self.cost_usd<0 or not self.arrival_law or not self.failure_law:raise ValueError("monitor requires coverage cadence costs and observation laws")
+@dataclass(frozen=True)
+class EventUpdate:
+ event_id:str
+ source:str
+ @property
+ def can_confirm(self):return self.source=="OBSERVED_CONFIRMATION"

@@ -13,3 +13,7 @@ class EventTests(unittest.TestCase):
   from volterra.events import MonitorContract
   monitor=MonitorContract("weather",cadence_minutes=60,cost_usd=.1,arrival_law="LAGGED",failure_law="MISSING")
   self.assertEqual(monitor.coverage,"weather")
+ def test_predicted_event_cannot_confirm_itself(self):
+  from volterra.events import EventUpdate
+  predicted=EventUpdate("A",source="PREDICTED")
+  self.assertFalse(predicted.can_confirm)
