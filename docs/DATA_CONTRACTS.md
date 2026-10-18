@@ -47,3 +47,9 @@ All rules/function identifiers resolve to a trusted registry owned by code, not 
 `volterra.contracts` now supplies immutable `EventProbability`, `TransmissionProbability`, `ScenarioProbability`, and `ExpertWeight` types so their numerical values cannot silently stand in for one another. `canonical_json` recursively rejects nonfinite values, including parsed exponent overflow. `QuantileForecast` is explicitly marginal-only: ordered sparse quantiles do not create a CDF tail or joint-path capability. `StudentTSpec` rejects nonpositive degrees of freedom or scale, and a consumer requiring finite variance must call `require_finite_variance`.
 
 `CapabilityManifest` is a static typed claim record only. It does not establish an artifact's availability, license, resource behavior, model output or integration. Those checks remain VT06 work.
+
+## VT02 implemented ledger and dispatch controls
+
+`EvidenceLedger` stores append-only revisions, immutable snapshot membership, content-addressed byte artifacts, versioned target definitions, and synthetic outcomes with explicit target-end and first-publication timestamps. Live snapshots require receipt by origin; certified historical snapshots require recorded availability. Artifact reads recompute the stored SHA-256 and reject missing or mismatched references.
+
+`ReservationLedger` evaluates a `DispatchRequest` against an explicit deterministic policy before any caller could dispatch: deadline, network state, domain, purpose, capability, license, action count, and reserved worst-case budget. It records only `RESERVED`, `CANCELLED`, `FAILED`, or `COMPLETED` state; it has no provider client, fallback, URL, subprocess, brokerage, credential, or trading API.

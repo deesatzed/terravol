@@ -36,6 +36,22 @@ class ControlAcceptanceTests(unittest.TestCase):
             StudentTSpec(degrees_of_freedom=2, location=0.0, scale=1.0).require_finite_variance()
         StudentTSpec(degrees_of_freedom=3, location=0.0, scale=1.0).require_finite_variance()
 
+    def test_ac_ctrl_07_missing_snapshot_or_artifact_reference_is_rejected(self) -> None:
+        try:
+            from volterra.storage import EvidenceLedger, LedgerError
+        except ImportError as exc:
+            self.fail(f"VT02 integrity references are not implemented: {exc}")
+        import tempfile
+        with tempfile.TemporaryDirectory(prefix="volterra-artifact-") as directory:
+            ledger = EvidenceLedger(Path(directory) / "ledger.sqlite")
+            self.addCleanup(ledger.close)
+            with self.assertRaises(LedgerError):
+                ledger.get_snapshot("missing")
+            digest = ledger.put_artifact(b"synthetic artifact")
+            self.assertEqual(ledger.read_artifact(digest), b"synthetic artifact")
+            with self.assertRaises(LedgerError):
+                ledger.read_artifact("0" * 64)
+
 
 if __name__ == "__main__":
     unittest.main()

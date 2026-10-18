@@ -110,6 +110,11 @@ class EvidenceLedger:
                 value_json TEXT NOT NULL,
                 synthetic INTEGER NOT NULL CHECK (synthetic IN (0, 1))
             );
+            CREATE TABLE IF NOT EXISTS artifacts (
+                artifact_sha256 TEXT PRIMARY KEY,
+                payload BLOB NOT NULL,
+                byte_count INTEGER NOT NULL CHECK (byte_count >= 0)
+            );
         """)
         self.connection.commit()
 
@@ -263,6 +268,30 @@ class EvidenceLedger:
             raise LedgerError("outcome_id does not exist")
         instant = _utc(as_of, "as_of")
         return instant >= row[0] and instant >= row[1]
+
+    def put_artifact(self, payload: bytes) -> str:
+        if not isinstance(payload, bytes):
+            raise LedgerError("artifact payload must be bytes")
+        digest = hashlib.sha256(payload).hexdigest()
+        with self.connection:
+            self.connection.execute(
+                "INSERT OR IGNORE INTO artifacts(artifact_sha256, payload, byte_count) VALUES (?, ?, ?)",
+                (digest, payload, len(payload)),
+            )
+        return digest
+
+    def read_artifact(self, artifact_sha256: str) -> bytes:
+        if len(artifact_sha256) != 64 or any(char not in "0123456789abcdef" for char in artifact_sha256):
+            raise LedgerError("artifact_sha256 must be a lowercase SHA-256 digest")
+        row = self.connection.execute(
+            "SELECT payload, byte_count FROM artifacts WHERE artifact_sha256 = ?", (artifact_sha256,)
+        ).fetchone()
+        if row is None:
+            raise LedgerError("artifact_sha256 does not exist")
+        payload = bytes(row[0])
+        if len(payload) != row[1] or hashlib.sha256(payload).hexdigest() != artifact_sha256:
+            raise LedgerError("artifact payload hash or length does not match reference")
+        return payload
 
     def close(self) -> None:
         self.connection.close()
