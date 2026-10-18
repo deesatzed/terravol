@@ -24,6 +24,16 @@ class ExecutionCapability:
         return cls(model_id,path,"UNSUPPORTED",None,reason)
 
 @dataclass(frozen=True)
+class ResearchModelLimit:
+    model_id: str
+    pretraining_cutoff: str | None
+    @property
+    def prospective_gate(self) -> str:
+        return "PRETRAINING_CUTOFF_UNKNOWN" if self.pretraining_cutoff is None else "OVERLAP_REVIEW_REQUIRED"
+    def research_note(self) -> str:
+        return f"{self.model_id}: pretraining cutoff is unknown; historical performance may overlap pretraining data."
+
+@dataclass(frozen=True)
 class CheckpointGate:
     model_id: str
     available: bool
