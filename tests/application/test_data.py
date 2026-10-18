@@ -11,6 +11,27 @@ UTC = timezone.utc
 
 
 class DataContractTests(unittest.TestCase):
+    def test_ac_data_01_variance_target_requires_measurement_identity(self) -> None:
+        try:
+            from volterra.storage import EvidenceLedger, LedgerError, MeasurementSpec, TargetDefinition
+        except ImportError as exc:
+            self.fail(f"VT02 measurement contracts are not implemented: {exc}")
+        with self.assertRaises(LedgerError):
+            MeasurementSpec("squared_decimal_return", 0, "XNYS", "FULL_SESSION", "close_to_close")
+        measurement = MeasurementSpec(
+            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close",
+        )
+        target = TargetDefinition("rv-1", 1, "realized_variance_v1", measurement)
+        with tempfile.TemporaryDirectory(prefix="volterra-measurement-") as directory:
+            ledger = EvidenceLedger(Path(directory) / "ledger.sqlite")
+            self.addCleanup(ledger.close)
+            ledger.register_target(target)
+            with self.assertRaises(LedgerError):
+                ledger.register_target(TargetDefinition(
+                    "rv-1", 1, "realized_variance_v1",
+                    MeasurementSpec("squared_decimal_return", 365, "XNYS", "FULL_SESSION", "close_to_close"),
+                ))
+
     def test_ac_data_02_missing_or_stale_is_not_zero_observation(self) -> None:
         try:
             from volterra.storage import EvidenceInput, EvidenceLedger, LedgerError

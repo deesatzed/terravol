@@ -44,17 +44,47 @@ class Snapshot:
 
 
 @dataclass(frozen=True)
+class MeasurementSpec:
+    units: str
+    annualization_sessions: int
+    session_calendar_id: str
+    coverage_policy: str
+    proxy_label: str
+
+    def __post_init__(self) -> None:
+        if not all((self.units, self.session_calendar_id, self.coverage_policy, self.proxy_label)):
+            raise LedgerError("measurement units, calendar, coverage policy, and proxy label are required")
+        if (isinstance(self.annualization_sessions, bool)
+                or not isinstance(self.annualization_sessions, int)
+                or self.annualization_sessions <= 0):
+            raise LedgerError("annualization_sessions must be a positive integer")
+
+    def canonical(self) -> str:
+        return canonical_json({
+            "units": self.units,
+            "annualization_sessions": self.annualization_sessions,
+            "session_calendar_id": self.session_calendar_id,
+            "coverage_policy": self.coverage_policy,
+            "proxy_label": self.proxy_label,
+        })
+
+
+@dataclass(frozen=True)
 class TargetDefinition:
     target_id: str
     horizon_sessions: int
     estimator_id: str
-    units: str
+    measurement: MeasurementSpec
 
     def __post_init__(self) -> None:
-        if not self.target_id or not self.estimator_id or not self.units:
-            raise LedgerError("target identity, estimator and units are required")
+        if not self.target_id or not self.estimator_id:
+            raise LedgerError("target identity and estimator are required")
         if isinstance(self.horizon_sessions, bool) or not isinstance(self.horizon_sessions, int) or self.horizon_sessions <= 0:
             raise LedgerError("horizon_sessions must be a positive integer")
+
+    @property
+    def units(self) -> str:
+        return self.measurement.units
 
 
 class EvidenceLedger:
@@ -98,7 +128,8 @@ class EvidenceLedger:
                 target_id TEXT PRIMARY KEY,
                 horizon_sessions INTEGER NOT NULL CHECK (horizon_sessions > 0),
                 estimator_id TEXT NOT NULL,
-                units TEXT NOT NULL
+                units TEXT NOT NULL,
+                measurement_json TEXT
             );
             CREATE TABLE IF NOT EXISTS outcomes (
                 outcome_id TEXT PRIMARY KEY,
@@ -122,6 +153,9 @@ class EvidenceLedger:
                 PRIMARY KEY (job_kind, idempotency_key)
             );
         """)
+        columns = {row[1] for row in self.connection.execute("PRAGMA table_info(target_definitions)")}
+        if "measurement_json" not in columns:
+            self.connection.execute("ALTER TABLE target_definitions ADD COLUMN measurement_json TEXT")
         self.connection.commit()
 
     def append_evidence(self, evidence: EvidenceInput) -> str:
@@ -229,14 +263,15 @@ class EvidenceLedger:
     def register_target(self, target: TargetDefinition) -> None:
         with self.connection:
             existing = self.connection.execute(
-                "SELECT horizon_sessions, estimator_id, units FROM target_definitions WHERE target_id = ?",
+                "SELECT horizon_sessions, estimator_id, units, measurement_json FROM target_definitions WHERE target_id = ?",
                 (target.target_id,),
             ).fetchone()
-            current = (target.horizon_sessions, target.estimator_id, target.units)
+            current = (target.horizon_sessions, target.estimator_id, target.units, target.measurement.canonical())
             if existing is not None and tuple(existing) != current:
                 raise LedgerError("target_id is immutable; use a new target version")
             self.connection.execute(
-                "INSERT OR IGNORE INTO target_definitions(target_id, horizon_sessions, estimator_id, units) VALUES (?, ?, ?, ?)",
+                """INSERT OR IGNORE INTO target_definitions
+                   (target_id, horizon_sessions, estimator_id, units, measurement_json) VALUES (?, ?, ?, ?, ?)""",
                 (target.target_id, *current),
             )
 

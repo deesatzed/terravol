@@ -50,6 +50,6 @@ All rules/function identifiers resolve to a trusted registry owned by code, not 
 
 ## VT02 implemented ledger and dispatch controls
 
-`EvidenceLedger` stores append-only revisions, immutable snapshot membership, content-addressed byte artifacts, versioned target definitions, and synthetic outcomes with explicit target-end and first-publication timestamps. Live snapshots require receipt by origin; certified historical snapshots require recorded availability. Artifact reads recompute the stored SHA-256 and reject missing or mismatched references.
+`EvidenceLedger` stores append-only revisions, immutable snapshot membership, content-addressed byte artifacts, versioned target definitions, and synthetic outcomes with explicit target-end and first-publication timestamps. A variance target carries immutable units, annualization-session count, session calendar, coverage policy, estimator identity, and proxy label. Live snapshots require receipt by origin; certified historical snapshots require recorded availability. Artifact reads recompute the stored SHA-256 and reject missing or mismatched references.
 
 `ReservationLedger` evaluates a `DispatchRequest` against an explicit deterministic policy before any caller could dispatch: deadline, network state, domain, purpose, capability, license, action count, and reserved worst-case budget. It records only `RESERVED`, `CANCELLED`, `FAILED`, or `COMPLETED` state; it has no provider client, fallback, URL, subprocess, brokerage, credential, or trading API.

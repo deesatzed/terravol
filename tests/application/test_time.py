@@ -67,13 +67,13 @@ class EvidenceTimeTests(unittest.TestCase):
 
     def test_ac_time_05_outcomes_mature_only_after_horizon_and_publication(self) -> None:
         try:
-            from volterra.storage import TargetDefinition
+            from volterra.storage import MeasurementSpec, TargetDefinition
         except ImportError as exc:
             self.fail(f"VT02 target maturity is not implemented: {exc}")
         targets = (
-            TargetDefinition("one", 1, "synthetic_variance", "squared_decimal_return"),
-            TargetDefinition("five", 5, "synthetic_variance", "squared_decimal_return"),
-            TargetDefinition("twenty", 20, "synthetic_variance", "squared_decimal_return"),
+            TargetDefinition("one", 1, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close")),
+            TargetDefinition("five", 5, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close")),
+            TargetDefinition("twenty", 20, "synthetic_variance", MeasurementSpec("squared_decimal_return", 252, "SYNTHETIC", "FULL_SESSION", "synthetic_close")),
         )
         for target in targets:
             self.ledger.register_target(target)

@@ -1,7 +1,7 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T14:41:50.851410+00:00",
+  "updated_at_utc": "2026-10-18T14:42:28.983889+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
   "file_count_excluding_manifest": 125,
@@ -13,7 +13,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 7,
   "application_acceptance_remaining": 113,
-  "full_test_suite_passed": 54,
+  "full_test_suite_passed": 55,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -93,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 13810,
-      "sha256": "fb1ab42aeb2e736e153642d8a081877038b5a415f230cb55f86d6bf8212ee459"
+      "bytes": 14318,
+      "sha256": "8a3977627806f0db2d9773694c5489ad4b7f85a97d0a636ededdc46eaf059c80"
     },
     {
       "path": "README.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "docs/DATA_CONTRACTS.md",
-      "bytes": 6839,
-      "sha256": "502f83f78c6cb44fcb0cc6726175ed6a1f86b70cbc0677cb04f5128421a0003c"
+      "bytes": 6983,
+      "sha256": "9c1eb314c98698394876f01c590be2d8d3d868c2ff40d8d8e9346247bb50ba28"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -553,13 +553,13 @@
     },
     {
       "path": "src/volterra/storage/__init__.py",
-      "bytes": 253,
-      "sha256": "937627577fa9b405e359569beb8385cf2cc432db2d6d101cf9b1a82676c1e298"
+      "bytes": 289,
+      "sha256": "275a9872ccdd9470404d5e48ddcc6d3ba98d8b827061193d4678b9eb1aee225a"
     },
     {
       "path": "src/volterra/storage/ledger.py",
-      "bytes": 16595,
-      "sha256": "e4650f0be75fa420af11b6ada40c6dd755df1fddcdd6bd1041678fe67f2e4ff3"
+      "bytes": 18070,
+      "sha256": "a69c0064b6beef55cb988536ad64a4d257fed806e76061b69222fc126716bf51"
     },
     {
       "path": "tests/README.md",
@@ -588,8 +588,8 @@
     },
     {
       "path": "tests/application/test_data.py",
-      "bytes": 2709,
-      "sha256": "4616cbb49254ba279cc6acf91f8c2b079d227fd159ab5e8647c6eab6dfcb5428"
+      "bytes": 3920,
+      "sha256": "8b09f06b6c20394565ac1eb7e0dff09414715edbc49cf4e4f349cea4fffd4563"
     },
     {
       "path": "tests/application/test_dist.py",
@@ -613,8 +613,8 @@
     },
     {
       "path": "tests/application/test_time.py",
-      "bytes": 4333,
-      "sha256": "9f9182ea298ff96c8a6a63130cb64669aa5041ccb7f48820c8f5b7b773984d2b"
+      "bytes": 4560,
+      "sha256": "c70fe0ecf093eaab22a97d01e3e3fd9da578445b442afa9d2ab645eb4a96194d"
     },
     {
       "path": "tests/scaffold/__init__.py",
