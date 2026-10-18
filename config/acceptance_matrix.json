@@ -6,11 +6,20 @@
       "id": "AC-TIME-01",
       "requirement": "Changing data published after the origin leaves the earlier frozen forecast unchanged.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_time.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-02",
@@ -26,31 +35,58 @@
       "id": "AC-TIME-03",
       "requirement": "Historical availability and live receipt policies are tested separately; imported archives are not rejected merely for being imported today.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_time.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-04",
       "requirement": "First releases and revisions reconstruct different eligible snapshots at the appropriate times.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_time.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-05",
       "requirement": "One-, five-, and twenty-session labels mature only after their complete intervals and publication rules.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_time.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-06",
@@ -604,31 +640,58 @@
       "id": "AC-SEL-01",
       "requirement": "A zero external-call budget produces no paid API call or implicit paid fallback.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-02",
       "requirement": "Concurrent reservations, retries, cancellation, and failures cannot exceed the configured budget.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-03",
       "requirement": "Capability and license ineligibility removes an expert before dispatch.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-04",
@@ -654,11 +717,20 @@
       "id": "AC-SEL-06",
       "requirement": "Disabled networking, expired deadlines, and action limits produce explicit stop states.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-07",
@@ -764,41 +836,77 @@
       "id": "AC-DATA-01",
       "requirement": "Variance units, annualization, session coverage, estimator identity, and proxy labels remain consistent.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-02",
       "requirement": "Missing intraday bars and stale observations are not interpreted as zero variance.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-03",
       "requirement": "Splits and futures rolls do not create unmarked economic jumps.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-04",
       "requirement": "Nonpositive commodity prices use an explicit valid target or unsupported status, not silent log clipping.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-05",
@@ -914,11 +1022,20 @@
       "id": "AC-OPS-03",
       "requirement": "Idempotent replay/job recovery creates no duplicate evidence, forecasts, charges, or outcomes.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ops.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-04",
@@ -953,11 +1070,20 @@
       "id": "AC-OPS-06",
       "requirement": "Model/data licenses and capabilities are pinned and enforced independently.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ops.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-07",
@@ -1052,11 +1178,20 @@
       "id": "AC-CTRL-02",
       "requirement": "Purpose, allowlist, timeout, reservation and completion controls exist before any external model/source call.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-03",
@@ -1120,21 +1255,39 @@
       "id": "AC-CTRL-07",
       "requirement": "Nonexistent snapshot/model/calibrator references and missing or mismatched artifacts fail runtime integrity checks.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ctrl.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-08",
       "requirement": "Synthetic lineage propagates through mixed inputs and cannot be cleared by a forecast, branch or export.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-01",

@@ -1,10 +1,10 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T14:44:04.424472+00:00",
+  "updated_at_utc": "2026-10-18T15:04:16.584452+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 125,
+  "file_count_excluding_manifest": 126,
   "completed_implementation_tickets": [
     "VT00",
     "VT01"
@@ -148,8 +148,8 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 46253,
-      "sha256": "db4961f0b8d536a33a9f39b2b7607795089e31c3e90281af9cbc4fe2f6cb9da6"
+      "bytes": 52196,
+      "sha256": "1fed523768c47114640286698e99d93c995889f093951a871af90052b5e907b1"
     },
     {
       "path": "config/feasibility_matrix.json",
@@ -158,8 +158,8 @@
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11284,
-      "sha256": "af1adc153d5203c774f695d3bbf57b211dcfa1446a31f0addf962de43d6d157e"
+      "bytes": 11276,
+      "sha256": "559e2dd01c8a173bac7b2f20ecc4eea601427e13c0f2aa662e5781f4177ef140"
     },
     {
       "path": "config/model_registry.json",
@@ -480,6 +480,11 @@
       "path": "reports/vt01/ticket-verification.json",
       "bytes": 706,
       "sha256": "723486a020900f58bc128cbb68453c6a2ede3434691a170abf278ab551f75849"
+    },
+    {
+      "path": "reports/vt02/application-acceptance.json",
+      "bytes": 1148,
+      "sha256": "19a49720cfe385cc2045402100637346c69d287c7fc7bb3edf5c16c5cb43d7f4"
     },
     {
       "path": "requirements-spec-validation.txt",

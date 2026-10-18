@@ -47,7 +47,7 @@
         "targets",
         "policy"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "PARTIAL",
       "exit_evidence": "Durable revisions/snapshots, FK/artifact integrity, jobs, zero-default reservations, allowlists, timeouts and completion logs before external calls.",
       "evidence_refs": [],
       "optional": false
