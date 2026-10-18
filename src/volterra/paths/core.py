@@ -2,6 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import math
 class MarginalOnlyError(ValueError): pass
+class IndependentHeadError(ValueError): pass
 @dataclass(frozen=True)
 class VariancePath:
  increments: tuple[float,...]
@@ -20,3 +21,5 @@ class JointPathMixture:
  def __post_init__(self):
   if not self.worlds or abs(sum(p for p,_ in self.worlds)-1)>1e-12: raise ValueError("world masses must sum to one")
  def support(self): return {path for _,path in self.worlds}
+def independent_heads_joint_probability(*_: float) -> float:
+ raise IndependentHeadError("independently calibrated heads do not establish a coherent joint probability")

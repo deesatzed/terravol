@@ -14,4 +14,7 @@ class PathTests(unittest.TestCase):
   mixture=JointPathMixture(((.5,(0,0)),(.5,(1,1))))
   self.assertEqual(mixture.support(),{(0,0),(1,1)})
   self.assertNotIn((0,1),mixture.support())
+ def test_ac_dist_10_independent_heads_do_not_claim_joint_probability(self):
+  from volterra.paths import IndependentHeadError, independent_heads_joint_probability
+  with self.assertRaises(IndependentHeadError): independent_heads_joint_probability(.7,.8)
 
