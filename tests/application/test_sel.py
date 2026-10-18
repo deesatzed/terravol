@@ -68,3 +68,32 @@ class DispatchPolicyTests(unittest.TestCase):
                                                      now + timedelta(minutes=1), False, False), now=now)
         self.assertEqual(expired.reason, "DEADLINE_EXPIRED")
         self.assertEqual(ineligible.reason, "NETWORK_DISABLED")
+
+    def test_brokerage_or_trade_purpose_is_never_dispatchable(self) -> None:
+        try:
+            from volterra.policy import DispatchPolicy, DispatchRequest, ReservationLedger
+        except ImportError as exc:
+            self.fail(f"VT02 dispatch policy is not implemented: {exc}")
+        now = datetime(2026, 1, 1, tzinfo=UTC)
+        policy = DispatchPolicy(True, ("api.example.test",), ("brokerage",), 1.0, 1)
+        decision = ReservationLedger(policy).reserve(DispatchRequest(
+            "trade", "api.example.test", "brokerage", 0.1, now + timedelta(minutes=1), True, True
+        ), now=now)
+        self.assertEqual(decision.status, "DENIED")
+        self.assertEqual(decision.reason, "FORBIDDEN_PURPOSE")
+
+    def test_completed_reservation_retains_actual_cost_for_reconciliation(self) -> None:
+        try:
+            from volterra.policy import DispatchPolicy, DispatchRequest, ReservationLedger
+        except ImportError as exc:
+            self.fail(f"VT02 dispatch policy is not implemented: {exc}")
+        now = datetime(2026, 1, 1, tzinfo=UTC)
+        ledger = ReservationLedger(DispatchPolicy(True, ("api.example.test",), ("forecast",), 1.0, 1))
+        request = DispatchRequest("completed", "api.example.test", "forecast", 0.5,
+                                  now + timedelta(minutes=1), True, True)
+        self.assertEqual(ledger.reserve(request, now=now).status, "RESERVED")
+        ledger.complete("completed", actual_usd=0.37)
+        record = ledger.reservation_record("completed")
+        self.assertEqual(record.status, "COMPLETED")
+        self.assertEqual(record.worst_case_usd, 0.5)
+        self.assertEqual(record.actual_usd, 0.37)
