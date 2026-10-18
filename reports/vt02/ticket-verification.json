@@ -1,0 +1,21 @@
+{
+  "scope": "ticket_verification",
+  "status": "PASSED",
+  "ticket_ids": [
+    "VT02"
+  ],
+  "test_refs": [
+    "tests/application/test_ctrl.py",
+    "tests/application/test_data.py",
+    "tests/application/test_eco.py",
+    "tests/application/test_ops.py",
+    "tests/application/test_sel.py",
+    "tests/application/test_time.py"
+  ],
+  "tests_run": 30,
+  "run_id": "vt02-ledger-policy-20261018",
+  "executed_at": "2026-10-18T14:44:22.694119+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT02 implements only the local offline evidence ledger, target/maturity contracts, artifact integrity, idempotent jobs, deterministic dispatch authorization/reservations, and brokerage prohibition. It does not retrieve data, call providers, forecast, or execute trades."
+}

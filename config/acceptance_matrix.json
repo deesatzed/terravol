@@ -1158,11 +1158,20 @@
       "id": "AC-ECO-05",
       "requirement": "No brokerage credentials, execution endpoint, or autonomous trade action exists.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_eco.py"
+      ],
       "planned_test": "tests/application/test_eco.py::test_ac_eco_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-01",

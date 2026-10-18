@@ -58,7 +58,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 24)
+        self.assertEqual(report["application_acceptance_executed"], 25)
         self.assertEqual(report["next_ticket"], "VT02")
 
     def test_dependency_cycle_is_rejected(self) -> None:
@@ -171,7 +171,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                 command = self.run_cli("scaffold", "validate")
                 self.assertEqual(command.returncode, 0, command.stderr + command.stdout)
                 report = json.loads(command.stdout)
-                self.assertEqual(report["application_acceptance_executed"], 25)
+                self.assertEqual(report["application_acceptance_executed"], 26)
                 self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
 
     def test_malformed_receipt_test_reference_is_rejected_without_crashing(self) -> None:

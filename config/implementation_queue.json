@@ -47,9 +47,11 @@
         "targets",
         "policy"
       ],
-      "status": "PARTIAL",
+      "status": "COMPLETE",
       "exit_evidence": "Durable revisions/snapshots, FK/artifact integrity, jobs, zero-default reservations, allowlists, timeouts and completion logs before external calls.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt02/ticket-verification.json"
+      ],
       "optional": false
     },
     {
