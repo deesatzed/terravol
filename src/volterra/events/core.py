@@ -31,5 +31,10 @@ class EventState:
  physical_state:str
  evidence_state:str
  instrument_states:dict[str,str]
+@dataclass(frozen=True)
+class Vintage:
+ observation_at:datetime
+ published_at:datetime
+ def available_at(self,as_of:datetime):return as_of>=self.published_at
 def classify_surprise(*,own_model_error:float,expectation_source:str|None):
  return "OWN_MODEL_ERROR" if expectation_source is None else "MARKET_SURPRISE"
