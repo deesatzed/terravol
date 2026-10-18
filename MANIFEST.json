@@ -1,7 +1,7 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T14:37:45.526323+00:00",
+  "updated_at_utc": "2026-10-18T14:38:10.847189+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
   "file_count_excluding_manifest": 121,
@@ -13,7 +13,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 7,
   "application_acceptance_remaining": 113,
-  "full_test_suite_passed": 40,
+  "full_test_suite_passed": 44,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -93,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 12460,
-      "sha256": "86eb67eaca9a319578df6398d347435f5cfc9081e0ccd949dd5f6a953cbbefd1"
+      "bytes": 12427,
+      "sha256": "b47a726c5999f0897583be0297f373409f82750b1214c57309c231380e7573ef"
     },
     {
       "path": "README.md",
@@ -543,13 +543,13 @@
     },
     {
       "path": "src/volterra/storage/__init__.py",
-      "bytes": 187,
-      "sha256": "6391381a8c14c85d95dfe6a55f87f3bda90e43c9d40b01367e709f376fb59005"
+      "bytes": 225,
+      "sha256": "6df906f9547c407c8d394eda7ee21d0eba1eaf55ce5d2ab83501210faa824dd9"
     },
     {
       "path": "src/volterra/storage/ledger.py",
-      "bytes": 8208,
-      "sha256": "5e50d35f1b5ac9bd81894b8be78cacdc6aa1ae07c0eeeefbc6169e817a6a6fab"
+      "bytes": 12491,
+      "sha256": "81799ddceae0c1d6e62042007d99a635280813a1bf4714b92ae4209101a6f58b"
     },
     {
       "path": "tests/README.md",
@@ -593,8 +593,8 @@
     },
     {
       "path": "tests/application/test_time.py",
-      "bytes": 3059,
-      "sha256": "af5211b6a5ae5713cb6981d3356600ae0b7875f8b008e15bc96516e89eb0c840"
+      "bytes": 4333,
+      "sha256": "9f9182ea298ff96c8a6a63130cb64669aa5041ccb7f48820c8f5b7b773984d2b"
     },
     {
       "path": "tests/scaffold/__init__.py",

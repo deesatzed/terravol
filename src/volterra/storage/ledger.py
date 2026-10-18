@@ -43,6 +43,20 @@ class Snapshot:
     revision_ids: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class TargetDefinition:
+    target_id: str
+    horizon_sessions: int
+    estimator_id: str
+    units: str
+
+    def __post_init__(self) -> None:
+        if not self.target_id or not self.estimator_id or not self.units:
+            raise LedgerError("target identity, estimator and units are required")
+        if isinstance(self.horizon_sessions, bool) or not isinstance(self.horizon_sessions, int) or self.horizon_sessions <= 0:
+            raise LedgerError("horizon_sessions must be a positive integer")
+
+
 class EvidenceLedger:
     """A local ledger; it never fetches, executes, or interprets external evidence."""
 
@@ -79,6 +93,22 @@ class EvidenceLedger:
                 snapshot_id TEXT NOT NULL REFERENCES snapshots(snapshot_id),
                 revision_id TEXT NOT NULL REFERENCES evidence_revisions(revision_id),
                 PRIMARY KEY (snapshot_id, revision_id)
+            );
+            CREATE TABLE IF NOT EXISTS target_definitions (
+                target_id TEXT PRIMARY KEY,
+                horizon_sessions INTEGER NOT NULL CHECK (horizon_sessions > 0),
+                estimator_id TEXT NOT NULL,
+                units TEXT NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS outcomes (
+                outcome_id TEXT PRIMARY KEY,
+                target_id TEXT NOT NULL REFERENCES target_definitions(target_id),
+                origin_at TEXT NOT NULL,
+                completed_sessions INTEGER NOT NULL CHECK (completed_sessions > 0),
+                target_end_at TEXT NOT NULL,
+                first_public_at TEXT NOT NULL,
+                value_json TEXT NOT NULL,
+                synthetic INTEGER NOT NULL CHECK (synthetic IN (0, 1))
             );
         """)
         self.connection.commit()
@@ -180,6 +210,59 @@ class EvidenceLedger:
             (snapshot_id,),
         ).fetchall()
         return Snapshot(snapshot_id, datetime.fromisoformat(row[0]), row[1], tuple(item[0] for item in revisions))
+
+    def register_target(self, target: TargetDefinition) -> None:
+        with self.connection:
+            existing = self.connection.execute(
+                "SELECT horizon_sessions, estimator_id, units FROM target_definitions WHERE target_id = ?",
+                (target.target_id,),
+            ).fetchone()
+            current = (target.horizon_sessions, target.estimator_id, target.units)
+            if existing is not None and tuple(existing) != current:
+                raise LedgerError("target_id is immutable; use a new target version")
+            self.connection.execute(
+                "INSERT OR IGNORE INTO target_definitions(target_id, horizon_sessions, estimator_id, units) VALUES (?, ?, ?, ?)",
+                (target.target_id, *current),
+            )
+
+    def record_outcome(self, *, target_id: str, origin_at: datetime, completed_sessions: int,
+                       target_end_at: datetime, first_public_at: datetime, value: Any,
+                       synthetic: bool) -> str:
+        target = self.connection.execute(
+            "SELECT horizon_sessions FROM target_definitions WHERE target_id = ?", (target_id,)
+        ).fetchone()
+        if target is None:
+            raise LedgerError("target_id does not exist")
+        if isinstance(completed_sessions, bool) or completed_sessions != target[0]:
+            raise LedgerError("completed_sessions must equal the declared target horizon")
+        origin = _utc(origin_at, "origin_at")
+        end = _utc(target_end_at, "target_end_at")
+        published = _utc(first_public_at, "first_public_at")
+        if end <= origin or published < end:
+            raise LedgerError("outcome must end after origin and publish no earlier than target end")
+        value_json = canonical_json(value)
+        outcome_id = hashlib.sha256(canonical_json({
+            "target_id": target_id, "origin_at": origin, "completed_sessions": completed_sessions,
+            "target_end_at": end, "first_public_at": published, "value": value_json,
+            "synthetic": synthetic,
+        }).encode()).hexdigest()
+        with self.connection:
+            self.connection.execute(
+                """INSERT OR IGNORE INTO outcomes
+                   (outcome_id, target_id, origin_at, completed_sessions, target_end_at, first_public_at, value_json, synthetic)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                (outcome_id, target_id, origin, completed_sessions, end, published, value_json, int(synthetic)),
+            )
+        return outcome_id
+
+    def is_outcome_mature(self, outcome_id: str, as_of: datetime) -> bool:
+        row = self.connection.execute(
+            "SELECT target_end_at, first_public_at FROM outcomes WHERE outcome_id = ?", (outcome_id,)
+        ).fetchone()
+        if row is None:
+            raise LedgerError("outcome_id does not exist")
+        instant = _utc(as_of, "as_of")
+        return instant >= row[0] and instant >= row[1]
 
     def close(self) -> None:
         self.connection.close()

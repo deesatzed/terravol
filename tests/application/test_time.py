@@ -65,6 +65,30 @@ class EvidenceTimeTests(unittest.TestCase):
         self.assertEqual(old.revision_ids, (first,))
         self.assertEqual(new.revision_ids, (second,))
 
+    def test_ac_time_05_outcomes_mature_only_after_horizon_and_publication(self) -> None:
+        try:
+            from volterra.storage import TargetDefinition
+        except ImportError as exc:
+            self.fail(f"VT02 target maturity is not implemented: {exc}")
+        targets = (
+            TargetDefinition("one", 1, "synthetic_variance", "squared_decimal_return"),
+            TargetDefinition("five", 5, "synthetic_variance", "squared_decimal_return"),
+            TargetDefinition("twenty", 20, "synthetic_variance", "squared_decimal_return"),
+        )
+        for target in targets:
+            self.ledger.register_target(target)
+            outcome_id = self.ledger.record_outcome(
+                target_id=target.target_id,
+                origin_at=instant(1),
+                completed_sessions=target.horizon_sessions,
+                target_end_at=instant(1 + target.horizon_sessions),
+                first_public_at=instant(2 + target.horizon_sessions),
+                value=0.03,
+                synthetic=True,
+            )
+            self.assertFalse(self.ledger.is_outcome_mature(outcome_id, instant(1 + target.horizon_sessions)))
+            self.assertTrue(self.ledger.is_outcome_mature(outcome_id, instant(2 + target.horizon_sessions)))
+
 
 if __name__ == "__main__":
     unittest.main()

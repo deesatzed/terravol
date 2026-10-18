@@ -62,4 +62,4 @@
 
 **Implemented so far:** a local SQLite `EvidenceLedger` accepts only finite, typed payload serialization; appends evidence revisions; requires same-logical-ID supersession; and seals immutable snapshot membership. A live snapshot requires receipt by origin, while certified historical replay uses recorded availability without treating today’s import time as past live receipt. The ledger performs no network or provider action.
 
-**Verification:** three new time-integrity tests passed as part of a 43-test full suite. They prove later eligible revisions cannot modify an earlier snapshot, historical/live policy divergence, and revision selection at the correct origin. VT02 is still `NOT_IMPLEMENTED`: targets/maturity, artifacts, jobs and external-call reservation controls remain next.
+**Verification:** four new time-integrity tests now cover later-revision invariance, historical/live policy divergence, revision selection at the correct origin, and 1/5/20-session outcome maturity after publication. VT02 is still `NOT_IMPLEMENTED`: artifact integrity, jobs and external-call reservation controls remain next.
