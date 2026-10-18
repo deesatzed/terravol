@@ -10,3 +10,4 @@ class MatchedEvidenceComparator:
 def future_covariate_mean(scenarios:tuple[tuple[float,float],...]):
  if not scenarios or abs(sum(w for w,_ in scenarios)-1)>1e-12:raise ValueError("future covariate requires weighted scenarios")
  return sum(w*x for w,x in scenarios)
+def crossfit_eligible(*,train_time:int,test_time:int,train_group:str,test_group:str):return train_time<test_time and train_group!=test_group
