@@ -188,11 +188,20 @@
       "id": "AC-PROB-03",
       "requirement": "Concurrent mechanisms are not normalized as though they were mutually exclusive outcomes.",
       "ticket": "VT09",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_scenarios.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt09-scenario-controls-20261018",
+        "executed_at": "2026-10-18T21:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt09/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-04",
@@ -227,11 +236,20 @@
       "id": "AC-PROB-06",
       "requirement": "Conflicting or unreliable observations do not silently create certainty.",
       "ticket": "VT09",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_scenarios.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt09-scenario-controls-20261018",
+        "executed_at": "2026-10-18T21:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt09/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-07",
@@ -256,11 +274,20 @@
       "id": "AC-PROB-08",
       "requirement": "User assumptions and interventions remain separate from observations and conditional sensitivities.",
       "ticket": "VT09",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_scenarios.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt09-scenario-controls-20261018",
+        "executed_at": "2026-10-18T21:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt09/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-09",
@@ -746,11 +773,20 @@
       "id": "AC-ARB-08",
       "requirement": "A scenario change invalidates affected cache entries even when price history is unchanged.",
       "ticket": "VT09",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_scenarios.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt09-scenario-controls-20261018",
+        "executed_at": "2026-10-18T21:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt09/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-09",
@@ -1320,11 +1356,20 @@
       "id": "AC-OPS-04",
       "requirement": "Graph text, retrieved documents, and serialized data cannot execute arbitrary code.",
       "ticket": "VT09",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_scenarios.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt09-scenario-controls-20261018",
+        "executed_at": "2026-10-18T21:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt09/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-05",

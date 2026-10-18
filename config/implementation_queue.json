@@ -171,9 +171,11 @@
         "ess",
         "scenarios"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Exact graph reference, safe functions, supported inference, fitted filter and scenario isolation.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt09/ticket-verification.json"
+      ],
       "optional": false
     },
     {

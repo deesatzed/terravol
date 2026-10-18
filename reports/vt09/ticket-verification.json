@@ -1,0 +1,1 @@
+{"scope": "ticket_verification", "ticket_ids": ["VT09"], "test_refs": ["tests/application/test_scenarios.py"], "status": "PASSED", "tests_run": 94, "run_id": "vt09-scenario-controls-20261018", "executed_at": "2026-10-18T21:30:00+00:00", "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v", "exit_code": 0}
