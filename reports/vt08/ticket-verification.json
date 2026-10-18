@@ -1,0 +1,1 @@
+{"scope": "ticket_verification", "ticket_ids": ["VT08"], "test_refs": ["tests/application/test_tasks.py"], "status": "PASSED", "tests_run": 92, "run_id": "vt08-task-separation-20261018", "executed_at": "2026-10-18T21:10:00+00:00", "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v", "exit_code": 0}

@@ -1146,11 +1146,20 @@
       "id": "AC-DATA-05",
       "requirement": "Paper replication and application-specific targets/horizons have separate task IDs.",
       "ticket": "VT08",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_tasks.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt08-task-separation-20261018",
+        "executed_at": "2026-10-18T21:10:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt08/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-06",

@@ -152,9 +152,11 @@
         "service",
         "evaluation"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Offline gate independent of VT06; checkpoint benchmark requires each actual VT06 integration and a separate gate.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt08/ticket-verification.json"
+      ],
       "optional": false
     },
     {
