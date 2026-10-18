@@ -134,9 +134,11 @@
         "distributions",
         "targets"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Time/instrument/world dependence, horizon sums, censoring, joint calibration and diagnostics.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt07/ticket-verification.json"
+      ],
       "optional": false
     },
     {

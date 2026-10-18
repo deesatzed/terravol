@@ -101,11 +101,20 @@
       "id": "AC-TIME-06",
       "requirement": "Episode confirmation lags, existing episodes, and right censoring are represented correctly.",
       "ticket": "VT07",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_episodes.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt07-paths-20261018",
+        "executed_at": "2026-10-18T21:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt07/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-07",
@@ -544,31 +553,58 @@
       "id": "AC-DIST-05",
       "requirement": "Variance is nonnegative; cumulative variance equals path sums; annualized volatility is not forced monotone.",
       "ticket": "VT07",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_paths.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt07-paths-20261018",
+        "executed_at": "2026-10-18T21:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt07/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-06",
       "requirement": "Marginal-only adapters cannot serve duration, joint-tail, or simultaneous multi-market queries.",
       "ticket": "VT07",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_paths.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt07-paths-20261018",
+        "executed_at": "2026-10-18T21:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt07/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-07",
       "requirement": "A joint mixture preserves world/expert identity and shared dependence across its full path.",
       "ticket": "VT07",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_paths.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt07-paths-20261018",
+        "executed_at": "2026-10-18T21:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt07/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-08",
@@ -612,11 +648,20 @@
       "id": "AC-DIST-10",
       "requirement": "Independent calibration heads cannot be combined into an unverified coherent joint probability.",
       "ticket": "VT07",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_paths.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_10",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt07-paths-20261018",
+        "executed_at": "2026-10-18T21:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt07/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-01",
