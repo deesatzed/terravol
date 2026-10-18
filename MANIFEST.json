@@ -1,10 +1,10 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T14:36:47.185438+00:00",
+  "updated_at_utc": "2026-10-18T14:37:45.526323+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 117,
+  "file_count_excluding_manifest": 121,
   "completed_implementation_tickets": [
     "VT00",
     "VT01"
@@ -93,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 11611,
-      "sha256": "997ad4f2608473489c7d09f8c8a6275aa32aff963ec71529e379b8e595e6f488"
+      "bytes": 12460,
+      "sha256": "86eb67eaca9a319578df6398d347435f5cfc9081e0ccd949dd5f6a953cbbefd1"
     },
     {
       "path": "README.md",
@@ -397,6 +397,11 @@
       "sha256": "e43bda3716ae9236c19a770181972e62488ef8d83fc712560157097789daa93d"
     },
     {
+      "path": "docs/plans/2026-10-18-vt02-ledger-policy.md",
+      "bytes": 3720,
+      "sha256": "be9cfbf7b1d71a6265fc4b0d55d38b1e2a1d5c01c9166e5b7f54a8659f52ae97"
+    },
+    {
       "path": "docs/reviews/scaffold-review.md",
       "bytes": 2827,
       "sha256": "59e0c5caf1382e4d11bf1d6026e5bd39805e0b434d4319d5fcddc20971e6068b"
@@ -537,6 +542,16 @@
       "sha256": "077b0b49fe52cd1ada3df9ccb4498e798cfdff85f193ca1ed695a085f8679381"
     },
     {
+      "path": "src/volterra/storage/__init__.py",
+      "bytes": 187,
+      "sha256": "6391381a8c14c85d95dfe6a55f87f3bda90e43c9d40b01367e709f376fb59005"
+    },
+    {
+      "path": "src/volterra/storage/ledger.py",
+      "bytes": 8208,
+      "sha256": "5e50d35f1b5ac9bd81894b8be78cacdc6aa1ae07c0eeeefbc6169e817a6a6fab"
+    },
+    {
       "path": "tests/README.md",
       "bytes": 740,
       "sha256": "d6f0567c70870564b3f68f9e897653d1208e73253ab55516b8400e9a7bad6f4a"
@@ -575,6 +590,11 @@
       "path": "tests/application/test_prob.py",
       "bytes": 934,
       "sha256": "1b9ca4b4cc9bc24ab7e6fc560788c71b1fd25a1a79c00e540c48a13f6abc5fd8"
+    },
+    {
+      "path": "tests/application/test_time.py",
+      "bytes": 3059,
+      "sha256": "af5211b6a5ae5713cb6981d3356600ae0b7875f8b008e15bc96516e89eb0c840"
     },
     {
       "path": "tests/scaffold/__init__.py",

@@ -57,3 +57,9 @@
 **Acceptance evidence:** VT00 executed AC-OPS-05, AC-CTRL-01 and AC-OPS-09. VT01 executed AC-PROB-01, AC-DIST-02, AC-CTRL-05 and AC-CTRL-06. Every other requirement remains `NOT_IMPLEMENTED`; a capability-manifest type is not proof of a real model/artifact integration.
 
 **Next work:** VT02 adds durable as-of evidence/target/maturity stores, artifact integrity, idempotent jobs, and deterministic external-call policy/reservation controls. It remains offline and synthetic-only until specific data/model feasibility receives real evidence.
+
+## 2026-10-18 — VT02 in progress: evidence snapshots
+
+**Implemented so far:** a local SQLite `EvidenceLedger` accepts only finite, typed payload serialization; appends evidence revisions; requires same-logical-ID supersession; and seals immutable snapshot membership. A live snapshot requires receipt by origin, while certified historical replay uses recorded availability without treating today’s import time as past live receipt. The ledger performs no network or provider action.
+
+**Verification:** three new time-integrity tests passed as part of a 43-test full suite. They prove later eligible revisions cannot modify an earlier snapshot, historical/live policy divergence, and revision selection at the correct origin. VT02 is still `NOT_IMPLEMENTED`: targets/maturity, artifacts, jobs and external-call reservation controls remain next.
