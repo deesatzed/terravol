@@ -58,8 +58,8 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 49)
-        self.assertEqual(report["next_ticket"], "VT06")
+        self.assertEqual(report["application_acceptance_executed"], 53)
+        self.assertEqual(report["next_ticket"], "VT07")
 
     def test_dependency_cycle_is_rejected(self) -> None:
         self.update("implementation_queue.json", lambda value: value["tickets"][0].update(dependencies=["VT05"]))
@@ -184,7 +184,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                     command = self.run_cli("scaffold", "validate")
                     self.assertEqual(command.returncode, 0, command.stderr + command.stdout)
                     report = json.loads(command.stdout)
-                    self.assertEqual(report["application_acceptance_executed"], 50)
+                    self.assertEqual(report["application_acceptance_executed"], 54)
                     self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
                 finally:
                     matrix_path.write_text(original)
