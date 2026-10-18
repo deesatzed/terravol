@@ -682,11 +682,20 @@
       "id": "AC-ARB-07",
       "requirement": "An expert failure is credited to its named fallback, not the failed model.",
       "ticket": "VT06",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_checkpoint_gate.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt06-checkpoint-gates-20261018",
+        "executed_at": "2026-10-18T20:44:53+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt06/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-08",
@@ -1121,11 +1130,20 @@
       "id": "AC-DATA-07",
       "requirement": "Pretraining overlap/unknown-cutoff limitations are retained in research reports and prospective gates.",
       "ticket": "VT06",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_model_limits.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt06-checkpoint-gates-20261018",
+        "executed_at": "2026-10-18T20:44:53+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt06/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-01",
@@ -1210,11 +1228,20 @@
       "id": "AC-OPS-02",
       "requirement": "Save/reload parity includes all fitted numerical and state artifacts, not configuration alone.",
       "ticket": "VT06",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_model_limits.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt06-checkpoint-gates-20261018",
+        "executed_at": "2026-10-18T20:44:53+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt06/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-03",
@@ -1287,11 +1314,20 @@
       "id": "AC-OPS-07",
       "requirement": "CPU/reference and any accelerator paths have measured parity/resource tests with honest unsupported states.",
       "ticket": "VT06",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_checkpoint_gate.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt06-checkpoint-gates-20261018",
+        "executed_at": "2026-10-18T20:44:53+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt06/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-08",

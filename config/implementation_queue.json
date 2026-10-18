@@ -117,9 +117,11 @@
       "owns": [
         "models"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Exact artifacts/terms, capability/failure identity, resource and reload checks; unavailable integration remains blocked.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt06/ticket-verification.json"
+      ],
       "optional": false
     },
     {
