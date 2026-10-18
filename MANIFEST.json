@@ -1,10 +1,10 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T17:46:43.601701+00:00",
-  "status": "VT00_VT04_VALIDATED_VT05_NEXT",
+  "updated_at_utc": "2026-10-18T17:55:55.401174+00:00",
+  "status": "VT00_VT04_VALIDATED_VT05_IN_PROGRESS",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 138,
+  "file_count_excluding_manifest": 141,
   "completed_implementation_tickets": [
     "VT00",
     "VT01",
@@ -16,7 +16,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 41,
   "application_acceptance_remaining": 79,
-  "full_test_suite_passed": 76,
+  "full_test_suite_passed": 77,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -100,8 +100,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 18238,
-      "sha256": "c18d6a1e8602225521c8394f14da7db695a0465ea6150403244f7f85229b50b5"
+      "bytes": 19150,
+      "sha256": "e589451fc3f162ed5ea53b38c2a0a9bb8b4872893db6af10eb3134b67b18c223"
     },
     {
       "path": "README.md",
@@ -594,6 +594,16 @@
       "sha256": "fbbe75e5fdaa19918860521145cd54200503013e5e8b1bff33bf6230528fefa2"
     },
     {
+      "path": "src/volterra/forecast_store/__init__.py",
+      "bytes": 243,
+      "sha256": "4227863091d0e672493151092713d47759721240afdb818e62289b5922a288f1"
+    },
+    {
+      "path": "src/volterra/forecast_store/store.py",
+      "bytes": 6445,
+      "sha256": "a2a6c5450e17ed83313d2b245ac2eb1ac7d7aec3303afcd31f6cbd2374a31194"
+    },
+    {
       "path": "src/volterra/policy/__init__.py",
       "bytes": 344,
       "sha256": "3c396ddfb61aa77ce9cf8b8051aba70f4c64f0004348268d18d2f4cdd1e4fea7"
@@ -610,13 +620,13 @@
     },
     {
       "path": "src/volterra/storage/__init__.py",
-      "bytes": 289,
-      "sha256": "275a9872ccdd9470404d5e48ddcc6d3ba98d8b827061193d4678b9eb1aee225a"
+      "bytes": 309,
+      "sha256": "be9042ddfaa29a45931ed77323879aecded1d4553bf28061ba4d7df520b4c151"
     },
     {
       "path": "src/volterra/storage/ledger.py",
-      "bytes": 19491,
-      "sha256": "47d9fca44b4fdf51e33ac385dd918c4569332f109a87a01b5adc89475048b4cd"
+      "bytes": 20367,
+      "sha256": "cced916b69ab197979ac8c179faf9c65ca8af8608c1cafe8d0a68a103687b07b"
     },
     {
       "path": "tests/README.md",
@@ -667,6 +677,11 @@
       "path": "tests/application/test_eco.py",
       "bytes": 934,
       "sha256": "aac5a9e2fbaacced3f9b2b36f57cd64089f4dbddba863e755c0151663af4bc17"
+    },
+    {
+      "path": "tests/application/test_offline_slice.py",
+      "bytes": 2780,
+      "sha256": "854a8e5b4197f1454479cd5f0639da0768ee011b76714b676fbdffdea44dbbe5"
     },
     {
       "path": "tests/application/test_ops.py",

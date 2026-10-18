@@ -95,3 +95,9 @@
 **Implemented so far:** Persistence, EWMA, configured Log-HAR, and configured GJR-GARCH produce explicit point-variance forecasts from supplied pre-origin synthetic histories. A residual Normal outcome distribution binds to the immutable target measurement identity, and named consumers reject Student-t distributions without the required finite moment. The classical primitives do not fit parameters, infer intraday realized-variance distributions, retrieve external data, or score forecasts.
 
 **Verification:** the 46-test application suite passed; [application evidence](reports/vt04/application-acceptance.json) binds AC-TIME-02, AC-DIST-01, AC-DIST-08, and AC-DIST-09. The 76-test full suite and [ticket receipt](reports/vt04/ticket-verification.json) close VT04. Scaffold validation reports 41/120 requirements executed and selects VT05 for sealed forecasts, mature outcomes, and delayed proper scoring.
+
+## 2026-10-18 — VT05 in progress: sealed forecast and mature-outcome score seam
+
+**Implemented so far:** a local `ForecastStore` seals a Normal variance forecast using its snapshot, immutable target measurement identity, origin, model identity, distribution parameters, and synthetic lineage. It rejects duplicate seals and allows CRPS only once a same-target, same-origin outcome from the ledger has matured; scoring again cannot replace the original score. Ledger outcome retrieval now preserves its stored synthetic identity.
+
+**Verification:** the new focused test covers early-score denial, matching mature-outcome scoring, immutable forecast identity, and a nonzero CRPS. The complete suite passes 77 tests. This is an in-progress seam, not the completed VT05 offline slice: mixture scoring, provenance isolation, a runnable synthetic pipeline, and the remaining acceptance evidence are still required.

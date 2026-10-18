@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import hashlib
+import json
 import sqlite3
 from pathlib import Path
 from typing import Any
@@ -90,6 +91,17 @@ class TargetDefinition:
     @property
     def units(self) -> str:
         return self.measurement.units
+
+
+@dataclass(frozen=True)
+class Outcome:
+    outcome_id: str
+    target_id: str
+    origin_at: datetime
+    target_end_at: datetime
+    first_public_at: datetime
+    value: Any
+    synthetic: bool
 
 
 class EvidenceLedger:
@@ -322,6 +334,19 @@ class EvidenceLedger:
             raise LedgerError("outcome_id does not exist")
         instant = _utc(as_of, "as_of")
         return instant >= row[0] and instant >= row[1]
+
+    def get_outcome(self, outcome_id: str) -> Outcome:
+        row = self.connection.execute(
+            """SELECT target_id, origin_at, target_end_at, first_public_at, value_json, synthetic
+               FROM outcomes WHERE outcome_id = ?""", (outcome_id,)
+        ).fetchone()
+        if row is None:
+            raise LedgerError("outcome_id does not exist")
+        return Outcome(
+            outcome_id=outcome_id, target_id=str(row[0]), origin_at=datetime.fromisoformat(row[1]),
+            target_end_at=datetime.fromisoformat(row[2]), first_public_at=datetime.fromisoformat(row[3]),
+            value=json.loads(row[4]), synthetic=bool(row[5]),
+        )
 
     def put_artifact(self, payload: bytes, *, export_classification: str = "LOCAL_ONLY") -> str:
         if not isinstance(payload, bytes):
