@@ -330,5 +330,18 @@ class EvidenceLedger:
             raise LedgerError("job does not exist")
         return str(row[0])
 
+    def derive_synthetic_lineage(self, parent_revision_ids: tuple[str, ...], *, declared_synthetic: bool) -> bool:
+        """Return monotone synthetic provenance for a future derived artifact or record."""
+        if not parent_revision_ids:
+            return declared_synthetic
+        placeholders = ",".join("?" for _ in parent_revision_ids)
+        rows = self.connection.execute(
+            f"SELECT revision_id, synthetic FROM evidence_revisions WHERE revision_id IN ({placeholders})",
+            parent_revision_ids,
+        ).fetchall()
+        if len(rows) != len(set(parent_revision_ids)):
+            raise LedgerError("derived lineage references a nonexistent evidence revision")
+        return declared_synthetic or any(bool(row[1]) for row in rows)
+
     def close(self) -> None:
         self.connection.close()

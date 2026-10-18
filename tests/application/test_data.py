@@ -30,6 +30,22 @@ class DataContractTests(unittest.TestCase):
                                                              "STALE", True))
             self.assertIsInstance(revision, str)
 
+    def test_synthetic_lineage_cannot_be_cleared_by_a_derived_record(self) -> None:
+        try:
+            from volterra.storage import EvidenceInput, EvidenceLedger
+        except ImportError as exc:
+            self.fail(f"VT02 lineage controls are not implemented: {exc}")
+        moment = datetime(2026, 1, 1, tzinfo=UTC)
+        with tempfile.TemporaryDirectory(prefix="volterra-lineage-") as directory:
+            ledger = EvidenceLedger(Path(directory) / "ledger.sqlite")
+            self.addCleanup(ledger.close)
+            synthetic = ledger.append_evidence(EvidenceInput("synthetic", "fixture", 1.0, moment, moment, moment, moment,
+                                                              "OBSERVED", True))
+            observed = ledger.append_evidence(EvidenceInput("observed", "fixture", 2.0, moment, moment, moment, moment,
+                                                             "OBSERVED", False))
+            self.assertTrue(ledger.derive_synthetic_lineage((synthetic, observed), declared_synthetic=False))
+            self.assertFalse(ledger.derive_synthetic_lineage((observed,), declared_synthetic=False))
+
 
 if __name__ == "__main__":
     unittest.main()
