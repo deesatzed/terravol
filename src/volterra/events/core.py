@@ -36,5 +36,6 @@ class Vintage:
  observation_at:datetime
  published_at:datetime
  def available_at(self,as_of:datetime):return as_of>=self.published_at
+def confirmatory_coverage(**coverage:bool):return all(coverage.values())
 def classify_surprise(*,own_model_error:float,expectation_source:str|None):
  return "OWN_MODEL_ERROR" if expectation_source is None else "MARKET_SURPRISE"
