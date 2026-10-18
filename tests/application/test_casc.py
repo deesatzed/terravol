@@ -50,3 +50,28 @@ class ExactCascadeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ExclusiveBranchTable((("a", 1.1), ("b", -0.1)))
 
+    def test_ac_prob_04_and_casc_02_background_and_complete_set_arithmetic(self) -> None:
+        try:
+            from volterra.cascades import background_probability, complete_set_probability
+        except ImportError as exc:
+            self.fail(f"VT03 exact conditional arithmetic is not implemented: {exc}")
+        self.assertAlmostEqual(background_probability(0.30, 0.85, 0.10), 0.325)
+        self.assertAlmostEqual(complete_set_probability(0.30, 0.85, 0.85), 0.21675)
+        self.assertAlmostEqual(complete_set_probability(0.30, 0.85, 0.85, scenario_sets=3), 0.519491349421875)
+
+    def test_ac_casc_05_shared_downstream_is_counted_once(self) -> None:
+        try:
+            from volterra.cascades import shared_downstream_probability
+        except ImportError as exc:
+            self.fail(f"VT03 shared-downstream arithmetic is not implemented: {exc}")
+        self.assertAlmostEqual(shared_downstream_probability((0.30, 0.30, 0.30), 0.85, 0.0), 0.55845)
+
+    def test_ac_casc_07_both_and_either_queries_are_distinct(self) -> None:
+        try:
+            from volterra.cascades import conditional_both_or_either
+        except ImportError as exc:
+            self.fail(f"VT03 conditional query arithmetic is not implemented: {exc}")
+        both, either = conditional_both_or_either(0.85, 0.85, joint_probability=0.70)
+        self.assertEqual(both, 0.70)
+        self.assertEqual(either, 1.0)
+

@@ -130,6 +130,20 @@
       "benchmarks_reproduced": false
     },
     {
+      "candidate_id": "timestral_209m",
+      "role": "optional_covariate_challenger",
+      "enabled": false,
+      "implementation_status": "NOT_IMPLEMENTED",
+      "checkpoint_revision": null,
+      "artifact_sha256": null,
+      "tested_lock_ref": null,
+      "resource_measurements": null,
+      "license_status": "WEIGHT_LICENSE_REQUIRES_REVENUE_GATE_AND_EXACT_ARTIFACT_AUDIT",
+      "capabilities_verified": [],
+      "commercial_eligible": false,
+      "benchmarks_reproduced": false
+    },
+    {
       "candidate_id": "timesfm_3_downloaded",
       "role": "restricted_research_candidate",
       "enabled": false,

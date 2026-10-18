@@ -18,6 +18,7 @@ Each decision records scope/architecture and its evidence; it does not certify i
 | ADR-012 | Keep query deduplication separate from cross-origin episode clustering | Preserve each origin's frozen target and avoid repeated-event sample inflation | Active |
 | ADR-013 | New scaffold runtime supplies only doctor/control validation | Provide a real executable starting point without fake adapters or forecasting claims | Active for this increment |
 | ADR-014 | Statistical and domain decisions use same-information/budget controls and negative-result gates | Added complexity must earn use; no promised improvement or profitable strategy | Active |
+| ADR-015 | Add Timestral-209M only as a disabled optional VT06 covariate challenger | Published 21 marginal quantiles and covariates may make it a useful same-information challenger, but it cannot establish joint paths; separate weight terms require a revenue and artifact gate | Active |
 
 ## Superseded instructions
 

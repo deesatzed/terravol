@@ -55,6 +55,39 @@ def unique_source_probabilities(sources: tuple[tuple[str, float], ...]) -> tuple
     return _validated(tuple(probability for _, probability in sources))
 
 
+def background_probability(precursor_probability: float, given_precursor: float, given_absence: float) -> float:
+    """Apply total probability without deleting background risk when A is absent."""
+    precursor, present, absent = _validated((precursor_probability, given_precursor, given_absence))
+    return precursor * present + (1.0 - precursor) * absent
+
+
+def complete_set_probability(precursor_probability: float, first_given_precursor: float,
+                             second_given_precursor: float, *, scenario_sets: int = 1) -> float:
+    """Exact complete A-B-C probability, optionally across independent complete sets."""
+    precursor, first, second = _validated((precursor_probability, first_given_precursor, second_given_precursor))
+    if isinstance(scenario_sets, bool) or not isinstance(scenario_sets, int) or scenario_sets <= 0:
+        raise ValueError("scenario_sets must be a positive integer")
+    complete = precursor * first * second
+    return 1.0 - (1.0 - complete) ** scenario_sets
+
+
+def shared_downstream_probability(precursor_probabilities: tuple[float, ...], given_any_precursor: float,
+                                  given_no_precursor: float) -> float:
+    """Count one shared downstream outcome once across independent precursor routes."""
+    given_any, given_none = _validated((given_any_precursor, given_no_precursor))
+    any_precursor = independent_any_probability(precursor_probabilities)
+    return any_precursor * given_any + (1.0 - any_precursor) * given_none
+
+
+def conditional_both_or_either(first: float, second: float, *, joint_probability: float) -> tuple[float, float]:
+    """Return separate `both` and `either` values for declared conditional joint mass."""
+    left, right, joint = _validated((first, second, joint_probability))
+    lower, upper = joint_probability_bounds(left, right)
+    if joint < lower or joint > upper:
+        raise ValueError("joint_probability violates the supplied marginal bounds")
+    return joint, left + right - joint
+
+
 @dataclass(frozen=True)
 class ExclusiveBranchTable:
     """A named, exhaustive mutually exclusive branch distribution."""
