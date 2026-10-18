@@ -149,7 +149,8 @@ class EvidenceLedger:
             CREATE TABLE IF NOT EXISTS artifacts (
                 artifact_sha256 TEXT PRIMARY KEY,
                 payload BLOB NOT NULL,
-                byte_count INTEGER NOT NULL CHECK (byte_count >= 0)
+                byte_count INTEGER NOT NULL CHECK (byte_count >= 0),
+                export_classification TEXT NOT NULL DEFAULT 'LOCAL_ONLY'
             );
             CREATE TABLE IF NOT EXISTS jobs (
                 job_kind TEXT NOT NULL,
@@ -161,6 +162,9 @@ class EvidenceLedger:
         columns = {row[1] for row in self.connection.execute("PRAGMA table_info(target_definitions)")}
         if "measurement_json" not in columns:
             self.connection.execute("ALTER TABLE target_definitions ADD COLUMN measurement_json TEXT")
+        artifact_columns = {row[1] for row in self.connection.execute("PRAGMA table_info(artifacts)")}
+        if "export_classification" not in artifact_columns:
+            self.connection.execute("ALTER TABLE artifacts ADD COLUMN export_classification TEXT NOT NULL DEFAULT 'LOCAL_ONLY'")
         self.connection.commit()
 
     def append_evidence(self, evidence: EvidenceInput) -> str:
@@ -319,14 +323,17 @@ class EvidenceLedger:
         instant = _utc(as_of, "as_of")
         return instant >= row[0] and instant >= row[1]
 
-    def put_artifact(self, payload: bytes) -> str:
+    def put_artifact(self, payload: bytes, *, export_classification: str = "LOCAL_ONLY") -> str:
         if not isinstance(payload, bytes):
             raise LedgerError("artifact payload must be bytes")
+        if export_classification not in {"PUBLIC", "LOCAL_ONLY", "RESTRICTED"}:
+            raise LedgerError("artifact export classification is unsupported")
         digest = hashlib.sha256(payload).hexdigest()
         with self.connection:
             self.connection.execute(
-                "INSERT OR IGNORE INTO artifacts(artifact_sha256, payload, byte_count) VALUES (?, ?, ?)",
-                (digest, payload, len(payload)),
+                """INSERT OR IGNORE INTO artifacts
+                   (artifact_sha256, payload, byte_count, export_classification) VALUES (?, ?, ?, ?)""",
+                (digest, payload, len(payload), export_classification),
             )
         return digest
 
@@ -342,6 +349,16 @@ class EvidenceLedger:
         if len(payload) != row[1] or hashlib.sha256(payload).hexdigest() != artifact_sha256:
             raise LedgerError("artifact payload hash or length does not match reference")
         return payload
+
+    def export_artifact(self, artifact_sha256: str) -> bytes:
+        row = self.connection.execute(
+            "SELECT export_classification FROM artifacts WHERE artifact_sha256 = ?", (artifact_sha256,)
+        ).fetchone()
+        if row is None:
+            raise LedgerError("artifact_sha256 does not exist")
+        if row[0] != "PUBLIC":
+            raise LedgerError("artifact is not exportable under its own classification")
+        return self.read_artifact(artifact_sha256)
 
     def claim_job(self, job_kind: str, idempotency_key: str) -> bool:
         if not job_kind or not idempotency_key:

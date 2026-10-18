@@ -58,7 +58,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 7)
+        self.assertEqual(report["application_acceptance_executed"], 24)
         self.assertEqual(report["next_ticket"], "VT02")
 
     def test_dependency_cycle_is_rejected(self) -> None:
@@ -78,7 +78,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assert_invalid("UNSAFE_OFFLINE_DEFAULTS")
 
     def test_unexecuted_requirement_cannot_receive_a_pass(self) -> None:
-        self.update("acceptance_matrix.json", lambda value: value["requirements"][0].update(status="PASSED"))
+        self.update("acceptance_matrix.json", lambda value: value["requirements"][1].update(status="PASSED"))
         self.assert_invalid("UNSUPPORTED_ACCEPTANCE_CLAIM")
 
     def test_unverified_model_cannot_be_enabled(self) -> None:
@@ -153,7 +153,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         test_path.parent.mkdir(parents=True, exist_ok=True)
         test_path.write_text("# Metadata-fixture target; never run as application acceptance.\n")
         reference = "tests/application/test_fixture.py::fixture_reference"
-        requirement = json.loads((self.root / "config/acceptance_matrix.json").read_text())["requirements"][0]["id"]
+        requirement = json.loads((self.root / "config/acceptance_matrix.json").read_text())["requirements"][1]["id"]
         run = {"run_id": "metadata-fixture", "executed_at": "2026-10-18T12:00:00Z",
                "command": "metadata-fixture-only", "exit_code": 0 if result == "PASSED" else 1}
         receipt = {"scope": "application_acceptance", "status": result, "requirement_ids": [requirement],
@@ -161,7 +161,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         path = self.root / "reports/bound-fixture.json"
         path.parent.mkdir(exist_ok=True)
         path.write_text(json.dumps(receipt))
-        self.update("acceptance_matrix.json", lambda value: value["requirements"][0].update(
+        self.update("acceptance_matrix.json", lambda value: value["requirements"][1].update(
             status=result, test_refs=[reference], last_run=run, evidence_refs=["reports/bound-fixture.json"]))
 
     def test_bound_pass_and_failure_receipts_have_consistent_execution_counts(self) -> None:
@@ -171,7 +171,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                 command = self.run_cli("scaffold", "validate")
                 self.assertEqual(command.returncode, 0, command.stderr + command.stdout)
                 report = json.loads(command.stdout)
-                self.assertEqual(report["application_acceptance_executed"], 8)
+                self.assertEqual(report["application_acceptance_executed"], 25)
                 self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
 
     def test_malformed_receipt_test_reference_is_rejected_without_crashing(self) -> None:

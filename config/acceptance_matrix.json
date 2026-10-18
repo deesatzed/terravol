@@ -922,11 +922,20 @@
       "id": "AC-DATA-06",
       "requirement": "Raw restricted datasets and model artifacts cannot be exported under the code license alone.",
       "ticket": "VT02",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_data.py"
+      ],
       "planned_test": "tests/application/test_data.py::test_ac_data_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt02-ledger-policy-20261018",
+        "executed_at": "2026-10-18T14:44:22.694119+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt02/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-07",

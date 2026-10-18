@@ -1,7 +1,7 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T15:04:16.584452+00:00",
+  "updated_at_utc": "2026-10-18T15:05:20.559492+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
   "file_count_excluding_manifest": 126,
@@ -13,7 +13,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 7,
   "application_acceptance_remaining": 113,
-  "full_test_suite_passed": 58,
+  "full_test_suite_passed": 59,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -148,8 +148,8 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 52196,
-      "sha256": "1fed523768c47114640286698e99d93c995889f093951a871af90052b5e907b1"
+      "bytes": 52546,
+      "sha256": "996216e63df188bdfd2d387eb0b87cf3bc769165742b0eab2f592d6214c9b402"
     },
     {
       "path": "config/feasibility_matrix.json",
@@ -483,8 +483,8 @@
     },
     {
       "path": "reports/vt02/application-acceptance.json",
-      "bytes": 1148,
-      "sha256": "19a49720cfe385cc2045402100637346c69d287c7fc7bb3edf5c16c5cb43d7f4"
+      "bytes": 1166,
+      "sha256": "0378388fd9478262c28df6d86ca6b4742a91c62081653aa3c7965073c9bbf062"
     },
     {
       "path": "requirements-spec-validation.txt",
@@ -563,8 +563,8 @@
     },
     {
       "path": "src/volterra/storage/ledger.py",
-      "bytes": 18361,
-      "sha256": "c107082edd052665967d828c94ebea3aa4fbe710100190af242d5755d6054a62"
+      "bytes": 19491,
+      "sha256": "47d9fca44b4fdf51e33ac385dd918c4569332f109a87a01b5adc89475048b4cd"
     },
     {
       "path": "tests/README.md",
@@ -593,8 +593,8 @@
     },
     {
       "path": "tests/application/test_data.py",
-      "bytes": 5715,
-      "sha256": "108640433d7270161184c22420ae0add33974fd720570967fbc8d688cf474706"
+      "bytes": 6406,
+      "sha256": "413635046f5983958024c9f370fa947b14d7d3d5bd8ab3730766e4ada2720903"
     },
     {
       "path": "tests/application/test_dist.py",
@@ -628,8 +628,8 @@
     },
     {
       "path": "tests/scaffold/test_cli.py",
-      "bytes": 14443,
-      "sha256": "ccdd38ca1f9cee3bd43561036dfa08f162b754ae9f7d3c8294086a4534ee6494"
+      "bytes": 14445,
+      "sha256": "50ea4f635856d2126aeea931aa1469c114ca82c03ba69b896e53795b47f522cf"
     },
     {
       "path": "tools/validate_specs.py",

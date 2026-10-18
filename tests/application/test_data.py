@@ -81,6 +81,18 @@ class DataContractTests(unittest.TestCase):
         )
         self.assertNotEqual(unsupported.canonical(), alternative.canonical())
 
+    def test_ac_data_06_restricted_artifact_has_no_code_license_export_right(self) -> None:
+        try:
+            from volterra.storage import EvidenceLedger, LedgerError
+        except ImportError as exc:
+            self.fail(f"VT02 artifact-rights contract is not implemented: {exc}")
+        with tempfile.TemporaryDirectory(prefix="volterra-rights-") as directory:
+            ledger = EvidenceLedger(Path(directory) / "ledger.sqlite")
+            self.addCleanup(ledger.close)
+            digest = ledger.put_artifact(b"synthetic restricted bytes", export_classification="RESTRICTED")
+            with self.assertRaises(LedgerError):
+                ledger.export_artifact(digest)
+
     def test_synthetic_lineage_cannot_be_cleared_by_a_derived_record(self) -> None:
         try:
             from volterra.storage import EvidenceInput, EvidenceLedger
