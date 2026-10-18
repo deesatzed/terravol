@@ -26,3 +26,5 @@ class EventUpdate:
  source:str
  @property
  def can_confirm(self):return self.source=="OBSERVED_CONFIRMATION"
+def classify_surprise(*,own_model_error:float,expectation_source:str|None):
+ return "OWN_MODEL_ERROR" if expectation_source is None else "MARKET_SURPRISE"

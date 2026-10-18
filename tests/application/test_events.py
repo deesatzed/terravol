@@ -17,3 +17,6 @@ class EventTests(unittest.TestCase):
   from volterra.events import EventUpdate
   predicted=EventUpdate("A",source="PREDICTED")
   self.assertFalse(predicted.can_confirm)
+ def test_own_model_error_is_not_market_surprise(self):
+  from volterra.events import classify_surprise
+  self.assertEqual(classify_surprise(own_model_error=.2,expectation_source=None),"OWN_MODEL_ERROR")
