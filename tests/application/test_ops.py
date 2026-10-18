@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import tempfile
 import unittest
 
 
@@ -25,6 +26,19 @@ class OperationsAcceptanceTests(unittest.TestCase):
         self.assertTrue(all("reports/scaffold/" not in reference
                             for row in matrix["requirements"]
                             for reference in row["evidence_refs"]))
+
+    def test_ac_ops_03_idempotent_job_claim_prevents_duplicate_replay_work(self) -> None:
+        try:
+            from volterra.storage import EvidenceLedger
+        except ImportError as exc:
+            self.fail(f"VT02 job ledger is not implemented: {exc}")
+        with tempfile.TemporaryDirectory(prefix="volterra-job-") as directory:
+            ledger = EvidenceLedger(Path(directory) / "ledger.sqlite")
+            self.addCleanup(ledger.close)
+            self.assertTrue(ledger.claim_job("replay", "run-001"))
+            self.assertFalse(ledger.claim_job("replay", "run-001"))
+            ledger.complete_job("replay", "run-001")
+            self.assertEqual(ledger.job_status("replay", "run-001"), "COMPLETED")
 
 
 if __name__ == "__main__":

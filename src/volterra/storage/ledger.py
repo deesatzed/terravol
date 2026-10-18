@@ -115,6 +115,12 @@ class EvidenceLedger:
                 payload BLOB NOT NULL,
                 byte_count INTEGER NOT NULL CHECK (byte_count >= 0)
             );
+            CREATE TABLE IF NOT EXISTS jobs (
+                job_kind TEXT NOT NULL,
+                idempotency_key TEXT NOT NULL,
+                status TEXT NOT NULL CHECK (status IN ('RUNNING', 'COMPLETED', 'FAILED')),
+                PRIMARY KEY (job_kind, idempotency_key)
+            );
         """)
         self.connection.commit()
 
@@ -292,6 +298,33 @@ class EvidenceLedger:
         if len(payload) != row[1] or hashlib.sha256(payload).hexdigest() != artifact_sha256:
             raise LedgerError("artifact payload hash or length does not match reference")
         return payload
+
+    def claim_job(self, job_kind: str, idempotency_key: str) -> bool:
+        if not job_kind or not idempotency_key:
+            raise LedgerError("job_kind and idempotency_key are required")
+        with self.connection:
+            result = self.connection.execute(
+                "INSERT OR IGNORE INTO jobs(job_kind, idempotency_key, status) VALUES (?, ?, 'RUNNING')",
+                (job_kind, idempotency_key),
+            )
+        return result.rowcount == 1
+
+    def complete_job(self, job_kind: str, idempotency_key: str) -> None:
+        with self.connection:
+            result = self.connection.execute(
+                "UPDATE jobs SET status = 'COMPLETED' WHERE job_kind = ? AND idempotency_key = ? AND status = 'RUNNING'",
+                (job_kind, idempotency_key),
+            )
+        if result.rowcount != 1:
+            raise LedgerError("only a running job may be completed")
+
+    def job_status(self, job_kind: str, idempotency_key: str) -> str:
+        row = self.connection.execute(
+            "SELECT status FROM jobs WHERE job_kind = ? AND idempotency_key = ?", (job_kind, idempotency_key)
+        ).fetchone()
+        if row is None:
+            raise LedgerError("job does not exist")
+        return str(row[0])
 
     def close(self) -> None:
         self.connection.close()
