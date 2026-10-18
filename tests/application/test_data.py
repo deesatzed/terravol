@@ -17,9 +17,9 @@ class DataContractTests(unittest.TestCase):
         except ImportError as exc:
             self.fail(f"VT02 measurement contracts are not implemented: {exc}")
         with self.assertRaises(LedgerError):
-            MeasurementSpec("squared_decimal_return", 0, "XNYS", "FULL_SESSION", "close_to_close")
+            MeasurementSpec("squared_decimal_return", 0, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED")
         measurement = MeasurementSpec(
-            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close",
+            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED",
         )
         target = TargetDefinition("rv-1", 1, "realized_variance_v1", measurement)
         with tempfile.TemporaryDirectory(prefix="volterra-measurement-") as directory:
@@ -29,7 +29,7 @@ class DataContractTests(unittest.TestCase):
             with self.assertRaises(LedgerError):
                 ledger.register_target(TargetDefinition(
                     "rv-1", 1, "realized_variance_v1",
-                    MeasurementSpec("squared_decimal_return", 365, "XNYS", "FULL_SESSION", "close_to_close"),
+                    MeasurementSpec("squared_decimal_return", 365, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED"),
                 ))
 
     def test_ac_data_02_missing_or_stale_is_not_zero_observation(self) -> None:
@@ -50,6 +50,21 @@ class DataContractTests(unittest.TestCase):
             revision = ledger.append_evidence(EvidenceInput("stale", "synthetic", None, moment, moment, moment, moment,
                                                              "STALE", True))
             self.assertIsInstance(revision, str)
+
+    def test_ac_data_03_target_requires_declared_split_or_roll_policy(self) -> None:
+        try:
+            from volterra.storage import LedgerError, MeasurementSpec
+        except ImportError as exc:
+            self.fail(f"VT02 adjustment contract is not implemented: {exc}")
+        with self.assertRaises(LedgerError):
+            MeasurementSpec("squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "")
+        adjusted = MeasurementSpec(
+            "squared_decimal_return", 252, "XNYS", "FULL_SESSION", "close_to_close", "SPLIT_ADJUSTED",
+        )
+        rolled = MeasurementSpec(
+            "squared_decimal_return", 252, "CME", "FULL_SESSION", "close_to_close", "BACK_ADJUSTED_ROLL",
+        )
+        self.assertNotEqual(adjusted.canonical(), rolled.canonical())
 
     def test_synthetic_lineage_cannot_be_cleared_by_a_derived_record(self) -> None:
         try:

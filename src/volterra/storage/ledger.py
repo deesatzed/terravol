@@ -50,10 +50,11 @@ class MeasurementSpec:
     session_calendar_id: str
     coverage_policy: str
     proxy_label: str
+    adjustment_policy: str
 
     def __post_init__(self) -> None:
-        if not all((self.units, self.session_calendar_id, self.coverage_policy, self.proxy_label)):
-            raise LedgerError("measurement units, calendar, coverage policy, and proxy label are required")
+        if not all((self.units, self.session_calendar_id, self.coverage_policy, self.proxy_label, self.adjustment_policy)):
+            raise LedgerError("measurement units, calendar, coverage, proxy label, and adjustment policy are required")
         if (isinstance(self.annualization_sessions, bool)
                 or not isinstance(self.annualization_sessions, int)
                 or self.annualization_sessions <= 0):
@@ -66,6 +67,7 @@ class MeasurementSpec:
             "session_calendar_id": self.session_calendar_id,
             "coverage_policy": self.coverage_policy,
             "proxy_label": self.proxy_label,
+            "adjustment_policy": self.adjustment_policy,
         })
 
 
