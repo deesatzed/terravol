@@ -1,2 +1,2 @@
-from volterra.models.checkpoints import CheckpointGate, CheckpointResult
-__all__=["CheckpointGate","CheckpointResult"]
+from volterra.models.checkpoints import CheckpointGate, CheckpointResult, ExecutionCapability
+__all__=["CheckpointGate","CheckpointResult","ExecutionCapability"]
