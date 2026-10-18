@@ -130,11 +130,20 @@
       "id": "AC-TIME-08",
       "requirement": "Forecast completion and source arrival times prevent fictitious earlier entries or earlier knowledge.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-09",
@@ -226,11 +235,20 @@
       "id": "AC-PROB-05",
       "requirement": "Predicted A cannot trigger the same update as independently observed/confirmed A.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-06",
@@ -821,21 +839,39 @@
       "id": "AC-EVT-01",
       "requirement": "Event outcome rules are frozen independently of the observed market response.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-02",
       "requirement": "Storage/macro first-release timing, original weather runs, and publication-lagged data obey their vintages.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-03",
@@ -851,31 +887,58 @@
       "id": "AC-EVT-04",
       "requirement": "Own-model error is not relabeled market surprise without an eligible expectation source.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-05",
       "requirement": "Event occurrence, information receipt, and market response can have different clocks.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-06",
       "requirement": "Non-occurrence, cancellation, and uncertainty resolution remain possible outcomes.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-07",
@@ -1653,11 +1716,20 @@
       "id": "AC-MON-01",
       "requirement": "A monitor declares observation coverage, cadence, arrival/error/failure law and costs separately from event occurrence.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-02",
@@ -1693,11 +1765,20 @@
       "id": "AC-MON-05",
       "requirement": "Physical state, evidence/confirmation state and per-instrument propagation state are stored independently.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-06",
@@ -1772,11 +1853,20 @@
       "id": "AC-EVT-09",
       "requirement": "The real event study verifies intersecting contract/target/weather-run/member/availability coverage before confirmatory evaluation.",
       "ticket": "VT10",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_events.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt10-event-clocks-20261018",
+        "executed_at": "2026-10-18T22:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt10/application-acceptance.json"
+      ]
     }
   ]
 }

@@ -190,9 +190,11 @@
         "expectations",
         "instruments"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "After equity integrity, verify exact gas contracts and as-issued weather/storage coverage; separate physical/evidence/propagation states.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt10/ticket-verification.json"
+      ],
       "optional": false
     },
     {
