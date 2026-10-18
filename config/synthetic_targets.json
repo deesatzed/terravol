@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "data_mode": "SYNTHETIC_ONLY",
+  "lineage_label": "SYNTHETIC",
+  "targets": {
+    "equity_variance": {
+      "target_id": "synthetic-equity-realized-variance-v1",
+      "measurement_status": "SYNTHETIC_PROXY",
+      "units": "squared_decimal_log_return",
+      "annualization_sessions": 252,
+      "horizons_completed_sessions": [1, 5, 20],
+      "session_policy": "synthetic_trading_sessions_only",
+      "maturity_policy": "reveal_only_after_complete_declared_window",
+      "future_data_policy": "unavailable_at_origin"
+    },
+    "cascade_episode": {
+      "target_id": "synthetic-cascade-episode-v1",
+      "measurement_status": "SYNTHETIC_OBSERVED_WORLD",
+      "units": "probability",
+      "no_event_state": true,
+      "future_data_policy": "unavailable_at_origin"
+    }
+  }
+}

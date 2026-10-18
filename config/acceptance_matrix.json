@@ -96,11 +96,20 @@
       "id": "AC-PROB-01",
       "requirement": "Event probability, transmission probability, scenario mass, and expert weight have distinct typed fields.",
       "ticket": "VT01",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_prob.py"
+      ],
       "planned_test": "tests/application/test_prob.py::test_ac_prob_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt01-contract-foundation-20261018",
+        "executed_at": "2026-10-18T15:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt01/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-02",
@@ -316,11 +325,20 @@
       "id": "AC-DIST-02",
       "requirement": "Quantiles are ordered with valid support; sparse quantiles cannot silently imply full tails or joint paths.",
       "ticket": "VT01",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_dist.py"
+      ],
       "planned_test": "tests/application/test_dist.py::test_ac_dist_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt01-contract-foundation-20261018",
+        "executed_at": "2026-10-18T15:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt01/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-03",
@@ -916,11 +934,20 @@
       "id": "AC-OPS-05",
       "requirement": "Credentials and private donor data are excluded from logs, artifacts, and the new repository.",
       "ticket": "VT00",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ops.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt00-local-boundary-20261018",
+        "executed_at": "2026-10-18T15:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt00/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-06",
@@ -1006,11 +1033,20 @@
       "id": "AC-CTRL-01",
       "requirement": "The canonical goal is GOAL_UPD.md; all active entry points agree and archived specifications remain identifiable.",
       "ticket": "VT00",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ctrl.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt00-local-boundary-20261018",
+        "executed_at": "2026-10-18T15:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt00/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-02",
@@ -1046,21 +1082,39 @@
       "id": "AC-CTRL-05",
       "requirement": "Numeric exponent overflow and nested nonfinite values fail safe serialization and contract validation.",
       "ticket": "VT01",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ctrl.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt01-contract-foundation-20261018",
+        "executed_at": "2026-10-18T15:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt01/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-06",
       "requirement": "Student-t and every admitted family reject invalid scale, parameter sets, support and required moments.",
       "ticket": "VT01",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ctrl.py"
+      ],
       "planned_test": "tests/application/test_ctrl.py::test_ac_ctrl_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt01-contract-foundation-20261018",
+        "executed_at": "2026-10-18T15:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt01/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CTRL-07",
@@ -1186,11 +1240,20 @@
       "id": "AC-OPS-09",
       "requirement": "Scaffold/package checks and application acceptance execution have separate counts and no unimplemented capability receives a pass.",
       "ticket": "VT00",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ops.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt00-local-boundary-20261018",
+        "executed_at": "2026-10-18T15:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt00/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-09",

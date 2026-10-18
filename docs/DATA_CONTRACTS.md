@@ -41,3 +41,9 @@ Authoritative minimum fields and semantics: [GOAL_UPD.md](../GOAL_UPD.md) §§3,
 `ConditionalBranchFailure` retains affected world mass, actual fallback/remainder identity and diagnostics. A failed rare-risk branch cannot be silently discarded and the surviving mass renormalized into apparent safety.
 
 All rules/function identifiers resolve to a trusted registry owned by code, not a caller-supplied list of executable text. Safe metadata is not an untrusted pickle loader.
+
+## VT01 implemented local primitives
+
+`volterra.contracts` now supplies immutable `EventProbability`, `TransmissionProbability`, `ScenarioProbability`, and `ExpertWeight` types so their numerical values cannot silently stand in for one another. `canonical_json` recursively rejects nonfinite values, including parsed exponent overflow. `QuantileForecast` is explicitly marginal-only: ordered sparse quantiles do not create a CDF tail or joint-path capability. `StudentTSpec` rejects nonpositive degrees of freedom or scale, and a consumer requiring finite variance must call `require_finite_variance`.
+
+`CapabilityManifest` is a static typed claim record only. It does not establish an artifact's availability, license, resource behavior, model output or integration. Those checks remain VT06 work.

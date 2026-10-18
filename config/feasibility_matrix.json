@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "data_mode": "SYNTHETIC_ONLY",
+  "external_dependencies": [
+    {
+      "dependency_id": "authorized-equity-intraday-history",
+      "category": "market_data",
+      "required_for": "realized_variance_target",
+      "status": "UNVERIFIED",
+      "missing_evidence": "Authorized provider, historical availability, corporate-action and session policy"
+    },
+    {
+      "dependency_id": "authorized-natural-gas-contract-history",
+      "category": "market_data",
+      "required_for": "event_to_volatility_first_research_proof",
+      "status": "UNVERIFIED",
+      "missing_evidence": "Exact contract, rolls, target policy and overlapping historical coverage"
+    },
+    {
+      "dependency_id": "as-issued-weather-run-member-archive",
+      "category": "weather_data",
+      "required_for": "event_to_volatility_first_research_proof",
+      "status": "UNVERIFIED",
+      "missing_evidence": "Run/member timestamps, archive retention and allowed replay use"
+    },
+    {
+      "dependency_id": "timestamped-consensus-rights",
+      "category": "event_data",
+      "required_for": "expectation_and_surprise_comparison",
+      "status": "UNVERIFIED",
+      "missing_evidence": "Provider rights, vintage availability and target-specific coverage"
+    },
+    {
+      "dependency_id": "ttm-chronos2-timesfm25-artifact-intersection",
+      "category": "model_artifact",
+      "required_for": "VT06_checkpoint_integrations",
+      "status": "UNVERIFIED",
+      "missing_evidence": "Exact artifact hashes, licenses, compatible lock and Mac resource measurements"
+    },
+    {
+      "dependency_id": "paid-or-live-provider-access",
+      "category": "external_access",
+      "required_for": "live_or_paid_modes",
+      "status": "BLOCKED",
+      "missing_evidence": "Offline profile permits no network, downloads, subscriptions or paid calls"
+    }
+  ]
+}

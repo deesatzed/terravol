@@ -2,7 +2,7 @@
 
 Canonical requirements: [GOAL_UPD.md](../GOAL_UPD.md). Machine source: [acceptance_matrix.json](../config/acceptance_matrix.json).
 
-**120 planned application requirements; 0 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Planned test paths are not existing tests. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
+**120 application requirements; 7 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
 
 ## Execution receipt contract
 
@@ -21,7 +21,7 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-TIME-07 | VT11 | NOT_IMPLEMENTED | Cross-fitted event forecasts and upstream ensembles respect chronology and shared-event groups. | `tests/application/test_time.py::test_ac_time_07` |
 | AC-TIME-08 | VT10 | NOT_IMPLEMENTED | Forecast completion and source arrival times prevent fictitious earlier entries or earlier knowledge. | `tests/application/test_time.py::test_ac_time_08` |
 | AC-TIME-09 | VT20 | NOT_IMPLEMENTED | Reusing an examined holdout for a fresh confirmation claim is rejected by the experiment manifest. | `tests/application/test_time.py::test_ac_time_09` |
-| AC-PROB-01 | VT01 | NOT_IMPLEMENTED | Event probability, transmission probability, scenario mass, and expert weight have distinct typed fields. | `tests/application/test_prob.py::test_ac_prob_01` |
+| AC-PROB-01 | VT01 | PASSED | Event probability, transmission probability, scenario mass, and expert weight have distinct typed fields. | `tests/application/test_prob.py::test_ac_prob_01` |
 | AC-PROB-02 | VT03 | NOT_IMPLEMENTED | Invalid conditional tables, non-normalized exclusive branches, and probabilities outside [0,1] fail validation. | `tests/application/test_prob.py::test_ac_prob_02` |
 | AC-PROB-03 | VT09 | NOT_IMPLEMENTED | Concurrent mechanisms are not normalized as though they were mutually exclusive outcomes. | `tests/application/test_prob.py::test_ac_prob_03` |
 | AC-PROB-04 | VT03 | NOT_IMPLEMENTED | Background B risk when A is absent is included in total probability calculations. | `tests/application/test_prob.py::test_ac_prob_04` |
@@ -43,7 +43,7 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-CASC-11 | VT12 | NOT_IMPLEMENTED | Sampled market episodes and derived variance paths cannot contradict each other in a joint-capable artifact. | `tests/application/test_casc.py::test_ac_casc_11` |
 | AC-CASC-12 | VT12 | NOT_IMPLEMENTED | Pruning/importance sampling preserves no-event and remainder mass with correct weights and uncertainty. | `tests/application/test_casc.py::test_ac_casc_12` |
 | AC-DIST-01 | VT04 | NOT_IMPLEMENTED | Identical point experts can retain nonzero predictive uncertainty through their outcome distributions. | `tests/application/test_dist.py::test_ac_dist_01` |
-| AC-DIST-02 | VT01 | NOT_IMPLEMENTED | Quantiles are ordered with valid support; sparse quantiles cannot silently imply full tails or joint paths. | `tests/application/test_dist.py::test_ac_dist_02` |
+| AC-DIST-02 | VT01 | PASSED | Quantiles are ordered with valid support; sparse quantiles cannot silently imply full tails or joint paths. | `tests/application/test_dist.py::test_ac_dist_02` |
 | AC-DIST-03 | VT05 | NOT_IMPLEMENTED | A CDF mixture and a weighted-quantile average are distinguished on a known counterexample. | `tests/application/test_dist.py::test_ac_dist_03` |
 | AC-DIST-04 | VT05 | NOT_IMPLEMENTED | The empirical/analytic mixture CRPS identity matches a direct reference calculation. | `tests/application/test_dist.py::test_ac_dist_04` |
 | AC-DIST-05 | VT07 | NOT_IMPLEMENTED | Variance is nonnegative; cumulative variance equals path sums; annualized volatility is not forced monotone. | `tests/application/test_dist.py::test_ac_dist_05` |
@@ -103,7 +103,7 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-OPS-02 | VT06 | NOT_IMPLEMENTED | Save/reload parity includes all fitted numerical and state artifacts, not configuration alone. | `tests/application/test_ops.py::test_ac_ops_02` |
 | AC-OPS-03 | VT02 | NOT_IMPLEMENTED | Idempotent replay/job recovery creates no duplicate evidence, forecasts, charges, or outcomes. | `tests/application/test_ops.py::test_ac_ops_03` |
 | AC-OPS-04 | VT09 | NOT_IMPLEMENTED | Graph text, retrieved documents, and serialized data cannot execute arbitrary code. | `tests/application/test_ops.py::test_ac_ops_04` |
-| AC-OPS-05 | VT00 | NOT_IMPLEMENTED | Credentials and private donor data are excluded from logs, artifacts, and the new repository. | `tests/application/test_ops.py::test_ac_ops_05` |
+| AC-OPS-05 | VT00 | PASSED | Credentials and private donor data are excluded from logs, artifacts, and the new repository. | `tests/application/test_ops.py::test_ac_ops_05` |
 | AC-OPS-06 | VT02 | NOT_IMPLEMENTED | Model/data licenses and capabilities are pinned and enforced independently. | `tests/application/test_ops.py::test_ac_ops_06` |
 | AC-OPS-07 | VT06 | NOT_IMPLEMENTED | CPU/reference and any accelerator paths have measured parity/resource tests with honest unsupported states. | `tests/application/test_ops.py::test_ac_ops_07` |
 | AC-OPS-08 | VT23 | NOT_IMPLEMENTED | Release reports distinguish tests run, failed, blocked, synthetic-only, and not implemented. | `tests/application/test_ops.py::test_ac_ops_08` |
@@ -112,12 +112,12 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-ECO-03 | VT22 | NOT_IMPLEMENTED | Entry/exit timing, bid/ask costs, financing where material, overlapping capital, and non-activations are retained. | `tests/application/test_eco.py::test_ac_eco_03` |
 | AC-ECO-04 | VT22 | NOT_IMPLEMENTED | Missing quotes return NOT_ASSESSED; model valuations are never relabeled observed historical fills. | `tests/application/test_eco.py::test_ac_eco_04` |
 | AC-ECO-05 | VT02 | NOT_IMPLEMENTED | No brokerage credentials, execution endpoint, or autonomous trade action exists. | `tests/application/test_eco.py::test_ac_eco_05` |
-| AC-CTRL-01 | VT00 | NOT_IMPLEMENTED | The canonical goal is GOAL_UPD.md; all active entry points agree and archived specifications remain identifiable. | `tests/application/test_ctrl.py::test_ac_ctrl_01` |
+| AC-CTRL-01 | VT00 | PASSED | The canonical goal is GOAL_UPD.md; all active entry points agree and archived specifications remain identifiable. | `tests/application/test_ctrl.py::test_ac_ctrl_01` |
 | AC-CTRL-02 | VT02 | NOT_IMPLEMENTED | Purpose, allowlist, timeout, reservation and completion controls exist before any external model/source call. | `tests/application/test_ctrl.py::test_ac_ctrl_02` |
 | AC-CTRL-03 | VT05 | NOT_IMPLEMENTED | A blocked external checkpoint cannot prevent a verified offline classical slice or be credited as tested. | `tests/application/test_ctrl.py::test_ac_ctrl_03` |
 | AC-CTRL-04 | VT05 | NOT_IMPLEMENTED | The first scored offline slice includes genuine baseline inference, sealed predictions, matured outcomes and proper scores. | `tests/application/test_ctrl.py::test_ac_ctrl_04` |
-| AC-CTRL-05 | VT01 | NOT_IMPLEMENTED | Numeric exponent overflow and nested nonfinite values fail safe serialization and contract validation. | `tests/application/test_ctrl.py::test_ac_ctrl_05` |
-| AC-CTRL-06 | VT01 | NOT_IMPLEMENTED | Student-t and every admitted family reject invalid scale, parameter sets, support and required moments. | `tests/application/test_ctrl.py::test_ac_ctrl_06` |
+| AC-CTRL-05 | VT01 | PASSED | Numeric exponent overflow and nested nonfinite values fail safe serialization and contract validation. | `tests/application/test_ctrl.py::test_ac_ctrl_05` |
+| AC-CTRL-06 | VT01 | PASSED | Student-t and every admitted family reject invalid scale, parameter sets, support and required moments. | `tests/application/test_ctrl.py::test_ac_ctrl_06` |
 | AC-CTRL-07 | VT02 | NOT_IMPLEMENTED | Nonexistent snapshot/model/calibrator references and missing or mismatched artifacts fail runtime integrity checks. | `tests/application/test_ctrl.py::test_ac_ctrl_07` |
 | AC-CTRL-08 | VT02 | NOT_IMPLEMENTED | Synthetic lineage propagates through mixed inputs and cannot be cleared by a forecast, branch or export. | `tests/application/test_ctrl.py::test_ac_ctrl_08` |
 | AC-MON-01 | VT10 | NOT_IMPLEMENTED | A monitor declares observation coverage, cadence, arrival/error/failure law and costs separately from event occurrence. | `tests/application/test_mon.py::test_ac_mon_01` |
@@ -130,5 +130,5 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-SEL-10 | VT16 | NOT_IMPLEMENTED | Full-pool audit forecasts and randomized selection propensities are recorded with their full compute/acquisition cost. | `tests/application/test_sel.py::test_ac_sel_10` |
 | AC-CASC-13 | VT12 | NOT_IMPLEMENTED | Failure in a conditional branch cannot silently discard its probability mass or renormalize background risk away. | `tests/application/test_casc.py::test_ac_casc_13` |
 | AC-ARB-11 | VT15 | NOT_IMPLEMENTED | Event/world probabilities remain independently resolvable and scored; expert weights cannot masquerade as event calibration. | `tests/application/test_arb.py::test_ac_arb_11` |
-| AC-OPS-09 | VT00 | NOT_IMPLEMENTED | Scaffold/package checks and application acceptance execution have separate counts and no unimplemented capability receives a pass. | `tests/application/test_ops.py::test_ac_ops_09` |
+| AC-OPS-09 | VT00 | PASSED | Scaffold/package checks and application acceptance execution have separate counts and no unimplemented capability receives a pass. | `tests/application/test_ops.py::test_ac_ops_09` |
 | AC-EVT-09 | VT10 | NOT_IMPLEMENTED | The real event study verifies intersecting contract/target/weather-run/member/availability coverage before confirmatory evaluation. | `tests/application/test_evt.py::test_ac_evt_09` |

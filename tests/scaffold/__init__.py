@@ -1,0 +1,1 @@
+"""Scaffold-control tests."""

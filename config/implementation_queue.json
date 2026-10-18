@@ -11,9 +11,11 @@
         "docs",
         "config"
       ],
-      "status": "PARTIAL",
+      "status": "COMPLETE",
       "exit_evidence": "Close environment, repository and source/data feasibility records; scaffold preparation is not application completion.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt00/ticket-verification.json"
+      ],
       "optional": false
     },
     {
@@ -25,9 +27,11 @@
       "owns": [
         "contracts"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Close finite-number/Student-t defects with failing regressions; version schemas and capabilities.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt01/ticket-verification.json"
+      ],
       "optional": false
     },
     {

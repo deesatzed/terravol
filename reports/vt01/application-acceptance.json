@@ -1,0 +1,21 @@
+{
+  "scope": "application_acceptance",
+  "status": "PASSED",
+  "requirement_ids": [
+    "AC-PROB-01",
+    "AC-DIST-02",
+    "AC-CTRL-05",
+    "AC-CTRL-06"
+  ],
+  "test_refs": [
+    "tests/application/test_prob.py",
+    "tests/application/test_dist.py",
+    "tests/application/test_ctrl.py"
+  ],
+  "tests_run": 10,
+  "run_id": "vt01-contract-foundation-20261018",
+  "executed_at": "2026-10-18T15:30:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "Typed probability concepts, finite canonical serialization, quantile-only capability limits and Student-t parameter/moment constraints passed. No persistence, model inference, external access or forecasting is included."
+}

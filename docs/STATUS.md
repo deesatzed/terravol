@@ -6,12 +6,12 @@ Canonical goal: [GOAL_UPD.md](../GOAL_UPD.md).
 |---|---|
 | Project/control scaffold | PREPARED; 30 scaffold tests passed on 2026-10-18, with both supplied commands verified |
 | Statistical/event/cascade application | NOT_IMPLEMENTED |
-| Application acceptance | 0 of 120 requirements executed |
+| Application acceptance | 7 of 120 requirements executed: VT00 local boundary and VT01 safe contract controls |
 | Model adapters and real-data integrations | NOT_IMPLEMENTED / feasibility unverified |
 | Scientific comparison | NOT_EVALUATED |
 | Prospective collection | NOT_STARTED |
 | Economic assessment | NOT_ASSESSED |
 
-The current CLI validates project controls and reports this distinction. It does not load forecasts, infer a graph, retrieve evidence, start monitoring, learn weights or execute financial actions. The next application ticket is VT00 closure, followed by VT01–VT05 for the first scored offline slice.
+The current CLI validates project controls and reports this distinction. It does not load forecasts, infer a graph, retrieve evidence, start monitoring, learn weights or execute financial actions. The next application ticket is VT02, followed by VT03–VT05 for the first scored offline slice.
 
 The legacy package's 28 checks and this scaffold's command tests are separate from application acceptance. Record actual latest verification in [PROGRESS.md](../PROGRESS.md) and [verification.json](../reports/scaffold/verification.json).

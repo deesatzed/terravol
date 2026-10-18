@@ -1,0 +1,18 @@
+{
+  "scope": "ticket_verification",
+  "status": "PASSED",
+  "ticket_ids": [
+    "VT00"
+  ],
+  "test_refs": [
+    "tests/application/test_audit.py",
+    "tests/application/test_ctrl.py",
+    "tests/application/test_ops.py"
+  ],
+  "tests_run": 6,
+  "run_id": "vt00-local-boundary-20261018",
+  "executed_at": "2026-10-18T15:00:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "VT00 closes the local current-state, synthetic-target and feasibility-boundary audit. Five required external dependencies are UNVERIFIED; paid/live external access is BLOCKED by the offline profile."
+}

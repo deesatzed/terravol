@@ -1,11 +1,11 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). Current next ticket is VT00 closure. Scaffold work is recorded separately from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00 and VT01 are closed within their bounded local/synthetic scopes; current next ticket is VT02. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
-| VT00 | None | PARTIAL | Current-state and source/data feasibility audit |
-| VT01 | VT00 | NOT_IMPLEMENTED | Typed contracts, safe serialization and manifests |
+| VT00 | None | COMPLETE | Bounded local/synthetic current-state and source/data feasibility audit |
+| VT01 | VT00 | COMPLETE | Typed finite contracts, safe serialization and capability-manifest primitives |
 | VT02 | VT01 | NOT_IMPLEMENTED | As-of evidence, targets, maturity and early deterministic call controls |
 | VT03 | VT01, VT02 | NOT_IMPLEMENTED | Seeded market/event worlds and exact cascade reference |
 | VT04 | VT02, VT03 | NOT_IMPLEMENTED | Classical forecasts and measurement-compatible distributions |

@@ -1,0 +1,20 @@
+{
+  "scope": "application_acceptance",
+  "status": "PASSED",
+  "requirement_ids": [
+    "AC-OPS-05",
+    "AC-CTRL-01",
+    "AC-OPS-09"
+  ],
+  "test_refs": [
+    "tests/application/test_audit.py",
+    "tests/application/test_ctrl.py",
+    "tests/application/test_ops.py"
+  ],
+  "tests_run": 6,
+  "run_id": "vt00-local-boundary-20261018",
+  "executed_at": "2026-10-18T15:00:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests/application -p 'test_*.py' -v",
+  "exit_code": 0,
+  "result": "Six application-boundary tests passed. This receipt verifies local goal/archive, exclusion and evidence-count controls only; it verifies no external source, model or forecast capability."
+}

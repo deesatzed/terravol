@@ -1,18 +1,25 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "created_at_utc": "2026-10-18T14:27:58.805915+00:00",
-  "status": "SCAFFOLD_VALIDATED_APPLICATION_NOT_IMPLEMENTED",
+  "updated_at_utc": "2026-10-18T14:36:47.185438+00:00",
+  "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 99,
+  "file_count_excluding_manifest": 117,
+  "completed_implementation_tickets": [
+    "VT00",
+    "VT01"
+  ],
   "planned_implementation_tickets": 24,
   "planned_application_acceptance_requirements": 120,
-  "application_acceptance_executed": 0,
-  "scaffold_tests_passed": 30,
-  "archived_v1_package_checks_passed": 28,
+  "application_acceptance_executed": 7,
+  "application_acceptance_remaining": 113,
+  "full_test_suite_passed": 40,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
-  "verification": "reports/scaffold/verification.json",
-  "integrity_note": "Snapshot hashes cover this scaffold increment, not future edits or implementation claims. Original v1 hashes remain in the archived manifest.",
+  "verification": [
+    "reports/vt00/ticket-verification.json",
+    "reports/vt01/ticket-verification.json"
+  ],
+  "integrity_note": "Snapshot hashes cover this state. Original v1 hashes remain in the archived manifest; no real-data/model availability is claimed.",
   "files": [
     {
       "path": ".gitignore",
@@ -86,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 9813,
-      "sha256": "043b8957718018b7a3d98158f352857cc4257e78b7e6e8d873ef5d82f00f717f"
+      "bytes": 11611,
+      "sha256": "997ad4f2608473489c7d09f8c8a6275aa32aff963ec71529e379b8e595e6f488"
     },
     {
       "path": "README.md",
@@ -116,8 +123,8 @@
     },
     {
       "path": "TASK_QUEUE.md",
-      "bytes": 2922,
-      "sha256": "09950da7c0d3a3252c325dec60d2f075b81edd806cc153cfe915f1204a3244d4"
+      "bytes": 3024,
+      "sha256": "8617e618dab6086c6b5567a337f9b3f43aabaed3a93450a94778576818efb896"
     },
     {
       "path": "VOLTERRA GOAL v2.txt",
@@ -141,13 +148,18 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 43827,
-      "sha256": "bcf56b38d5cc2cc4042a8a8daec3b342fbdb845bfd591ee82320f675f36c60c0"
+      "bytes": 46253,
+      "sha256": "db4961f0b8d536a33a9f39b2b7607795089e31c3e90281af9cbc4fe2f6cb9da6"
+    },
+    {
+      "path": "config/feasibility_matrix.json",
+      "bytes": 1876,
+      "sha256": "0f5464c7d2c3f73eaf0a04d01c7ff277f56bce00ce1bd4518cbe559a5270bd5b"
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11180,
-      "sha256": "6f4e0bbb6e92f2d3efd176aabd780925605a235b92e461ccdbbd39412b89d43e"
+      "bytes": 11284,
+      "sha256": "af1adc153d5203c774f695d3bbf57b211dcfa1446a31f0addf962de43d6d157e"
     },
     {
       "path": "config/model_registry.json",
@@ -175,9 +187,14 @@
       "sha256": "58b480c5056b94a3f74779b2cd5d824a0718f29d91a7ba2c1e36e946b5d9e5d1"
     },
     {
+      "path": "config/synthetic_targets.json",
+      "bytes": 817,
+      "sha256": "cdcbd575fd9b602e24f35bebe7e6e2b9fb18c29729e6813ec8233e79914c9df6"
+    },
+    {
       "path": "docs/ACCEPTANCE_MATRIX.md",
-      "bytes": 24354,
-      "sha256": "e388d5f42e3146fb9a1037925a9466fae55d719965efb3e4f7732a33a1f98773"
+      "bytes": 24327,
+      "sha256": "46161ee07e1068a65555e3b47c9908578df121f38d0ec3777c458e9a4ef3b3da"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -191,8 +208,8 @@
     },
     {
       "path": "docs/DATA_CONTRACTS.md",
-      "bytes": 5170,
-      "sha256": "c83d2d7fa90c0da5ebd8548cf770523227fe2c2e22f5ef41fdb29a6c7477cb6a"
+      "bytes": 5970,
+      "sha256": "ef3240bed369ffb8180789bb1aa45a748a19748dfecc834cc90c052653b0cbcb"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -216,13 +233,13 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 1088,
-      "sha256": "b15b7c27fa50111e47088293ff179552a795f48ae609a97a2f8a0021b84fcd78"
+      "bytes": 1133,
+      "sha256": "9675678aa8934dd937b866a6681ee0866a8321bfce3844be5cf18fb407ee11ed"
     },
     {
       "path": "docs/TRANSFORMATION_AUDIT.md",
-      "bytes": 3154,
-      "sha256": "847bc47f1e357469333e4d7af508bbc9371335590973b51ddbd4070c69c614fc"
+      "bytes": 3420,
+      "sha256": "c2dae15f4a407b60da5377957f4a7555721d37994fc07676104ed959cd1ea69e"
     },
     {
       "path": "docs/WORKFLOWS.md",
@@ -375,6 +392,11 @@
       "sha256": "846d37cf1e3b07e3050d514a73bd9555848f620f1dd5bd0e8c7c6a5d998de36c"
     },
     {
+      "path": "docs/plans/2026-10-18-vt00-vt01-integrity-foundation.md",
+      "bytes": 4561,
+      "sha256": "e43bda3716ae9236c19a770181972e62488ef8d83fc712560157097789daa93d"
+    },
+    {
       "path": "docs/reviews/scaffold-review.md",
       "bytes": 2827,
       "sha256": "59e0c5caf1382e4d11bf1d6026e5bd39805e0b434d4319d5fcddc20971e6068b"
@@ -435,6 +457,26 @@
       "sha256": "3e9dc04ecb8ffe1a350fd708265b79033bbf9fb1be5a834c1aea8ade986e0d1d"
     },
     {
+      "path": "reports/vt00/application-acceptance.json",
+      "bytes": 715,
+      "sha256": "db43d14f4386e29746a5d04657bb4910496ea34c428191d965250ad7e95feac7"
+    },
+    {
+      "path": "reports/vt00/ticket-verification.json",
+      "bytes": 679,
+      "sha256": "163ad6b9d563a21de411e23d88bf6c99016a9fcdd61839a70b90b4e5ca6847ff"
+    },
+    {
+      "path": "reports/vt01/application-acceptance.json",
+      "bytes": 774,
+      "sha256": "9157466338cda862e2549f23d0ef13777b4a39fdbd3bb25366cf9cb4eb8b1a70"
+    },
+    {
+      "path": "reports/vt01/ticket-verification.json",
+      "bytes": 706,
+      "sha256": "723486a020900f58bc128cbb68453c6a2ede3434691a170abf278ab551f75849"
+    },
+    {
       "path": "requirements-spec-validation.txt",
       "bytes": 20,
       "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
@@ -475,6 +517,21 @@
       "sha256": "afe2955a8bb32bd08967f6f801804c480258e6003aa1e58f73801e10ba92c976"
     },
     {
+      "path": "src/volterra/audit.py",
+      "bytes": 3247,
+      "sha256": "6568eeacd3ca31b061aea434b7c9bfc4e13a9a4d76b672ece9ab80b3891eb200"
+    },
+    {
+      "path": "src/volterra/contracts/__init__.py",
+      "bytes": 538,
+      "sha256": "f4f1b446b05bbaef493b4bece603d7493345ff2f7885eedee7cdf7759fb20bfa"
+    },
+    {
+      "path": "src/volterra/contracts/core.py",
+      "bytes": 5522,
+      "sha256": "97ad25ebee7917ef175684c4c0e8719037097472bb50099ca2aa40d647ae83ae"
+    },
+    {
       "path": "src/volterra/scaffold.py",
       "bytes": 16941,
       "sha256": "077b0b49fe52cd1ada3df9ccb4498e798cfdff85f193ca1ed695a085f8679381"
@@ -485,9 +542,49 @@
       "sha256": "d6f0567c70870564b3f68f9e897653d1208e73253ab55516b8400e9a7bad6f4a"
     },
     {
+      "path": "tests/__init__.py",
+      "bytes": 36,
+      "sha256": "566a718355ceb7d2bbe1af8bdec0cc7bb18315dacd7f69ec0462c4260cc05e4f"
+    },
+    {
+      "path": "tests/application/__init__.py",
+      "bytes": 36,
+      "sha256": "279d921c6ccdaf731c98e830e145473c78886a58b1b22d053991b337d053bd17"
+    },
+    {
+      "path": "tests/application/test_audit.py",
+      "bytes": 2086,
+      "sha256": "362ad980d2d59173b49c61ee099663127e4f7ac0e932c2374ffb4cf7c3596521"
+    },
+    {
+      "path": "tests/application/test_ctrl.py",
+      "bytes": 1789,
+      "sha256": "de1adb77c08e035c15445bc68dd4e64e6d7f3e2dfcd794da0bccc4e568174a86"
+    },
+    {
+      "path": "tests/application/test_dist.py",
+      "bytes": 944,
+      "sha256": "338682384607ea95b7b1c0e213e9c9fc1925a6f92063dd3f3fc72db5c3e63a51"
+    },
+    {
+      "path": "tests/application/test_ops.py",
+      "bytes": 1242,
+      "sha256": "4303cc0eb4073b2e33f0c7bda47cafc93d7ab6af4fe5f88f7df54f5d610a0184"
+    },
+    {
+      "path": "tests/application/test_prob.py",
+      "bytes": 934,
+      "sha256": "1b9ca4b4cc9bc24ab7e6fc560788c71b1fd25a1a79c00e540c48a13f6abc5fd8"
+    },
+    {
+      "path": "tests/scaffold/__init__.py",
+      "bytes": 30,
+      "sha256": "ee676e8c59a42333674fe172d607fa49397acfd32f71a7c905c2b6b959fb27d1"
+    },
+    {
       "path": "tests/scaffold/test_cli.py",
-      "bytes": 14293,
-      "sha256": "5285e81ad7c675ad1c04d2a03999c18bc3fe2d0846cfe167bd5dc5935c7ed108"
+      "bytes": 14443,
+      "sha256": "ccdd38ca1f9cee3bd43561036dfa08f162b754ae9f7d3c8294086a4534ee6494"
     },
     {
       "path": "tools/validate_specs.py",
