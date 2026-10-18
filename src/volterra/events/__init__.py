@@ -1,2 +1,2 @@
-from volterra.events.core import EventClock, EventUpdate, MonitorContract, classify_surprise
-__all__=["EventClock","EventUpdate","MonitorContract","classify_surprise"]
+from volterra.events.core import EventClock, EventState, EventUpdate, MonitorContract, classify_surprise
+__all__=["EventClock","EventState","EventUpdate","MonitorContract","classify_surprise"]
