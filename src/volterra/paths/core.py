@@ -14,3 +14,9 @@ class VariancePath:
   return math.sqrt(annualization*sum(self.increments[:horizon])/horizon)
 class MarginalPathAdapter:
  def joint_tail(self): raise MarginalOnlyError("marginal-only adapter cannot answer joint-tail query")
+@dataclass(frozen=True)
+class JointPathMixture:
+ worlds: tuple[tuple[float,tuple[float,...]],...]
+ def __post_init__(self):
+  if not self.worlds or abs(sum(p for p,_ in self.worlds)-1)>1e-12: raise ValueError("world masses must sum to one")
+ def support(self): return {path for _,path in self.worlds}
