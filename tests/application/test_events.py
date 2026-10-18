@@ -9,3 +9,7 @@ class EventTests(unittest.TestCase):
   self.assertEqual(clock.outcome,"CANCELLED")
   self.assertLess(clock.occurred_at,clock.received_at)
   self.assertLess(clock.received_at,clock.market_response_at)
+ def test_monitor_declares_observation_law_separately(self):
+  from volterra.events import MonitorContract
+  monitor=MonitorContract("weather",cadence_minutes=60,cost_usd=.1,arrival_law="LAGGED",failure_law="MISSING")
+  self.assertEqual(monitor.coverage,"weather")

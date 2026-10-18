@@ -1,2 +1,2 @@
-from volterra.events.core import EventClock
-__all__=["EventClock"]
+from volterra.events.core import EventClock, MonitorContract
+__all__=["EventClock","MonitorContract"]
