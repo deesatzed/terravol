@@ -38,3 +38,15 @@ class ExactCascadeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             unique_source_probabilities((("a", 0.3), ("a", 0.3)))
 
+    def test_ac_prob_02_exclusive_branch_table_requires_normalized_probabilities(self) -> None:
+        try:
+            from volterra.cascades import ExclusiveBranchTable
+        except ImportError as exc:
+            self.fail(f"VT03 branch-table validation is not implemented: {exc}")
+        table = ExclusiveBranchTable((("none", 0.7), ("event", 0.3)))
+        self.assertEqual(table.probability_of("none"), 0.7)
+        with self.assertRaises(ValueError):
+            ExclusiveBranchTable((("a", 0.7), ("b", 0.4)))
+        with self.assertRaises(ValueError):
+            ExclusiveBranchTable((("a", 1.1), ("b", -0.1)))
+

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+from dataclasses import dataclass
 
 
 def _validated(probabilities: tuple[float, ...]) -> tuple[float, ...]:
@@ -52,3 +53,25 @@ def unique_source_probabilities(sources: tuple[tuple[str, float], ...]) -> tuple
     if len(set(identifiers)) != len(identifiers):
         raise ValueError("a source identity may appear only once in a scenario")
     return _validated(tuple(probability for _, probability in sources))
+
+
+@dataclass(frozen=True)
+class ExclusiveBranchTable:
+    """A named, exhaustive mutually exclusive branch distribution."""
+    branches: tuple[tuple[str, float], ...]
+
+    def __post_init__(self) -> None:
+        names = tuple(name for name, _ in self.branches)
+        if not names or not all(isinstance(name, str) and name for name in names):
+            raise ValueError("exclusive branches require nonempty names")
+        if len(set(names)) != len(names):
+            raise ValueError("exclusive branch names must be unique")
+        values = _validated(tuple(value for _, value in self.branches))
+        if not math.isclose(sum(values), 1.0, rel_tol=0.0, abs_tol=1e-12):
+            raise ValueError("exclusive branch probabilities must sum to one")
+
+    def probability_of(self, name: str) -> float:
+        for branch, probability in self.branches:
+            if branch == name:
+                return probability
+        raise KeyError(name)
