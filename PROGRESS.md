@@ -75,3 +75,5 @@
 **Current VT02 authorization increment:** policy may now require a pinned `Authorization` record containing capability and license identifiers plus their versions. A request lacking the exact approved record is denied before reservation. The full suite passes 56 tests. Existing boolean fields remain only for the already-local compatibility path; any policy configured with authorization records enforces the immutable records independently.
 
 **Current VT02 adjustment increment:** measurement identity now also requires an explicit split/futures-roll adjustment policy. Adjustment policy participates in the immutable target definition hash, so adjusted and unadjusted series cannot silently share a target. The full suite passes 57 tests. Nonpositive-price handling and receipt-backed ticket completion remain pending.
+
+**Current VT02 nonpositive-price increment:** target measurement identity now requires a declared nonpositive-price policy, such as `UNSUPPORTED` or an explicitly supported arithmetic-return definition. Silent log clipping is not representable. The full suite passes 58 tests.

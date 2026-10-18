@@ -1,7 +1,7 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T14:43:34.513877+00:00",
+  "updated_at_utc": "2026-10-18T14:44:04.424472+00:00",
   "status": "VT00_VT01_VALIDATED_APPLICATION_PARTIAL",
   "canonical_goal": "GOAL_UPD.md",
   "file_count_excluding_manifest": 125,
@@ -13,7 +13,7 @@
   "planned_application_acceptance_requirements": 120,
   "application_acceptance_executed": 7,
   "application_acceptance_remaining": 113,
-  "full_test_suite_passed": 57,
+  "full_test_suite_passed": 58,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -93,8 +93,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 15141,
-      "sha256": "8e0a329a7c5dc17eeb780c2c81dfd99dc8095d0fa814788c8c1f62fe05ee683a"
+      "bytes": 15419,
+      "sha256": "e2c9abce7c9fa59d1aee28704dae45e8ad5eb59d226a8ec72112fe66de7fa36b"
     },
     {
       "path": "README.md",
@@ -558,8 +558,8 @@
     },
     {
       "path": "src/volterra/storage/ledger.py",
-      "bytes": 18190,
-      "sha256": "15ba5f1d6b78d683af6c9508b431570f4d3e0f6118ef13d700519c8fbd32a19f"
+      "bytes": 18361,
+      "sha256": "c107082edd052665967d828c94ebea3aa4fbe710100190af242d5755d6054a62"
     },
     {
       "path": "tests/README.md",
@@ -588,8 +588,8 @@
     },
     {
       "path": "tests/application/test_data.py",
-      "bytes": 4774,
-      "sha256": "758efc68bf87286e6c7e7fbfe4af079ec8063c8a075953fe26bc9931c36b9c90"
+      "bytes": 5715,
+      "sha256": "108640433d7270161184c22420ae0add33974fd720570967fbc8d688cf474706"
     },
     {
       "path": "tests/application/test_dist.py",
@@ -613,8 +613,8 @@
     },
     {
       "path": "tests/application/test_time.py",
-      "bytes": 4632,
-      "sha256": "99947f2f2adafce25cde2318e9f796a9aea12b7611eb488371bb292d0ff6d8d1"
+      "bytes": 4686,
+      "sha256": "906c7926ef6eeaa549970a58be0db0a6631e1e4ef47e849afb2c81440fcf0b84"
     },
     {
       "path": "tests/scaffold/__init__.py",
