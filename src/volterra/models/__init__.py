@@ -1,2 +1,2 @@
-from volterra.models.checkpoints import CheckpointGate, CheckpointResult, ExecutionCapability, ResearchModelLimit
-__all__=["CheckpointGate","CheckpointResult","ExecutionCapability","ResearchModelLimit"]
+from volterra.models.checkpoints import CheckpointGate, CheckpointResult, ExecutionCapability, ResearchModelLimit, FittedStateArtifact
+__all__=["CheckpointGate","CheckpointResult","ExecutionCapability","ResearchModelLimit","FittedStateArtifact"]
