@@ -42,3 +42,13 @@ def joint_probability_bounds(first: float, second: float) -> tuple[float, float]
     """Return Fréchet bounds when no dependence model has been admitted."""
     left, right = _validated((first, second))
     return (round(max(0.0, left + right - 1.0), 12), min(left, right))
+
+
+def unique_source_probabilities(sources: tuple[tuple[str, float], ...]) -> tuple[float, ...]:
+    """Validate stable source identities before any exact world arithmetic."""
+    identifiers = tuple(source_id for source_id, _ in sources)
+    if not all(isinstance(source_id, str) and source_id for source_id in identifiers):
+        raise ValueError("source identities must be nonempty strings")
+    if len(set(identifiers)) != len(identifiers):
+        raise ValueError("a source identity may appear only once in a scenario")
+    return _validated(tuple(probability for _, probability in sources))

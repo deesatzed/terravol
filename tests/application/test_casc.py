@@ -29,3 +29,12 @@ class ExactCascadeTests(unittest.TestCase):
             self.fail(f"VT03 joint-bounds reference is not implemented: {exc}")
         self.assertEqual(joint_probability_bounds(0.85, 0.85), (0.70, 0.85))
 
+    def test_ac_casc_08_duplicate_source_identity_is_rejected(self) -> None:
+        try:
+            from volterra.cascades import unique_source_probabilities
+        except ImportError as exc:
+            self.fail(f"VT03 source identity reference is not implemented: {exc}")
+        self.assertEqual(unique_source_probabilities((("a", 0.3), ("b", 0.2))), (0.3, 0.2))
+        with self.assertRaises(ValueError):
+            unique_source_probabilities((("a", 0.3), ("a", 0.3)))
+
