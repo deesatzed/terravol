@@ -70,3 +70,30 @@ class ArbitrationTests(unittest.TestCase):
         low = gate.predict(pool[0])
         high = gate.predict(pool[-1])
         self.assertNotEqual(low.weights, high.weights)
+
+class ConditionalFusionTests(unittest.TestCase):
+    def test_ac_arb_05_unconditional_is_not_double_weighted(self) -> None:
+        from volterra.arbitration import conditional_fuse
+        from volterra.distributions import DiscreteDistribution
+        baseline = DiscreteDistribution(((0.0, 1.0),))
+        result = conditional_fuse({"no": .7, "yes": .3}, {"base": baseline}, {"base": 1.0})
+        self.assertEqual(result.distribution.atoms, ((0.0, 1.0),))
+        self.assertEqual(result.world_masses, {"no": .7, "yes": .3})
+
+    def test_ac_arb_06_marginal_expert_cannot_pose_as_conditional(self) -> None:
+        from volterra.arbitration import ArbitrationError, conditional_fuse
+        from volterra.distributions import DiscreteDistribution
+        with self.assertRaises(ArbitrationError):
+            conditional_fuse({"no": .5, "yes": .5}, {"only_no": {"no": DiscreteDistribution(((0.0, 1.0),))}}, {"only_no": 1.0})
+
+    def test_ac_arb_10_shrinkage_is_bounded_toward_baseline(self) -> None:
+        from volterra.arbitration import shrink_weights
+        weights=shrink_weights({"a":1.0,"b":0.0},{"a":.5,"b":.5},strength=.8,max_change=.2)
+        self.assertEqual(weights,{"a":.7,"b":.3})
+
+    def test_ac_arb_11_world_mass_is_distinct_from_expert_weight(self) -> None:
+        from volterra.arbitration import conditional_fuse
+        from volterra.distributions import DiscreteDistribution
+        result=conditional_fuse({"no":.9,"yes":.1},{"a":DiscreteDistribution(((0.0,1.0),)),"b":DiscreteDistribution(((1.0,1.0),))},{"a":.25,"b":.75})
+        self.assertEqual(result.world_masses,{"no":.9,"yes":.1})
+        self.assertNotEqual(result.world_masses,{"a":.25,"b":.75})

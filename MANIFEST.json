@@ -1,10 +1,10 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-19T10:25:02.891976+00:00",
-  "status": "VT00_VT14_VALIDATED_VT15_NEXT",
+  "updated_at_utc": "2026-10-19T11:18:09.222923+00:00",
+  "status": "VT00_VT15_VALIDATED_VT16_NEXT",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 209,
+  "file_count_excluding_manifest": 211,
   "completed_implementation_tickets": [
     "VT00",
     "VT01",
@@ -20,13 +20,14 @@
     "VT11",
     "VT12",
     "VT13",
-    "VT14"
+    "VT14",
+    "VT15"
   ],
   "planned_implementation_tickets": 24,
   "planned_application_acceptance_requirements": 120,
-  "application_acceptance_executed": 92,
-  "application_acceptance_remaining": 28,
-  "full_test_suite_passed": 122,
+  "application_acceptance_executed": 96,
+  "application_acceptance_remaining": 24,
+  "full_test_suite_passed": 126,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
@@ -43,7 +44,8 @@
     "reports/vt11/ticket-verification.json",
     "reports/vt12/ticket-verification.json",
     "reports/vt13/ticket-verification.json",
-    "reports/vt14/ticket-verification.json"
+    "reports/vt14/ticket-verification.json",
+    "reports/vt15/ticket-verification.json"
   ],
   "integrity_note": "Snapshot hashes cover this state. Original v1 hashes remain in the archived manifest; no real-data/model availability is claimed.",
   "files": [
@@ -119,8 +121,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 22935,
-      "sha256": "96e47dc55611298cae373ac0c5616a496c8996efdfb4bde2f4ea2a46ae0bc634"
+      "bytes": 24098,
+      "sha256": "6ad8f7898240b3cd15eef655f35bedd238254013fa43d95c1c58e7c5774bb7f7"
     },
     {
       "path": "README.md",
@@ -149,8 +151,8 @@
     },
     {
       "path": "TASK_QUEUE.md",
-      "bytes": 2921,
-      "sha256": "6d31f7e0f47e5a62dda0b1c9ae4a4fa25e25fee7b2321b62df9fd68cfe6aa8fc"
+      "bytes": 2914,
+      "sha256": "debc7c2518d197ae610805b4031bdc222cb62375e3957383504649fccd003459"
     },
     {
       "path": "VOLTERRA GOAL v2.txt",
@@ -174,8 +176,8 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 75640,
-      "sha256": "7f43c59718870194b6a17c93886e8d01042620d74eec631e9c73c3e4d1460716"
+      "bytes": 76980,
+      "sha256": "d75d21852da5f4612ace8ac8cec5e0e7df3274d58160deb29826d8714953a800"
     },
     {
       "path": "config/feasibility_matrix.json",
@@ -184,8 +186,8 @@
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11908,
-      "sha256": "37c515b599cb09556bd8b51967b326dec9e3b1258f46981a2b9dc83a921cf2c1"
+      "bytes": 11956,
+      "sha256": "06c39a3f73bc13b9ccf2f30f5ca42512fa49e289df4f2fc653362991f79e4f2c"
     },
     {
       "path": "config/model_registry.json",
@@ -219,8 +221,8 @@
     },
     {
       "path": "docs/ACCEPTANCE_MATRIX.md",
-      "bytes": 23563,
-      "sha256": "3519cd33ae78b01e8f02103347953d1f4c889553d0bd4e62a7f3708c3d9901e6"
+      "bytes": 23527,
+      "sha256": "0174469a1776a6c09e3ba6c869c80ed2c4636e89153789a5c6332cede9003537"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -260,7 +262,7 @@
     {
       "path": "docs/STATUS.md",
       "bytes": 1133,
-      "sha256": "6e5d626dbdaa9b839c7540751c0f567ec761eb8da82b215a0f61b60091dd391c"
+      "sha256": "6f4c27568d1a6758328788cdffa773cc519cc800900232a9e81c6d893419a91e"
     },
     {
       "path": "docs/TRANSFORMATION_AUDIT.md",
@@ -638,6 +640,16 @@
       "sha256": "f1a9886576da90a4f709eb2f3814c12c9ffb28b37c053a2e0c69da38d3cc05fa"
     },
     {
+      "path": "reports/vt15/application-acceptance.json",
+      "bytes": 446,
+      "sha256": "435966962fdbb97512416304bd1fe90bd1cb031ac4db888baa46c2ed3a1de4aa"
+    },
+    {
+      "path": "reports/vt15/ticket-verification.json",
+      "bytes": 382,
+      "sha256": "15fafbe54edf9cba2e38925b5ff5219c4c1ce71e55bcf4843c341be263030298"
+    },
+    {
       "path": "requirements-spec-validation.txt",
       "bytes": 20,
       "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
@@ -679,13 +691,13 @@
     },
     {
       "path": "src/volterra/arbitration/__init__.py",
-      "bytes": 299,
-      "sha256": "74971766982d3025bbc74a01dbd1c60b367802e636257f6263b5fc5e0a6f8dcc"
+      "bytes": 427,
+      "sha256": "e972e388153e87b97162e44a92879a3a6be2749951f983d72fbb70595c42d7fd"
     },
     {
       "path": "src/volterra/arbitration/core.py",
-      "bytes": 8466,
-      "sha256": "9e5f3234f5dd44b472ee7e54d34eb1696c1be66dff828876148ecbc573aaacb1"
+      "bytes": 11404,
+      "sha256": "2315430067dc4621251e70160604c0069d0ddeae45bf7d77ec2f9238c5079a76"
     },
     {
       "path": "src/volterra/audit.py",
@@ -884,8 +896,8 @@
     },
     {
       "path": "tests/application/test_arb.py",
-      "bytes": 3725,
-      "sha256": "e11725755ddacff4f803b180cf3442f0329765e3e50ec6d314fd4d024c88d541"
+      "bytes": 5414,
+      "sha256": "a1dfbdc7314352be7b38817076f08a396db57b6c6cd140bc34d990db7da4b1cd"
     },
     {
       "path": "tests/application/test_audit.py",
@@ -1070,7 +1082,7 @@
     {
       "path": "tests/scaffold/test_cli.py",
       "bytes": 15002,
-      "sha256": "63bd4be2ab7163806c3d272a1b99b044bdbfe723a206beebfb495f642fd949af"
+      "sha256": "d6d75fcaa8448000ebe683a4e2ecd3d39d1b8309b005ed032c911dc8e32cf955"
     },
     {
       "path": "tools/validate_specs.py",

@@ -824,21 +824,39 @@
       "id": "AC-ARB-05",
       "requirement": "An unconditional expert is not multiplied by scenario probabilities twice.",
       "ticket": "VT15",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt15-conditional-fusion-20261019",
+        "executed_at": "2026-10-19T00:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt15/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-06",
       "requirement": "An unsupported expert cannot be represented as a conditional-world forecaster.",
       "ticket": "VT15",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt15-conditional-fusion-20261019",
+        "executed_at": "2026-10-19T00:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt15/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-07",
@@ -901,11 +919,20 @@
       "id": "AC-ARB-10",
       "requirement": "Rare-context shrinkage and bounded weight updates are verified against their declared policy.",
       "ticket": "VT15",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_10",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt15-conditional-fusion-20261019",
+        "executed_at": "2026-10-19T00:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt15/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-01",
@@ -1986,11 +2013,20 @@
       "id": "AC-ARB-11",
       "requirement": "Event/world probabilities remain independently resolvable and scored; expert weights cannot masquerade as event calibration.",
       "ticket": "VT15",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_11",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt15-conditional-fusion-20261019",
+        "executed_at": "2026-10-19T00:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt15/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-09",

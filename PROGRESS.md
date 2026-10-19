@@ -1,5 +1,15 @@
 # VOLTERRA progress
 
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT15; the full application remains NOT_IMPLEMENTED. The machine control records 96/120 executed application acceptance requirements. VT16 is next.
+
+## 2026-10-19 — VT15 conditional-world fusion
+
+**Ticket:** conditional fusion now keeps world masses (`q`) distinct from expert weights (`w`), mixes each declared conditional expert once inside each world, and applies outer world mass once. Marginal experts must be explicitly invariant across all worlds; incomplete conditional maps are rejected. Rare-context updates use bounded shrinkage toward a declared baseline.
+
+**Validation:** missing APIs first produced 3 focused import errors. The final suite passed 126 tests. Receipts: [application acceptance](reports/vt15/application-acceptance.json) and [ticket verification](reports/vt15/ticket-verification.json). AC-ARB-05, AC-ARB-06, AC-ARB-10, and AC-ARB-11 are satisfied.
+
+**Limits / next work:** this is local distribution fusion only; it does not establish joint-path switching or an event forecast. VT16 is next.
+
 **Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT14; the full application remains NOT_IMPLEMENTED. The machine control records 92/120 executed application acceptance requirements. VT15 is next.
 
 ## 2026-10-18 — VT14 same-pool arbitration controls

@@ -284,9 +284,11 @@
         "arbitration",
         "distributions"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Distinct q/world mass and model weights, no double marginalization, shrinkage and joint-compatible gate.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt15/ticket-verification.json"
+      ],
       "optional": false
     },
     {

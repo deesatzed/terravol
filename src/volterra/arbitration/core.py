@@ -168,3 +168,50 @@ class SamePoolArbitrator:
             intercepts[expert] = mean_loss - slope * mean_value
         base = _weights_from_losses({expert: max(0.0, intercepts[expert]) for expert in self.expert_ids})
         return FittedArbitrator(objective, base, as_of, feature_name, intercepts, slopes)
+
+@dataclass(frozen=True)
+class ConditionalFusionResult:
+    world_masses: dict[str, float]
+    distribution: DiscreteDistribution
+
+
+def _normalized(weights: Mapping[str, float], name: str) -> dict[str, float]:
+    values = dict(weights)
+    if not values or any(not isinstance(key, str) or not key or not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value) or value < 0 for key, value in values.items()):
+        raise ArbitrationError(f"{name} must be finite nonnegative named weights")
+    total = sum(values.values())
+    if not math.isclose(total, 1.0, abs_tol=1e-12):
+        raise ArbitrationError(f"{name} must sum to one")
+    return {key: float(value) for key, value in values.items()}
+
+
+def conditional_fuse(world_masses: Mapping[str, float], experts: Mapping[str, DiscreteDistribution | Mapping[str, DiscreteDistribution]], weights: Mapping[str, float]) -> ConditionalFusionResult:
+    """Fuse declared conditional experts once inside each world; q stays outside model weights."""
+    worlds = _normalized(world_masses, "world_masses")
+    model_weights = _normalized(weights, "expert weights")
+    if set(experts) != set(model_weights):
+        raise ArbitrationError("expert weights must cover exactly the supplied experts")
+    per_world: list[tuple[float, DiscreteDistribution]] = []
+    for world, mass in worlds.items():
+        parts=[]
+        for expert, payload in experts.items():
+            if isinstance(payload, DiscreteDistribution):
+                distribution=payload  # Unconditional expert appears once per outer world, never q-weighted twice.
+            else:
+                by_world=dict(payload)
+                if set(by_world) != set(worlds) or not all(isinstance(item, DiscreteDistribution) for item in by_world.values()):
+                    raise ArbitrationError("conditional expert must supply every declared world exactly once")
+                distribution=by_world[world]
+            parts.append((model_weights[expert], distribution))
+        per_world.append((mass, cdf_mixture(tuple(parts))))
+    return ConditionalFusionResult(worlds, cdf_mixture(tuple(per_world)))
+
+
+def shrink_weights(proposed: Mapping[str, float], baseline: Mapping[str, float], *, strength: float, max_change: float) -> dict[str, float]:
+    """Bound a rare-context update toward a declared baseline allocation."""
+    proposal=_normalized(proposed, "proposed weights"); base=_normalized(baseline, "baseline weights")
+    if set(proposal)!=set(base) or not isinstance(strength,(int,float)) or not isinstance(max_change,(int,float)) or not 0<=strength<=1 or not 0<=max_change<=1:
+        raise ArbitrationError("shrinkage requires matching weights and strengths within [0, 1]")
+    values={key: base[key]+max(-max_change,min(max_change,strength*(proposal[key]-base[key]))) for key in base}
+    total=sum(values.values())
+    return {key:value/total for key,value in values.items()}

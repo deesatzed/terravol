@@ -1,0 +1,18 @@
+{
+  "scope": "application_acceptance",
+  "requirement_ids": [
+    "AC-ARB-05",
+    "AC-ARB-06",
+    "AC-ARB-10",
+    "AC-ARB-11"
+  ],
+  "test_refs": [
+    "tests/application/test_arb.py"
+  ],
+  "status": "PASSED",
+  "tests_run": 126,
+  "run_id": "vt15-conditional-fusion-20261019",
+  "executed_at": "2026-10-19T00:05:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

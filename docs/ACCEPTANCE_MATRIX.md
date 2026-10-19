@@ -2,7 +2,7 @@
 
 Canonical requirements: [GOAL_UPD.md](../GOAL_UPD.md). Machine source: [acceptance_matrix.json](../config/acceptance_matrix.json).
 
-**120 application requirements; 92 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
+**120 application requirements; 96 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
 
 ## Execution receipt contract
 
@@ -56,12 +56,12 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-ARB-02 | VT16 | NOT_IMPLEMENTED | Post-inference features cannot be used to claim pre-inference cost savings. | `tests/application/test_arb.py::test_ac_arb_02` |
 | AC-ARB-03 | VT14 | PASSED | Feature and gate parameters are fitted only on eligible earlier observations and out-of-fold forecasts. | `tests/application/test_arb.py::test_ac_arb_03` |
 | AC-ARB-04 | VT14 | PASSED | Loss-to-weight, FFORMA-inspired surrogate, and direct-mixture objectives have explicit distinct identifiers. | `tests/application/test_arb.py::test_ac_arb_04` |
-| AC-ARB-05 | VT15 | NOT_IMPLEMENTED | An unconditional expert is not multiplied by scenario probabilities twice. | `tests/application/test_arb.py::test_ac_arb_05` |
-| AC-ARB-06 | VT15 | NOT_IMPLEMENTED | An unsupported expert cannot be represented as a conditional-world forecaster. | `tests/application/test_arb.py::test_ac_arb_06` |
+| AC-ARB-05 | VT15 | PASSED | An unconditional expert is not multiplied by scenario probabilities twice. | `tests/application/test_arb.py::test_ac_arb_05` |
+| AC-ARB-06 | VT15 | PASSED | An unsupported expert cannot be represented as a conditional-world forecaster. | `tests/application/test_arb.py::test_ac_arb_06` |
 | AC-ARB-07 | VT06 | PASSED | An expert failure is credited to its named fallback, not the failed model. | `tests/application/test_arb.py::test_ac_arb_07` |
 | AC-ARB-08 | VT09 | PASSED | A scenario change invalidates affected cache entries even when price history is unchanged. | `tests/application/test_arb.py::test_ac_arb_08` |
 | AC-ARB-09 | VT05 | PASSED | Consensus or simulated ensemble medians cannot enter real performance updates. | `tests/application/test_arb.py::test_ac_arb_09` |
-| AC-ARB-10 | VT15 | NOT_IMPLEMENTED | Rare-context shrinkage and bounded weight updates are verified against their declared policy. | `tests/application/test_arb.py::test_ac_arb_10` |
+| AC-ARB-10 | VT15 | PASSED | Rare-context shrinkage and bounded weight updates are verified against their declared policy. | `tests/application/test_arb.py::test_ac_arb_10` |
 | AC-EVT-01 | VT10 | PASSED | Event outcome rules are frozen independently of the observed market response. | `tests/application/test_evt.py::test_ac_evt_01` |
 | AC-EVT-02 | VT10 | PASSED | Storage/macro first-release timing, original weather runs, and publication-lagged data obey their vintages. | `tests/application/test_evt.py::test_ac_evt_02` |
 | AC-EVT-03 | VT11 | PASSED | A forecast future covariate is marginalized through scenarios rather than treated as a certain observation. | `tests/application/test_evt.py::test_ac_evt_03` |
@@ -129,6 +129,6 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-SEL-09 | VT16 | NOT_IMPLEMENTED | An unrun expert has no realized counterfactual forecast score; missing forecasts never become zero loss. | `tests/application/test_sel.py::test_ac_sel_09` |
 | AC-SEL-10 | VT16 | NOT_IMPLEMENTED | Full-pool audit forecasts and randomized selection propensities are recorded with their full compute/acquisition cost. | `tests/application/test_sel.py::test_ac_sel_10` |
 | AC-CASC-13 | VT12 | PASSED | Failure in a conditional branch cannot silently discard its probability mass or renormalize background risk away. | `tests/application/test_casc.py::test_ac_casc_13` |
-| AC-ARB-11 | VT15 | NOT_IMPLEMENTED | Event/world probabilities remain independently resolvable and scored; expert weights cannot masquerade as event calibration. | `tests/application/test_arb.py::test_ac_arb_11` |
+| AC-ARB-11 | VT15 | PASSED | Event/world probabilities remain independently resolvable and scored; expert weights cannot masquerade as event calibration. | `tests/application/test_arb.py::test_ac_arb_11` |
 | AC-OPS-09 | VT00 | PASSED | Scaffold/package checks and application acceptance execution have separate counts and no unimplemented capability receives a pass. | `tests/application/test_ops.py::test_ac_ops_09` |
 | AC-EVT-09 | VT10 | PASSED | The real event study verifies intersecting contract/target/weather-run/member/availability coverage before confirmatory evaluation. | `tests/application/test_evt.py::test_ac_evt_09` |
