@@ -21,3 +21,7 @@ def interaction(kind:str,left:bool,right:bool)->bool:
 def joint_artifact(*,episode:bool,variance_path:tuple[float,...]):
     if episode and not any(variance_path):raise ValueError("episode contradicts zero sampled variance path")
     return {"episode":episode,"variance_path":variance_path}
+def preserved_mass(*,retained:float,remainder:float,no_event:float):
+    total=retained+remainder+no_event
+    if abs(total-1)>1e-12:raise ValueError("pruning must retain remainder and no-event mass")
+    return total
