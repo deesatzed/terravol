@@ -1793,11 +1793,20 @@
       "id": "AC-OPS-08",
       "requirement": "Release reports distinguish tests run, failed, blocked, synthetic-only, and not implemented.",
       "ticket": "VT23",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ops.py"
+      ],
       "planned_test": "tests/application/test_ops.py::test_ac_ops_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt23-release-classification-20261019",
+        "executed_at": "2026-10-19T02:25:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt23/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ECO-01",

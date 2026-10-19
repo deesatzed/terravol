@@ -22,3 +22,13 @@
 ## Controls retained
 
 The default profile remains local/offline: network, model downloads, paid calls, monitoring jobs, and financial execution are disabled. Scenario, acquisition, learning, arbitration, and coverage records retain explicit unsupported or unavailable states. The source donor remains excluded.
+
+## Evidence classification
+
+| Evidence class | Current state |
+|---|---|
+| TESTS_RUN | 145 local tests passed; this is software behavior evidence only. |
+| SYNTHETIC_ONLY | Fixture and offline flows use synthetic/local inputs. |
+| BLOCKED | Authorized real datasets, historical vintages, model artifacts, and live provider verification are unavailable. |
+| NOT_IMPLEMENTED | No production deployment, live collection job, or real economic-fill study exists. |
+| FAILED | No failing test was retained in this release run; earlier red tests are recorded in ticket progress entries. |

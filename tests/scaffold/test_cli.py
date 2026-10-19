@@ -58,7 +58,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 119)
+        self.assertEqual(report["application_acceptance_executed"], 120)
         self.assertIsNone(report["next_ticket"])
 
     def test_dependency_cycle_is_rejected(self) -> None:
@@ -80,9 +80,7 @@ class ScaffoldCommandTests(unittest.TestCase):
     def test_unexecuted_requirement_cannot_receive_a_pass(self) -> None:
         self.update(
             "acceptance_matrix.json",
-            lambda value: next(item for item in value["requirements"] if item["status"] == "NOT_IMPLEMENTED").update(
-                status="PASSED"
-            ),
+            lambda value: value["requirements"][0].update(status="PASSED", last_run=None, evidence_refs=[], test_refs=[]),
         )
         self.assert_invalid("UNSUPPORTED_ACCEPTANCE_CLAIM")
 
@@ -159,7 +157,10 @@ class ScaffoldCommandTests(unittest.TestCase):
         test_path.write_text("# Metadata-fixture target; never run as application acceptance.\n")
         reference = "tests/application/test_fixture.py::fixture_reference"
         matrix = json.loads((self.root / "config/acceptance_matrix.json").read_text())
-        requirement = next(item for item in matrix["requirements"] if item["status"] == "NOT_IMPLEMENTED")["id"]
+        requirement = matrix["requirements"][0]["id"]
+        self.update("acceptance_matrix.json", lambda value: value["requirements"][0].update(
+            status="NOT_IMPLEMENTED", last_run=None, evidence_refs=[], test_refs=[]
+        ))
         run = {"run_id": "metadata-fixture", "executed_at": "2026-10-18T12:00:00Z",
                "command": "metadata-fixture-only", "exit_code": 0 if result == "PASSED" else 1}
         receipt = {"scope": "application_acceptance", "status": result, "requirement_ids": [requirement],

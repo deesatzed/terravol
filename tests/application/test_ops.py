@@ -62,3 +62,9 @@ class OperationsAcceptanceTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_ac_ops_08_release_report_separates_evidence_states(self) -> None:
+        from pathlib import Path
+        text=Path('docs/RELEASE_REPORT.md').read_text()
+        for label in ('TESTS_RUN','SYNTHETIC_ONLY','BLOCKED','NOT_IMPLEMENTED','FAILED'):
+            self.assertIn(label,text)
