@@ -27,3 +27,4 @@ def preserved_mass(*,retained:float,remainder:float,no_event:float):
     return total
 def dedup_queries(rows:tuple[tuple[str,str,str],...]):
     return tuple(dict.fromkeys((origin,target) for _,origin,target in rows))
+def future_window_active(status:str):return status not in {"CANCELLED","POSTPONED","EXPIRED","NON_PROPAGATING"}
