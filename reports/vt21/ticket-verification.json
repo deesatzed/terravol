@@ -1,0 +1,15 @@
+{
+  "scope": "ticket_verification",
+  "ticket_ids": [
+    "VT21"
+  ],
+  "test_refs": [
+    "tests/application/test_prospective.py"
+  ],
+  "status": "PASSED",
+  "tests_run": 141,
+  "run_id": "vt21-prospective-protocol-20261019",
+  "executed_at": "2026-10-19T01:35:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

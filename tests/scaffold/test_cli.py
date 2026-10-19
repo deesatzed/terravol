@@ -59,7 +59,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
         self.assertEqual(report["application_acceptance_executed"], 115)
-        self.assertEqual(report["next_ticket"], "VT21")
+        self.assertEqual(report["next_ticket"], "VT23")
 
     def test_dependency_cycle_is_rejected(self) -> None:
         self.update("implementation_queue.json", lambda value: value["tickets"][0].update(dependencies=["VT05"]))
@@ -200,7 +200,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                                     "ticket_ids": ["VT23"], "tests_run": 1,
                                     "executed_at": "2026-10-18T12:00:00Z"}))
         self.update("implementation_queue.json", lambda value: value["tickets"][23].update(
-            status="COMPLETE", evidence_refs=["reports/ticket.json"]))
+            dependencies=["VT22"], status="COMPLETE", evidence_refs=["reports/ticket.json"]))
         self.assert_invalid("COMPLETION_DEPENDENCY")
 
     def test_ticket_status_is_a_defined_enum(self) -> None:

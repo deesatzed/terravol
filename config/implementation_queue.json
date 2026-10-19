@@ -398,9 +398,11 @@
         "evaluation",
         "service"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Frozen new observations; implementation can complete while real labels/results remain pending.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt21/ticket-verification.json"
+      ],
       "optional": false
     },
     {
