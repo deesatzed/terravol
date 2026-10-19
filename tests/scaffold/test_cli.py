@@ -59,7 +59,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
         self.assertEqual(report["application_acceptance_executed"], 115)
-        self.assertEqual(report["next_ticket"], "VT23")
+        self.assertIsNone(report["next_ticket"])
 
     def test_dependency_cycle_is_rejected(self) -> None:
         self.update("implementation_queue.json", lambda value: value["tickets"][0].update(dependencies=["VT05"]))

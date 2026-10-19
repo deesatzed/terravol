@@ -434,9 +434,11 @@
         "service",
         "docs"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "All applicable receipts, real blocked-capability accounting, resource/license/security checks; separate prospective/scientific/economic readiness.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt23/ticket-verification.json"
+      ],
       "optional": false
     }
   ]
