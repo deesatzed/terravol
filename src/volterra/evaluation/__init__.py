@@ -1,2 +1,3 @@
 from volterra.evaluation.tasks import EvaluationTask
-__all__=["EvaluationTask"]
+from volterra.evaluation.experiments import ExperimentError,ExperimentManifest
+__all__=['EvaluationTask','ExperimentError','ExperimentManifest']

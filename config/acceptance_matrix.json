@@ -158,11 +158,20 @@
       "id": "AC-TIME-09",
       "requirement": "Reusing an examined holdout for a fresh confirmation claim is rejected by the experiment manifest.",
       "ticket": "VT20",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_experiments.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt20-holdout-guard-20261019",
+        "executed_at": "2026-10-19T01:20:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt20/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-PROB-01",

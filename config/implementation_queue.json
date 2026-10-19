@@ -381,9 +381,11 @@
       "owns": [
         "evaluation"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Preregister protocol before fitting, matched evidence/budgets, event-group uncertainty and untouched confirmation.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt20/ticket-verification.json"
+      ],
       "optional": false
     },
     {
