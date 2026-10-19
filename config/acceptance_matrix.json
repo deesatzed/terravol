@@ -757,11 +757,20 @@
       "id": "AC-ARB-01",
       "requirement": "Equal/global/rolling/feature/event-stage policies can be evaluated on the identical forecast pool.",
       "ticket": "VT14",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt14-same-pool-arbitration-20261018",
+        "executed_at": "2026-10-18T23:45:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt14/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-02",
@@ -777,21 +786,39 @@
       "id": "AC-ARB-03",
       "requirement": "Feature and gate parameters are fitted only on eligible earlier observations and out-of-fold forecasts.",
       "ticket": "VT14",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt14-same-pool-arbitration-20261018",
+        "executed_at": "2026-10-18T23:45:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt14/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-04",
       "requirement": "Loss-to-weight, FFORMA-inspired surrogate, and direct-mixture objectives have explicit distinct identifiers.",
       "ticket": "VT14",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt14-same-pool-arbitration-20261018",
+        "executed_at": "2026-10-18T23:45:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt14/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-05",

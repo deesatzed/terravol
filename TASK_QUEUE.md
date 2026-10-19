@@ -1,6 +1,6 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT13 are closed within bounded local/synthetic scopes; VT14 is the next ticket. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT14 are closed within bounded local/synthetic scopes; VT15 is the next ticket. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
@@ -18,7 +18,7 @@ Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_que
 | VT11 | VT07, VT09, VT10 | COMPLETE | Transmission specialist and same-information numerical control |
 | VT12 | VT03, VT07, VT11 | COMPLETE | Fitted dependency-aware cascades and joint-world queries |
 | VT13 | VT10, VT12 | COMPLETE | Coverage planning and conditional research watches |
-| VT14 | VT05, VT08 | NOT_IMPLEMENTED | Same-pool global/rolling/feature arbitration |
+| VT14 | VT05, VT08 | COMPLETE | Same-pool global/rolling/feature arbitration |
 | VT15 | VT10, VT11, VT12, VT14 | NOT_IMPLEMENTED | Event-stage gates and conditional-world fusion |
 | VT16 | VT02, VT14, VT15 | NOT_IMPLEMENTED | Cheap pre-inference selector and charged reliability audits |
 | VT17 | VT10, VT13, VT16 | NOT_IMPLEMENTED | Bounded investigation and time-matched revisions |

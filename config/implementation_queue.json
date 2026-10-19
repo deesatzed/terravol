@@ -264,9 +264,11 @@
         "arbitration",
         "forecast_store"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Classical pool can be used first; separate supported objectives, OOF forecasts and actual mixture scoring.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt14/ticket-verification.json"
+      ],
       "optional": false
     },
     {

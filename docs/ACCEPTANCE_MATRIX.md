@@ -2,7 +2,7 @@
 
 Canonical requirements: [GOAL_UPD.md](../GOAL_UPD.md). Machine source: [acceptance_matrix.json](../config/acceptance_matrix.json).
 
-**120 application requirements; 89 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
+**120 application requirements; 92 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
 
 ## Execution receipt contract
 
@@ -52,10 +52,10 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-DIST-08 | VT04 | PASSED | Unsupported/infinite required moments block the relevant score or payoff consumer with a specific reason. | `tests/application/test_dist.py::test_ac_dist_08` |
 | AC-DIST-09 | VT04 | PASSED | Point/mean return-variance baselines do not silently masquerade as full intraday realized-variance distributions. | `tests/application/test_dist.py::test_ac_dist_09` |
 | AC-DIST-10 | VT07 | PASSED | Independent calibration heads cannot be combined into an unverified coherent joint probability. | `tests/application/test_dist.py::test_ac_dist_10` |
-| AC-ARB-01 | VT14 | NOT_IMPLEMENTED | Equal/global/rolling/feature/event-stage policies can be evaluated on the identical forecast pool. | `tests/application/test_arb.py::test_ac_arb_01` |
+| AC-ARB-01 | VT14 | PASSED | Equal/global/rolling/feature/event-stage policies can be evaluated on the identical forecast pool. | `tests/application/test_arb.py::test_ac_arb_01` |
 | AC-ARB-02 | VT16 | NOT_IMPLEMENTED | Post-inference features cannot be used to claim pre-inference cost savings. | `tests/application/test_arb.py::test_ac_arb_02` |
-| AC-ARB-03 | VT14 | NOT_IMPLEMENTED | Feature and gate parameters are fitted only on eligible earlier observations and out-of-fold forecasts. | `tests/application/test_arb.py::test_ac_arb_03` |
-| AC-ARB-04 | VT14 | NOT_IMPLEMENTED | Loss-to-weight, FFORMA-inspired surrogate, and direct-mixture objectives have explicit distinct identifiers. | `tests/application/test_arb.py::test_ac_arb_04` |
+| AC-ARB-03 | VT14 | PASSED | Feature and gate parameters are fitted only on eligible earlier observations and out-of-fold forecasts. | `tests/application/test_arb.py::test_ac_arb_03` |
+| AC-ARB-04 | VT14 | PASSED | Loss-to-weight, FFORMA-inspired surrogate, and direct-mixture objectives have explicit distinct identifiers. | `tests/application/test_arb.py::test_ac_arb_04` |
 | AC-ARB-05 | VT15 | NOT_IMPLEMENTED | An unconditional expert is not multiplied by scenario probabilities twice. | `tests/application/test_arb.py::test_ac_arb_05` |
 | AC-ARB-06 | VT15 | NOT_IMPLEMENTED | An unsupported expert cannot be represented as a conditional-world forecaster. | `tests/application/test_arb.py::test_ac_arb_06` |
 | AC-ARB-07 | VT06 | PASSED | An expert failure is credited to its named fallback, not the failed model. | `tests/application/test_arb.py::test_ac_arb_07` |

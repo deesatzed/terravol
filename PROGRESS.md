@@ -1,5 +1,17 @@
 # VOLTERRA progress
 
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT14; the full application remains NOT_IMPLEMENTED. The machine control records 92/120 executed application acceptance requirements. VT15 is next.
+
+## 2026-10-18 — VT14 same-pool arbitration controls
+
+**Ticket:** VT14 adds `volterra.arbitration`: immutable same-pool rows with matured out-of-fold labels, origin-available features, and discrete expert distributions. Equal, global regularized, rolling regularized, loss-to-weight, FFORMA-inspired, and direct-mixture gate identities are explicit. The lightweight feature gate fits an eligible-only loss regression rather than relabeling a global mixture.
+
+**Safeguards:** every training row has the identical expert pool, a mature label no later than the fit as-of, and features available at its own origin; future feature availability and in-fold rows are rejected. The current path is post-inference arbitration only and contains no model selection/cost claim.
+
+**Validation:** tests first failed because `volterra.arbitration` was absent (3 errors). The focused four tests and full command `PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -q` then passed: 122 tests. Receipts: [application acceptance](reports/vt14/application-acceptance.json), [ticket verification](reports/vt14/ticket-verification.json). Acceptance IDs: AC-ARB-01, AC-ARB-03, AC-ARB-04.
+
+**Limits / next work:** no event-stage or conditional-world fusion, promotion, external model, or performance-improvement claim exists. VT15 is next.
+
 **Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT13; the full application remains NOT_IMPLEMENTED. The machine control records 89/120 executed application acceptance requirements. VT14 is next.
 
 ## 2026-10-18 — VT13 coverage planning and conditional research watches

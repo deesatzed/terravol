@@ -58,8 +58,8 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 89)
-        self.assertEqual(report["next_ticket"], "VT14")
+        self.assertEqual(report["application_acceptance_executed"], 92)
+        self.assertEqual(report["next_ticket"], "VT15")
 
     def test_dependency_cycle_is_rejected(self) -> None:
         self.update("implementation_queue.json", lambda value: value["tickets"][0].update(dependencies=["VT05"]))
@@ -184,7 +184,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                     command = self.run_cli("scaffold", "validate")
                     self.assertEqual(command.returncode, 0, command.stderr + command.stdout)
                     report = json.loads(command.stdout)
-                    self.assertEqual(report["application_acceptance_executed"], 90)
+                    self.assertEqual(report["application_acceptance_executed"], 93)
                     self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
                 finally:
                     matrix_path.write_text(original)
@@ -197,9 +197,9 @@ class ScaffoldCommandTests(unittest.TestCase):
         path = self.root / "reports/ticket.json"
         path.parent.mkdir(exist_ok=True)
         path.write_text(json.dumps({"scope": "ticket_verification", "status": "PASSED",
-                                    "ticket_ids": ["VT15"], "tests_run": 1,
+                                    "ticket_ids": ["VT16"], "tests_run": 1,
                                     "executed_at": "2026-10-18T12:00:00Z"}))
-        self.update("implementation_queue.json", lambda value: value["tickets"][15].update(
+        self.update("implementation_queue.json", lambda value: value["tickets"][16].update(
             status="COMPLETE", evidence_refs=["reports/ticket.json"]))
         self.assert_invalid("COMPLETION_DEPENDENCY")
 
