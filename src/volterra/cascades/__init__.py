@@ -13,3 +13,8 @@ def retain_failed_branch_mass(branch_mass:float,*,background:float)->dict[str,fl
 def downstream_status(*,observed:bool,report_due:bool)->str:
     if observed:return "OBSERVED_RESPONSE"
     return "MISSING_REPORT" if report_due else "REPORTING_DELAY"
+def interaction(kind:str,left:bool,right:bool)->bool:
+    if kind=="AND":return left and right
+    if kind=="INHIBIT":return left and not right
+    if kind=="EXCLUSIVE":return left != right
+    raise ValueError("declared interaction kind required")
