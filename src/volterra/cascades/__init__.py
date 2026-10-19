@@ -18,3 +18,6 @@ def interaction(kind:str,left:bool,right:bool)->bool:
     if kind=="INHIBIT":return left and not right
     if kind=="EXCLUSIVE":return left != right
     raise ValueError("declared interaction kind required")
+def joint_artifact(*,episode:bool,variance_path:tuple[float,...]):
+    if episode and not any(variance_path):raise ValueError("episode contradicts zero sampled variance path")
+    return {"episode":episode,"variance_path":variance_path}
