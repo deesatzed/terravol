@@ -228,9 +228,11 @@
         "cascades",
         "distributions"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Shared drivers/outcomes, lag/absence/cancellation, canonical episode matching and branch-failure mass.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt12/ticket-verification.json"
+      ],
       "optional": false
     },
     {

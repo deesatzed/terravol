@@ -491,41 +491,77 @@
       "id": "AC-CASC-09",
       "requirement": "AND interactions, inhibitory/buffering paths, mutually exclusive branches, and lagged feedback behave as declared.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-10",
       "requirement": "Cancelled, postponed, expired, and non-propagating precursors update the correct future windows.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_10",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-11",
       "requirement": "Sampled market episodes and derived variance paths cannot contradict each other in a joint-capable artifact.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_11",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-12",
       "requirement": "Pruning/importance sampling preserves no-event and remainder mass with correct weights and uncertainty.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_12",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DIST-01",
@@ -981,11 +1017,20 @@
       "id": "AC-EVT-08",
       "requirement": "Unobserved downstream response is distinguished from delayed or missing reporting.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-01",
@@ -1811,11 +1856,20 @@
       "id": "AC-MON-06",
       "requirement": "Query episode deduplication and cross-origin evaluation clustering preserve each origin-specific target definition.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-09",
@@ -1841,11 +1895,20 @@
       "id": "AC-CASC-13",
       "requirement": "Failure in a conditional branch cannot silently discard its probability mass or renormalize background risk away.",
       "ticket": "VT12",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_conditional_mass.py"
+      ],
       "planned_test": "tests/application/test_casc.py::test_ac_casc_13",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt12-cascade-controls-20261018",
+        "executed_at": "2026-10-18T23:00:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt12/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-11",
