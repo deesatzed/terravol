@@ -120,11 +120,20 @@
       "id": "AC-TIME-07",
       "requirement": "Cross-fitted event forecasts and upstream ensembles respect chronology and shared-event groups.",
       "ticket": "VT11",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_transmission.py"
+      ],
       "planned_test": "tests/application/test_time.py::test_ac_time_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt11-transmission-controls-20261018",
+        "executed_at": "2026-10-18T22:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt11/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-TIME-08",
@@ -877,11 +886,20 @@
       "id": "AC-EVT-03",
       "requirement": "A forecast future covariate is marginalized through scenarios rather than treated as a certain observation.",
       "ticket": "VT11",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_transmission.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt11-transmission-controls-20261018",
+        "executed_at": "2026-10-18T22:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt11/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-04",
@@ -944,11 +962,20 @@
       "id": "AC-EVT-07",
       "requirement": "An ESS graph and a plain numerical comparator receive matched eligible evidence.",
       "ticket": "VT11",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_transmission.py"
+      ],
       "planned_test": "tests/application/test_evt.py::test_ac_evt_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt11-transmission-controls-20261018",
+        "executed_at": "2026-10-18T22:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt11/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-EVT-08",

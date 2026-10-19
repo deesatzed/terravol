@@ -209,9 +209,11 @@
         "models",
         "ess"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Chronological OOF event/reference inputs, exposure, buffers and conditional distributions.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt11/ticket-verification.json"
+      ],
       "optional": false
     },
     {
