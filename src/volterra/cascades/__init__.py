@@ -10,3 +10,6 @@ __all__ = ["ExclusiveBranchTable", "background_probability", "coincident_any_pro
 def retain_failed_branch_mass(branch_mass:float,*,background:float)->dict[str,float]:
     if branch_mass<0 or background<0 or abs(branch_mass+background-1)>1e-12: raise ValueError("mass must form a partition")
     return {"failed_branch":branch_mass,"background":background}
+def downstream_status(*,observed:bool,report_due:bool)->str:
+    if observed:return "OBSERVED_RESPONSE"
+    return "MISSING_REPORT" if report_due else "REPORTING_DELAY"
