@@ -1,30 +1,47 @@
 {
   "package": "VOLTERRA consolidated goal and executable project scaffold",
   "version": "2.1",
-  "updated_at_utc": "2026-10-18T17:55:55.401174+00:00",
-  "status": "VT00_VT04_VALIDATED_VT05_IN_PROGRESS",
+  "updated_at_utc": "2026-10-19T02:06:41.772215+00:00",
+  "status": "VT00_VT13_VALIDATED_VT14_NEXT",
   "canonical_goal": "GOAL_UPD.md",
-  "file_count_excluding_manifest": 141,
+  "file_count_excluding_manifest": 204,
   "completed_implementation_tickets": [
     "VT00",
     "VT01",
     "VT02",
     "VT03",
-    "VT04"
+    "VT04",
+    "VT05",
+    "VT06",
+    "VT07",
+    "VT08",
+    "VT09",
+    "VT10",
+    "VT11",
+    "VT12",
+    "VT13"
   ],
   "planned_implementation_tickets": 24,
   "planned_application_acceptance_requirements": 120,
-  "application_acceptance_executed": 41,
-  "application_acceptance_remaining": 79,
-  "full_test_suite_passed": 77,
+  "application_acceptance_executed": 89,
+  "application_acceptance_remaining": 31,
+  "full_test_suite_passed": 118,
   "original_manifest": "docs/archive/spec-v1/MANIFEST.json",
   "verification": [
     "reports/vt00/ticket-verification.json",
     "reports/vt01/ticket-verification.json",
     "reports/vt02/ticket-verification.json",
     "reports/vt03/ticket-verification.json",
-    "reports/vt04/application-acceptance.json",
-    "reports/vt04/ticket-verification.json"
+    "reports/vt04/ticket-verification.json",
+    "reports/vt05/ticket-verification.json",
+    "reports/vt06/ticket-verification.json",
+    "reports/vt07/ticket-verification.json",
+    "reports/vt08/ticket-verification.json",
+    "reports/vt09/ticket-verification.json",
+    "reports/vt10/ticket-verification.json",
+    "reports/vt11/ticket-verification.json",
+    "reports/vt12/ticket-verification.json",
+    "reports/vt13/ticket-verification.json"
   ],
   "integrity_note": "Snapshot hashes cover this state. Original v1 hashes remain in the archived manifest; no real-data/model availability is claimed.",
   "files": [
@@ -100,8 +117,8 @@
     },
     {
       "path": "PROGRESS.md",
-      "bytes": 19150,
-      "sha256": "e589451fc3f162ed5ea53b38c2a0a9bb8b4872893db6af10eb3134b67b18c223"
+      "bytes": 21300,
+      "sha256": "9b60b1b158dcfeec9031af5d9eebbc6ffcb97df7546df5a07c496c0a467918a7"
     },
     {
       "path": "README.md",
@@ -130,8 +147,8 @@
     },
     {
       "path": "TASK_QUEUE.md",
-      "bytes": 2997,
-      "sha256": "9a4808a01f99a6cc79349e55330812fd8c73a96e285b17f05c85e52334b19432"
+      "bytes": 2928,
+      "sha256": "90b5ab0d5fd81904b6de99d8b51089605e03eebf92fc77703597139661f8318b"
     },
     {
       "path": "VOLTERRA GOAL v2.txt",
@@ -155,8 +172,8 @@
     },
     {
       "path": "config/acceptance_matrix.json",
-      "bytes": 58463,
-      "sha256": "62ca352cd6251b887799ffc338145135cb07a0ba676a42a56f38c0ec96eb4c74"
+      "bytes": 74626,
+      "sha256": "5ce771e52e61509a154cd2410723f0aeb76dc36de043347808862b575ecd2b97"
     },
     {
       "path": "config/feasibility_matrix.json",
@@ -165,8 +182,8 @@
     },
     {
       "path": "config/implementation_queue.json",
-      "bytes": 11428,
-      "sha256": "f61324d61b4e1b1e7f846b1a3f376c871d5180ad90d32fc0e31bbdcb74c3e3ee"
+      "bytes": 11860,
+      "sha256": "d6a6117a42ef0a69b031a479ad51b8b8313c17db1d74e94a7ef6cab016edd34d"
     },
     {
       "path": "config/model_registry.json",
@@ -200,8 +217,8 @@
     },
     {
       "path": "docs/ACCEPTANCE_MATRIX.md",
-      "bytes": 24327,
-      "sha256": "46161ee07e1068a65555e3b47c9908578df121f38d0ec3777c458e9a4ef3b3da"
+      "bytes": 23590,
+      "sha256": "d88ceeeb8bbbed9c213670d4c426c1824bd268eb9b02d6ce69d67b20a378a7f2"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -241,7 +258,7 @@
     {
       "path": "docs/STATUS.md",
       "bytes": 1133,
-      "sha256": "9675678aa8934dd937b866a6681ee0866a8321bfce3844be5cf18fb407ee11ed"
+      "sha256": "20e2176f4d89d9d3023bb581c17e00c22910e90ce9d4cf068b6c59b33cbd6f7e"
     },
     {
       "path": "docs/TRANSFORMATION_AUDIT.md",
@@ -519,6 +536,96 @@
       "sha256": "886a8d51f9ad2b51ca9799efbfde873d265c52d94271adb24fda753b125b1d46"
     },
     {
+      "path": "reports/vt05/application-acceptance.json",
+      "bytes": 586,
+      "sha256": "bce17c83eb3a181637a44b1002a73b7b64d8b990ad388bad97427ec7454bbf16"
+    },
+    {
+      "path": "reports/vt05/ticket-verification.json",
+      "bytes": 482,
+      "sha256": "3e220f78b819018cbf97219a4a403f626278c6174c754c7c727a1a0244e2c5a8"
+    },
+    {
+      "path": "reports/vt06/application-acceptance.json",
+      "bytes": 449,
+      "sha256": "41612f981a4f44cbfbb158e9a17672931156cb12a85e57a6329032bad2f2e1ad"
+    },
+    {
+      "path": "reports/vt06/ticket-verification.json",
+      "bytes": 396,
+      "sha256": "48696920d88bcdd6dc8c74ebe47c6756aa6183acc645bb0fe462ed0839508d40"
+    },
+    {
+      "path": "reports/vt07/application-acceptance.json",
+      "bytes": 441,
+      "sha256": "16713b984bfbf0bcf073591a54571e5d0f746c6c3edab5e2ec1a3c8ca333a0e3"
+    },
+    {
+      "path": "reports/vt07/ticket-verification.json",
+      "bytes": 371,
+      "sha256": "1f83d18c732ce711d7f2accc6083fc7a71f31117989095a5aaba4b24e07bfcfa"
+    },
+    {
+      "path": "reports/vt08/application-acceptance.json",
+      "bytes": 357,
+      "sha256": "5ad4187c235a3583ad9d8c1fd6ee81b11160ce43b7eb4144ae37943eccfbaeb6"
+    },
+    {
+      "path": "reports/vt08/ticket-verification.json",
+      "bytes": 343,
+      "sha256": "2c01c3c5d076ff7ea58d96425f2a77b39defc90d8f8fd5b7e5ed31a7ae089417"
+    },
+    {
+      "path": "reports/vt09/application-acceptance.json",
+      "bytes": 417,
+      "sha256": "d1317cc541a3bbb28615ade84cec2639cacaf2561e9b5c3ccffbde657f5ca915"
+    },
+    {
+      "path": "reports/vt09/ticket-verification.json",
+      "bytes": 349,
+      "sha256": "bf67d134b2aeac8998e1cdfb675dc5cb964370f6dac51912698b344cfa9d0a98"
+    },
+    {
+      "path": "reports/vt10/application-acceptance.json",
+      "bytes": 591,
+      "sha256": "843c40f78b68abb300e7c6cf95a7bcc23ccef8f743121e0c062514aa238e731a"
+    },
+    {
+      "path": "reports/vt10/ticket-verification.json",
+      "bytes": 459,
+      "sha256": "3e10a3779f49e750c0a023d96bb20213782f3a2c45e4674a62a4979d99655667"
+    },
+    {
+      "path": "reports/vt11/application-acceptance.json",
+      "bytes": 397,
+      "sha256": "32f5767ba73a66d609e79386f6dfd447483aab8a18688d37846de74df87f8ea3"
+    },
+    {
+      "path": "reports/vt11/ticket-verification.json",
+      "bytes": 357,
+      "sha256": "08e72b8a12e0f0ac581d39f8cb03e7b775a3ce9ba8d63b8c38202633f1b98bff"
+    },
+    {
+      "path": "reports/vt12/application-acceptance.json",
+      "bytes": 702,
+      "sha256": "756b26842e7a28ff863ec3a2861ca9aebc5d23814e32f781e68b24b0aaa00e7e"
+    },
+    {
+      "path": "reports/vt12/ticket-verification.json",
+      "bytes": 606,
+      "sha256": "187f13ca54d1cbeede4656b2dd841746cccdf15be13949386f877b1d9c6b05ab"
+    },
+    {
+      "path": "reports/vt13/application-acceptance.json",
+      "bytes": 500,
+      "sha256": "f2f290ea4dae40ff2207137bcfb08bea14884a976e4b6eb0f2a88c426a31ff39"
+    },
+    {
+      "path": "reports/vt13/ticket-verification.json",
+      "bytes": 435,
+      "sha256": "99c1270309aedfdbc0567c99b6d862be6ef35043b3961bc7d948d9de69e627bd"
+    },
+    {
       "path": "requirements-spec-validation.txt",
       "bytes": 20,
       "sha256": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0"
@@ -575,8 +682,8 @@
     },
     {
       "path": "src/volterra/cascades/__init__.py",
-      "bytes": 692,
-      "sha256": "85a7579f8d8431f41aeede5ba9c8f2091ae20f6bc3e04289c93ac80578aaa6fe"
+      "bytes": 2084,
+      "sha256": "192c3f0a8f6c07511eb68620a0b017b33338453b18d36a338f5c0640d5ebff13"
     },
     {
       "path": "src/volterra/cascades/reference.py",
@@ -594,6 +701,66 @@
       "sha256": "fbbe75e5fdaa19918860521145cd54200503013e5e8b1bff33bf6230528fefa2"
     },
     {
+      "path": "src/volterra/coverage/__init__.py",
+      "bytes": 386,
+      "sha256": "0c0a6e0d7c8f2adc879a020b90f27772c17b0a7d1d19703d9bee0e80133412b0"
+    },
+    {
+      "path": "src/volterra/coverage/core.py",
+      "bytes": 9697,
+      "sha256": "96765d485975850707099342410e6c83d053f25b563bfc678da4d2ac4e67867a"
+    },
+    {
+      "path": "src/volterra/demo.py",
+      "bytes": 1766,
+      "sha256": "f2a90c3b5604a6ef9c93ea1439ea0e505b26a8f56b0b7c2017d96fe7ad2d027e"
+    },
+    {
+      "path": "src/volterra/distributions/__init__.py",
+      "bytes": 288,
+      "sha256": "f2cc6d1db0757119af1f8d15335b0521c902fd538902b3a6c9239483ae5c9646"
+    },
+    {
+      "path": "src/volterra/distributions/discrete.py",
+      "bytes": 1554,
+      "sha256": "8c8e55d8449dde5cd53f8e2c5587068ad44f3e3b1b67f9fe59eafe1af8a83d23"
+    },
+    {
+      "path": "src/volterra/distributions/intervals.py",
+      "bytes": 851,
+      "sha256": "7668fdaafcf69e89d66680fb849c2e271cb0b825234821b2146b00ebb84efa59"
+    },
+    {
+      "path": "src/volterra/episodes/__init__.py",
+      "bytes": 106,
+      "sha256": "6d5855ee321b9ab9beed669bb771257ee59de460f593c3241141848ad69dddee"
+    },
+    {
+      "path": "src/volterra/episodes/core.py",
+      "bytes": 532,
+      "sha256": "444c3c9d81c2a99a7e7263df1483dc3c2ee36c22a1402dc19d917a9ea4c1b26d"
+    },
+    {
+      "path": "src/volterra/evaluation/__init__.py",
+      "bytes": 80,
+      "sha256": "81655f224de0de1aec8ba254c8dbe7009bc1015e8fb2310a2b36a730ed5a11f0"
+    },
+    {
+      "path": "src/volterra/evaluation/tasks.py",
+      "bytes": 511,
+      "sha256": "464399c015caf26ea54615d1eba66a912deb1ae0f1080807fe49a7e7f412c535"
+    },
+    {
+      "path": "src/volterra/events/__init__.py",
+      "bytes": 259,
+      "sha256": "ad4679b880c05d02e39fb34510e5a6d5251140fe555002e60bb9df7d167f2f5f"
+    },
+    {
+      "path": "src/volterra/events/core.py",
+      "bytes": 1637,
+      "sha256": "a33c498de4f6526d9bf40ebb8b89dedf6087a5718546073f87da95278534c0a6"
+    },
+    {
       "path": "src/volterra/forecast_store/__init__.py",
       "bytes": 243,
       "sha256": "4227863091d0e672493151092713d47759721240afdb818e62289b5922a288f1"
@@ -602,6 +769,36 @@
       "path": "src/volterra/forecast_store/store.py",
       "bytes": 6445,
       "sha256": "a2a6c5450e17ed83313d2b245ac2eb1ac7d7aec3303afcd31f6cbd2374a31194"
+    },
+    {
+      "path": "src/volterra/learning/__init__.py",
+      "bytes": 125,
+      "sha256": "64305495cf62210f1a399eed2b5149a7fb483c3bee363eaaddc0be2935f35927"
+    },
+    {
+      "path": "src/volterra/learning/provenance.py",
+      "bytes": 1282,
+      "sha256": "8ca820de90f879061744ffcb691657a584ba7417d2a060f6c2411ee9a2b7ddc0"
+    },
+    {
+      "path": "src/volterra/models/__init__.py",
+      "bytes": 246,
+      "sha256": "63c12cb5ebdbdc2505f1685bb2fa051df6d9231d495e7467b1d697a038d64c36"
+    },
+    {
+      "path": "src/volterra/models/checkpoints.py",
+      "bytes": 2434,
+      "sha256": "7d309eb386f3096db93e147a73788fde30f41dfeb9b865039b934558e327a74e"
+    },
+    {
+      "path": "src/volterra/paths/__init__.py",
+      "bytes": 309,
+      "sha256": "98dadde53ffba33c3fc86d7c98d5047df528678b1ec57de1aedc3e1861efa932"
+    },
+    {
+      "path": "src/volterra/paths/core.py",
+      "bytes": 1309,
+      "sha256": "02592336a743f549d6d07bdc5bc2505f2249d5ca75f134e13171951cf7250de1"
     },
     {
       "path": "src/volterra/policy/__init__.py",
@@ -619,6 +816,16 @@
       "sha256": "077b0b49fe52cd1ada3df9ccb4498e798cfdff85f193ca1ed695a085f8679381"
     },
     {
+      "path": "src/volterra/scenarios/__init__.py",
+      "bytes": 144,
+      "sha256": "625662d3de500f82d93443093e7b484e9690694a953e5a18eebeaaa801f41d46"
+    },
+    {
+      "path": "src/volterra/scenarios/core.py",
+      "bytes": 1027,
+      "sha256": "82e59ad7944de4bb5da90c7c18a27d1f5f12846380c89985506ed7bd39463df2"
+    },
+    {
       "path": "src/volterra/storage/__init__.py",
       "bytes": 309,
       "sha256": "be9042ddfaa29a45931ed77323879aecded1d4553bf28061ba4d7df520b4c151"
@@ -627,6 +834,16 @@
       "path": "src/volterra/storage/ledger.py",
       "bytes": 20367,
       "sha256": "cced916b69ab197979ac8c179faf9c65ca8af8608c1cafe8d0a68a103687b07b"
+    },
+    {
+      "path": "src/volterra/transmission/__init__.py",
+      "bytes": 189,
+      "sha256": "4c78fb0a55653d677d26a78406cc3da6bc45ce121c9e983b3db5a813d8dc1171"
+    },
+    {
+      "path": "src/volterra/transmission/core.py",
+      "bytes": 744,
+      "sha256": "7eb32deaeee521f1c2a7d73120c350d6a90eed66ab5d0996e35012d7aed5bb7f"
     },
     {
       "path": "tests/README.md",
@@ -659,6 +876,21 @@
       "sha256": "4bf1088bc10e60a076ed6a04eb70785f4740afb724c1b56984cc7f9a908ed526"
     },
     {
+      "path": "tests/application/test_checkpoint_gate.py",
+      "bytes": 1005,
+      "sha256": "80e09e2b414b28f4f0495c2dd31dec4f43a25e12af391645c1af597601cb1715"
+    },
+    {
+      "path": "tests/application/test_conditional_mass.py",
+      "bytes": 357,
+      "sha256": "f471cd66521866d5b4853c93ed9a7734394ae50aa9034d327ac861d9c58f92f3"
+    },
+    {
+      "path": "tests/application/test_coverage.py",
+      "bytes": 1751,
+      "sha256": "e40fb00f5363a916284430c688a3a16b002aa8cace7dc960e88f2d71c9976dd1"
+    },
+    {
       "path": "tests/application/test_ctrl.py",
       "bytes": 2635,
       "sha256": "7945f2ecaa773a87694ca00c29c5561ee557fa9073bf9f9e181a7a92247eac87"
@@ -669,14 +901,64 @@
       "sha256": "413635046f5983958024c9f370fa947b14d7d3d5bd8ab3730766e4ada2720903"
     },
     {
+      "path": "tests/application/test_demo.py",
+      "bytes": 480,
+      "sha256": "44db3fcf8211dacad4043535c4687e5600b6ef246c677931a216865cd6e8ee82"
+    },
+    {
       "path": "tests/application/test_dist.py",
       "bytes": 944,
       "sha256": "338682384607ea95b7b1c0e213e9c9fc1925a6f92063dd3f3fc72db5c3e63a51"
     },
     {
+      "path": "tests/application/test_downstream.py",
+      "bytes": 320,
+      "sha256": "d5c4f8fa602bae1aa204c8f8d71f0978726b059d3762bd7fe9c911e8b287611e"
+    },
+    {
       "path": "tests/application/test_eco.py",
       "bytes": 934,
       "sha256": "aac5a9e2fbaacced3f9b2b36f57cd64089f4dbddba863e755c0151663af4bc17"
+    },
+    {
+      "path": "tests/application/test_episodes.py",
+      "bytes": 337,
+      "sha256": "baf61574e12799c3f13b7074d8a96291dc49acb39f4d1c60b2bdc6aed1f0d1f0"
+    },
+    {
+      "path": "tests/application/test_event_state.py",
+      "bytes": 394,
+      "sha256": "2d8cd27301351fb5e7cfc78755797a589e9d9ed0eed2a60d2da936de1fb63224"
+    },
+    {
+      "path": "tests/application/test_events.py",
+      "bytes": 1171,
+      "sha256": "c857f2dae780d0586fbff5b28e114416b5045a417cd9cb618a3484867308aa61"
+    },
+    {
+      "path": "tests/application/test_interactions.py",
+      "bytes": 303,
+      "sha256": "3f25d33687409b67659db02c65ebb0b1c0ba3102dfbdb2ad0289b8d5e5d5df0d"
+    },
+    {
+      "path": "tests/application/test_joint_artifact.py",
+      "bytes": 278,
+      "sha256": "84e0429ac9ad9e9d5724f5ed5172d49d65ce5e8668d33503f2b20278bfbf7885"
+    },
+    {
+      "path": "tests/application/test_mixtures.py",
+      "bytes": 925,
+      "sha256": "d32cbbd11f51bc69f00a4e9a5f3a1ac0b10eb9e33a223214c3b662d9ed72988f"
+    },
+    {
+      "path": "tests/application/test_model_limits.py",
+      "bytes": 739,
+      "sha256": "db7255bf3a5e83ae45234649b81dfea23d4d47ca0795c6ec731e06fce9cd0e58"
+    },
+    {
+      "path": "tests/application/test_mon.py",
+      "bytes": 1480,
+      "sha256": "e32c7b9f43c431a62fa9d760a67982d567e002870692f79459d812913eb5663b"
     },
     {
       "path": "tests/application/test_offline_slice.py",
@@ -689,19 +971,69 @@
       "sha256": "a2d4df8742212aca46d061c67a3b9f147f44ab83e4cf98553b0d1514a2716890"
     },
     {
+      "path": "tests/application/test_paths.py",
+      "bytes": 1085,
+      "sha256": "17570bc2fee417a40110f539cbf5347f109f22bdcacdb1c63a9bfc1695f38800"
+    },
+    {
+      "path": "tests/application/test_precursor_window.py",
+      "bytes": 261,
+      "sha256": "3de893281865e4d82b54b17ffa260b57b8414dd85d2d456e2a125d9df2aa1263"
+    },
+    {
       "path": "tests/application/test_prob.py",
       "bytes": 934,
       "sha256": "1b9ca4b4cc9bc24ab7e6fc560788c71b1fd25a1a79c00e540c48a13f6abc5fd8"
     },
     {
+      "path": "tests/application/test_provenance.py",
+      "bytes": 821,
+      "sha256": "8d47e5367652e59053c1e475807607147f428aedc1b28296404239b0fa37183d"
+    },
+    {
+      "path": "tests/application/test_pruning.py",
+      "bytes": 277,
+      "sha256": "c74c4ba51eb74ef693045135dae8dade248b194ef712e1d5d6e7a1504f0fd3e9"
+    },
+    {
+      "path": "tests/application/test_query_dedup.py",
+      "bytes": 305,
+      "sha256": "6928f456aabd41605bd949655e545c1041400e0578c18f4c892f3220be550bd9"
+    },
+    {
+      "path": "tests/application/test_scenarios.py",
+      "bytes": 668,
+      "sha256": "de64bdaf5f86e5a3a9f9ddd20dec2a707346bbe8c8dd24ffcd85285b1055e2f0"
+    },
+    {
       "path": "tests/application/test_sel.py",
-      "bytes": 5633,
-      "sha256": "6b0d898665f63f4fa29810c8e9b6f71c6ac398582b604d8a70f3179650b3ec45"
+      "bytes": 7474,
+      "sha256": "5d4aa9913eee96819c63d77c6831a0d0d331d3e18ee29ec17a5f8e1dd73df747"
+    },
+    {
+      "path": "tests/application/test_tasks.py",
+      "bytes": 544,
+      "sha256": "31c38263926bc0ffceb9b9a2835b2373f0f915df8b5d8a1e3ce449d607b9574d"
     },
     {
       "path": "tests/application/test_time.py",
       "bytes": 4686,
       "sha256": "906c7926ef6eeaa549970a58be0db0a6631e1e4ef47e849afb2c81440fcf0b84"
+    },
+    {
+      "path": "tests/application/test_transmission.py",
+      "bytes": 892,
+      "sha256": "634db5158ece00a238af6b4301db3b102aeeb922f70be331ceb3358532d4a0fc"
+    },
+    {
+      "path": "tests/application/test_uncertainty.py",
+      "bytes": 586,
+      "sha256": "220022635cc8a7028747c610ce2f34adc1b5b79529ba99b1033bca8f2a871372"
+    },
+    {
+      "path": "tests/application/test_vintages.py",
+      "bytes": 400,
+      "sha256": "0ac62fa923df6b7702cbb6299c1e6fc5f34a19756ac6654e158b56fa899a7e7d"
     },
     {
       "path": "tests/scaffold/__init__.py",
@@ -710,8 +1042,8 @@
     },
     {
       "path": "tests/scaffold/test_cli.py",
-      "bytes": 15001,
-      "sha256": "b1ffc7d94d1e17d60d1777eaf64f69a184201491f65c2b610eb4b014d8fec4c6"
+      "bytes": 15002,
+      "sha256": "09cbe3f1abf3c3a7060bcdf9fc807fde6ed42d52063a219db305554ac9607a97"
     },
     {
       "path": "tools/validate_specs.py",

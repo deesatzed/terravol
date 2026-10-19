@@ -246,9 +246,11 @@
         "coverage",
         "scenarios"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Observation-aware lead time, explicit utility/cost units, bounded candidates, exact-small-set monitoring controls; no live jobs until enabled.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt13/ticket-verification.json"
+      ],
       "optional": false
     },
     {

@@ -1,5 +1,17 @@
 # VOLTERRA progress
 
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT13; the full application remains NOT_IMPLEMENTED. The machine control records 89/120 executed application acceptance requirements. VT14 is next.
+
+## 2026-10-18 — VT13 coverage planning and conditional research watches
+
+**Ticket:** VT13 completed locally with deterministic, offline coverage planning in `volterra.coverage`. `CoveragePolicy` freezes query, graph version, utility unit, minimum useful lead time, cost tradeoffs, budget and candidate universe. `MonitorCandidate` supplies conditional detection reliability only; it cannot change an `Outcome` world probability.
+
+**Behavior and safeguards:** selected monitors are bounded by the frozen candidate set/budget. Coverage is deduplicated by canonical downstream outcome; multiple feeds improve conditional detection resilience under a declared conditional-independence calculation but never create independent precursor/outcome mass. `AlertReceipt` retains `USABLE`, `LATE`, `FAILED`, and ineligible states. `ConditionalResearchWatch` is a local data object whose external job flag is permanently false. Exact enumeration is limited to 16 candidates and serves only as the small-set correctness comparator.
+
+**Tests and receipts:** tests were first run before implementation and failed with `ModuleNotFoundError: volterra.coverage` (7 errors in the focused group). After implementation, the focused 14 tests passed. Full validation: `PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v` — 118 passed. Receipt files: [application acceptance](reports/vt13/application-acceptance.json) and [ticket verification](reports/vt13/ticket-verification.json). Acceptance IDs: AC-SEL-04, AC-SEL-05, AC-MON-02, AC-MON-03, AC-MON-04.
+
+**Limits / next work:** this is not a live monitor, job scheduler, data provider integration, calibrated event model, or proof of monitoring value. Detection independence is explicit and only conditional on an already declared outcome. VT14 (same-pool arbitration) is now dependency-eligible.
+
 **Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. The entries below retain earlier observations and scope as history. The consolidated scaffold is validated; the forecasting application remains NOT_IMPLEMENTED, with 41/120 application acceptance requirements executed. VT05 is the next application ticket for the first scored offline slice.
 
 ## 2026-10-18 — ANALYSIS-VOLTUPD

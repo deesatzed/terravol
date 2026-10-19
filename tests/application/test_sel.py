@@ -97,3 +97,33 @@ class DispatchPolicyTests(unittest.TestCase):
         self.assertEqual(record.status, "COMPLETED")
         self.assertEqual(record.worst_case_usd, 0.5)
         self.assertEqual(record.actual_usd, 0.37)
+
+class CoverageSelectionTests(unittest.TestCase):
+    def test_ac_sel_04_monitor_selection_changes_coverage_not_world_probability(self) -> None:
+        from datetime import timedelta
+        from volterra.coverage import CoveragePolicy, MonitorCandidate, Outcome, plan_coverage
+        policy = CoveragePolicy("query", "g1", "qualified_episode", timedelta(minutes=30), 1.0, 0.0, 3.0, ("a", "b"))
+        outcomes = (Outcome("episode", 0.6),)
+        candidates = (
+            MonitorCandidate("a", {"episode": 0.5}, 1.0, "feed-a"),
+            MonitorCandidate("b", {"episode": 0.5}, 1.0, "feed-b"),
+        )
+        one = plan_coverage(policy, outcomes, candidates, ("a",))
+        both = plan_coverage(policy, outcomes, candidates, ("a", "b"))
+        self.assertEqual(one.outcome_probabilities, both.outcome_probabilities)
+        self.assertGreater(both.expected_coverage, one.expected_coverage)
+
+    def test_ac_sel_05_shared_outcomes_are_deduplicated_and_exact_small_set_matches(self) -> None:
+        from datetime import timedelta
+        from volterra.coverage import CoveragePolicy, MonitorCandidate, Outcome, exact_small_set_plan, plan_coverage
+        policy = CoveragePolicy("query", "g1", "qualified_episode", timedelta(minutes=5), 1.0, 0.0, 2.0, ("a", "b"))
+        outcomes = (Outcome("shared", 0.8),)
+        candidates = (
+            MonitorCandidate("a", {"shared": 0.5}, 0.1, "driver-a"),
+            MonitorCandidate("b", {"shared": 0.5}, 0.1, "driver-b"),
+        )
+        direct = plan_coverage(policy, outcomes, candidates, ("a", "b"))
+        exact = exact_small_set_plan(policy, outcomes, candidates)
+        self.assertAlmostEqual(direct.expected_coverage, 0.6)
+        self.assertEqual(exact.selected_monitor_ids, ("a", "b"))
+        self.assertAlmostEqual(exact.expected_coverage, direct.expected_coverage)

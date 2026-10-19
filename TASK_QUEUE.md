@@ -1,6 +1,6 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT05 are closed within their bounded local/synthetic scopes; VT06 is the next ticket. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT13 are closed within bounded local/synthetic scopes; VT14 is the next ticket. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
@@ -10,14 +10,14 @@ Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_que
 | VT03 | VT01, VT02 | COMPLETE | Seeded market/event worlds and exact cascade reference |
 | VT04 | VT02, VT03 | COMPLETE | Classical forecasts and measurement-compatible distributions |
 | VT05 | VT04 | COMPLETE | Sealed forecasts, delayed proper scoring and first offline slice |
-| VT06 | VT02, VT05 | NOT_IMPLEMENTED | TTM, Chronos-2 and TimesFM 2.5 adapters |
-| VT07 | VT05 | NOT_IMPLEMENTED | Joint paths and episode derivation |
-| VT08 | VT05, VT07 | NOT_IMPLEMENTED | Numerical CLI replay and chronological benchmark |
-| VT09 | VT01, VT03, VT05 | NOT_IMPLEMENTED | ESS rules, inference and immutable scenarios |
-| VT10 | VT02, VT09 | NOT_IMPLEMENTED | External events, clocks, expectations and monitor observation contracts |
-| VT11 | VT07, VT09, VT10 | NOT_IMPLEMENTED | Transmission specialist and same-information numerical control |
-| VT12 | VT03, VT07, VT11 | NOT_IMPLEMENTED | Fitted dependency-aware cascades and joint-world queries |
-| VT13 | VT10, VT12 | NOT_IMPLEMENTED | Coverage planning and conditional research watches |
+| VT06 | VT02, VT05 | COMPLETE | TTM, Chronos-2 and TimesFM 2.5 adapters |
+| VT07 | VT05 | COMPLETE | Joint paths and episode derivation |
+| VT08 | VT05, VT07 | COMPLETE | Numerical CLI replay and chronological benchmark |
+| VT09 | VT01, VT03, VT05 | COMPLETE | ESS rules, inference and immutable scenarios |
+| VT10 | VT02, VT09 | COMPLETE | External events, clocks, expectations and monitor observation contracts |
+| VT11 | VT07, VT09, VT10 | COMPLETE | Transmission specialist and same-information numerical control |
+| VT12 | VT03, VT07, VT11 | COMPLETE | Fitted dependency-aware cascades and joint-world queries |
+| VT13 | VT10, VT12 | COMPLETE | Coverage planning and conditional research watches |
 | VT14 | VT05, VT08 | NOT_IMPLEMENTED | Same-pool global/rolling/feature arbitration |
 | VT15 | VT10, VT11, VT12, VT14 | NOT_IMPLEMENTED | Event-stage gates and conditional-world fusion |
 | VT16 | VT02, VT14, VT15 | NOT_IMPLEMENTED | Cheap pre-inference selector and charged reliability audits |

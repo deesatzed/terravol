@@ -1,0 +1,11 @@
+{
+  "scope": "ticket_verification",
+  "ticket_ids": ["VT13"],
+  "test_refs": ["tests/application/test_coverage.py", "tests/application/test_sel.py", "tests/application/test_mon.py"],
+  "status": "PASSED",
+  "tests_run": 118,
+  "run_id": "vt13-coverage-planner-20261018",
+  "executed_at": "2026-10-18T23:30:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

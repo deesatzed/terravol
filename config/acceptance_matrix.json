@@ -1093,21 +1093,39 @@
       "id": "AC-SEL-04",
       "requirement": "Selecting more monitors changes coverage, not the underlying event probabilities.",
       "ticket": "VT13",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt13-coverage-planner-20261018",
+        "executed_at": "2026-10-18T23:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt13/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-05",
       "requirement": "The coverage planner handles shared outcomes/common drivers and is compared with exact small-set enumeration.",
       "ticket": "VT13",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt13-coverage-planner-20261018",
+        "executed_at": "2026-10-18T23:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt13/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-06",
@@ -1807,31 +1825,58 @@
       "id": "AC-MON-02",
       "requirement": "Coverage credits only eligible usable alerts satisfying the frozen lead-time rule; late and failed alerts remain visible.",
       "ticket": "VT13",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_mon.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt13-coverage-planner-20261018",
+        "executed_at": "2026-10-18T23:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt13/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-03",
       "requirement": "Monitoring utility units, cost tradeoffs, candidate universe and constraints freeze before policy evaluation.",
       "ticket": "VT13",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_mon.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt13-coverage-planner-20261018",
+        "executed_at": "2026-10-18T23:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt13/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-04",
       "requirement": "Duplicate feeds may change detection resilience but cannot create independent precursor or outcome probability.",
       "ticket": "VT13",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_mon.py"
+      ],
       "planned_test": "tests/application/test_mon.py::test_ac_mon_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt13-coverage-planner-20261018",
+        "executed_at": "2026-10-18T23:30:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt13/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-MON-05",

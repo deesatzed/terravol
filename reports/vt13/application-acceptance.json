@@ -1,0 +1,11 @@
+{
+  "scope": "application_acceptance",
+  "requirement_ids": ["AC-SEL-04", "AC-SEL-05", "AC-MON-02", "AC-MON-03", "AC-MON-04"],
+  "test_refs": ["tests/application/test_coverage.py", "tests/application/test_sel.py", "tests/application/test_mon.py"],
+  "status": "PASSED",
+  "tests_run": 118,
+  "run_id": "vt13-coverage-planner-20261018",
+  "executed_at": "2026-10-18T23:30:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}
