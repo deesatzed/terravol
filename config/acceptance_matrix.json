@@ -1537,61 +1537,115 @@
       "id": "AC-UI-01",
       "requirement": "Every numerical card exposes its target, conditioning, horizon, version, and synthetic/research/live status.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-02",
       "requirement": "The graph editor changes validated numerical assumptions and creates a new branch, not merely a visual edge.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-03",
       "requirement": "Empty, failed, unavailable, and unsupported states are visible without invented probabilities.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-04",
       "requirement": "Coverage is labeled as research/monitoring coverage rather than profit probability.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-05",
       "requirement": "Arbitration displays show actual run/failure/weight/cost lineage, not arbitrary model confidence.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-UI-06",
       "requirement": "All mandatory workflows can be reproduced through the CLI and inspected in the workbench.",
       "ticket": "VT19",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_ui.py"
+      ],
       "planned_test": "tests/application/test_ui.py::test_ac_ui_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt19-workbench-20261019",
+        "executed_at": "2026-10-19T01:05:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt19/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-OPS-01",

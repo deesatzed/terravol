@@ -1,0 +1,20 @@
+{
+  "scope": "application_acceptance",
+  "requirement_ids": [
+    "AC-UI-01",
+    "AC-UI-02",
+    "AC-UI-03",
+    "AC-UI-04",
+    "AC-UI-05",
+    "AC-UI-06"
+  ],
+  "test_refs": [
+    "tests/application/test_ui.py"
+  ],
+  "status": "PASSED",
+  "tests_run": 139,
+  "run_id": "vt19-workbench-20261019",
+  "executed_at": "2026-10-19T01:05:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

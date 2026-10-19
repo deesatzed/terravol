@@ -362,9 +362,11 @@
         "ui",
         "service"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Forecast/watch/event/graph/arbitration/scenario/evaluation views; graph edits change the actual numerical branch.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt19/ticket-verification.json"
+      ],
       "optional": false
     },
     {
