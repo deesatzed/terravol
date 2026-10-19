@@ -25,3 +25,5 @@ def preserved_mass(*,retained:float,remainder:float,no_event:float):
     total=retained+remainder+no_event
     if abs(total-1)>1e-12:raise ValueError("pruning must retain remainder and no-event mass")
     return total
+def dedup_queries(rows:tuple[tuple[str,str,str],...]):
+    return tuple(dict.fromkeys((origin,target) for _,origin,target in rows))
