@@ -340,9 +340,11 @@
       "owns": [
         "learning"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "No consensus labels; state versions, fresh confirmation, approved algorithms and reversible promotions.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt18/ticket-verification.json"
+      ],
       "optional": false
     },
     {

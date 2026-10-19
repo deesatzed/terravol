@@ -1271,71 +1271,134 @@
       "id": "AC-LEARN-02",
       "requirement": "Every approved online update records its algorithm, training label IDs, and resulting state version.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-03",
       "requirement": "Graph/model/prompt structural changes run in shadow until promotion approval.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-04",
       "requirement": "A learner cannot change evaluation targets, splits, budgets, permissions, or entitlements.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-05",
       "requirement": "Paired contribution credit is distinct from coalition success and model standalone accuracy.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_05",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-06",
       "requirement": "Corrected outcomes produce a versioned correction/replay rather than silent history changes.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_06",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-07",
       "requirement": "Rollback restores the declared model, gate, calibrator, graph, and online state.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-08",
       "requirement": "An inconclusive or negative benchmark preserves the incumbent and cannot become a superiority badge.",
       "ticket": "VT18",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_learn.py"
+      ],
       "planned_test": "tests/application/test_learn.py::test_ac_learn_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt18-learning-state-20261019",
+        "executed_at": "2026-10-19T00:50:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt18/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-DATA-01",
