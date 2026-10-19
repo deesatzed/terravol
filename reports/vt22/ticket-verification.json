@@ -1,0 +1,15 @@
+{
+  "scope": "ticket_verification",
+  "ticket_ids": [
+    "VT22"
+  ],
+  "test_refs": [
+    "tests/application/test_eco.py"
+  ],
+  "status": "PASSED",
+  "tests_run": 145,
+  "run_id": "vt22-read-only-options-20261019",
+  "executed_at": "2026-10-19T02:10:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

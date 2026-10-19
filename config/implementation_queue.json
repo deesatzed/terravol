@@ -417,9 +417,11 @@
       "owns": [
         "options"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Authorized quotes, actual timing/payoff/costs and no-edge results; no execution or brokerage integration.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt22/ticket-verification.json"
+      ],
       "optional": true
     },
     {

@@ -58,7 +58,7 @@ class ScaffoldCommandTests(unittest.TestCase):
         self.assertEqual(report["status"], "SCAFFOLD_VALID_APPLICATION_NOT_IMPLEMENTED")
         self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
         self.assertEqual(report["application_acceptance_total"], 120)
-        self.assertEqual(report["application_acceptance_executed"], 115)
+        self.assertEqual(report["application_acceptance_executed"], 119)
         self.assertIsNone(report["next_ticket"])
 
     def test_dependency_cycle_is_rejected(self) -> None:
@@ -184,7 +184,7 @@ class ScaffoldCommandTests(unittest.TestCase):
                     command = self.run_cli("scaffold", "validate")
                     self.assertEqual(command.returncode, 0, command.stderr + command.stdout)
                     report = json.loads(command.stdout)
-                    self.assertEqual(report["application_acceptance_executed"], 116)
+                    self.assertEqual(report["application_acceptance_executed"], 120)
                     self.assertEqual(report["application_status"], "NOT_IMPLEMENTED")
                 finally:
                     matrix_path.write_text(original)
@@ -199,8 +199,10 @@ class ScaffoldCommandTests(unittest.TestCase):
         path.write_text(json.dumps({"scope": "ticket_verification", "status": "PASSED",
                                     "ticket_ids": ["VT23"], "tests_run": 1,
                                     "executed_at": "2026-10-18T12:00:00Z"}))
-        self.update("implementation_queue.json", lambda value: value["tickets"][23].update(
-            dependencies=["VT22"], status="COMPLETE", evidence_refs=["reports/ticket.json"]))
+        self.update("implementation_queue.json", lambda value: (
+            value["tickets"][21].update(status="NOT_IMPLEMENTED"),
+            value["tickets"][23].update(status="COMPLETE", evidence_refs=["reports/ticket.json"])
+        ))
         self.assert_invalid("COMPLETION_DEPENDENCY")
 
     def test_ticket_status_is_a_defined_enum(self) -> None:

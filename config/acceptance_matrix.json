@@ -1803,41 +1803,77 @@
       "id": "AC-ECO-01",
       "requirement": "A high-variance path ending at the strike can lose the entire unhedged straddle premium.",
       "ticket": "VT22",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_eco.py"
+      ],
       "planned_test": "tests/application/test_eco.py::test_ac_eco_01",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt22-read-only-options-20261019",
+        "executed_at": "2026-10-19T02:10:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt22/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ECO-02",
       "requirement": "Payoff calculations use contract-specific multiplier, expiry, exercise/settlement, and eligible underlying prices.",
       "ticket": "VT22",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_eco.py"
+      ],
       "planned_test": "tests/application/test_eco.py::test_ac_eco_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt22-read-only-options-20261019",
+        "executed_at": "2026-10-19T02:10:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt22/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ECO-03",
       "requirement": "Entry/exit timing, bid/ask costs, financing where material, overlapping capital, and non-activations are retained.",
       "ticket": "VT22",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_eco.py"
+      ],
       "planned_test": "tests/application/test_eco.py::test_ac_eco_03",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt22-read-only-options-20261019",
+        "executed_at": "2026-10-19T02:10:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt22/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ECO-04",
       "requirement": "Missing quotes return NOT_ASSESSED; model valuations are never relabeled observed historical fills.",
       "ticket": "VT22",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_eco.py"
+      ],
       "planned_test": "tests/application/test_eco.py::test_ac_eco_04",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt22-read-only-options-20261019",
+        "executed_at": "2026-10-19T02:10:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt22/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ECO-05",
