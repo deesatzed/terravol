@@ -2,7 +2,7 @@
 
 Canonical requirements: [GOAL_UPD.md](../GOAL_UPD.md). Machine source: [acceptance_matrix.json](../config/acceptance_matrix.json).
 
-**120 application requirements; 96 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
+**120 application requirements; 99 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
 
 ## Execution receipt contract
 
@@ -53,7 +53,7 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-DIST-09 | VT04 | PASSED | Point/mean return-variance baselines do not silently masquerade as full intraday realized-variance distributions. | `tests/application/test_dist.py::test_ac_dist_09` |
 | AC-DIST-10 | VT07 | PASSED | Independent calibration heads cannot be combined into an unverified coherent joint probability. | `tests/application/test_dist.py::test_ac_dist_10` |
 | AC-ARB-01 | VT14 | PASSED | Equal/global/rolling/feature/event-stage policies can be evaluated on the identical forecast pool. | `tests/application/test_arb.py::test_ac_arb_01` |
-| AC-ARB-02 | VT16 | NOT_IMPLEMENTED | Post-inference features cannot be used to claim pre-inference cost savings. | `tests/application/test_arb.py::test_ac_arb_02` |
+| AC-ARB-02 | VT16 | PASSED | Post-inference features cannot be used to claim pre-inference cost savings. | `tests/application/test_arb.py::test_ac_arb_02` |
 | AC-ARB-03 | VT14 | PASSED | Feature and gate parameters are fitted only on eligible earlier observations and out-of-fold forecasts. | `tests/application/test_arb.py::test_ac_arb_03` |
 | AC-ARB-04 | VT14 | PASSED | Loss-to-weight, FFORMA-inspired surrogate, and direct-mixture objectives have explicit distinct identifiers. | `tests/application/test_arb.py::test_ac_arb_04` |
 | AC-ARB-05 | VT15 | PASSED | An unconditional expert is not multiplied by scenario probabilities twice. | `tests/application/test_arb.py::test_ac_arb_05` |
@@ -126,8 +126,8 @@ The scaffold validates receipt consistency, not the scientific correctness of a 
 | AC-MON-04 | VT13 | PASSED | Duplicate feeds may change detection resilience but cannot create independent precursor or outcome probability. | `tests/application/test_mon.py::test_ac_mon_04` |
 | AC-MON-05 | VT10 | PASSED | Physical state, evidence/confirmation state and per-instrument propagation state are stored independently. | `tests/application/test_mon.py::test_ac_mon_05` |
 | AC-MON-06 | VT12 | PASSED | Query episode deduplication and cross-origin evaluation clustering preserve each origin-specific target definition. | `tests/application/test_mon.py::test_ac_mon_06` |
-| AC-SEL-09 | VT16 | NOT_IMPLEMENTED | An unrun expert has no realized counterfactual forecast score; missing forecasts never become zero loss. | `tests/application/test_sel.py::test_ac_sel_09` |
-| AC-SEL-10 | VT16 | NOT_IMPLEMENTED | Full-pool audit forecasts and randomized selection propensities are recorded with their full compute/acquisition cost. | `tests/application/test_sel.py::test_ac_sel_10` |
+| AC-SEL-09 | VT16 | PASSED | An unrun expert has no realized counterfactual forecast score; missing forecasts never become zero loss. | `tests/application/test_sel.py::test_ac_sel_09` |
+| AC-SEL-10 | VT16 | PASSED | Full-pool audit forecasts and randomized selection propensities are recorded with their full compute/acquisition cost. | `tests/application/test_sel.py::test_ac_sel_10` |
 | AC-CASC-13 | VT12 | PASSED | Failure in a conditional branch cannot silently discard its probability mass or renormalize background risk away. | `tests/application/test_casc.py::test_ac_casc_13` |
 | AC-ARB-11 | VT15 | PASSED | Event/world probabilities remain independently resolvable and scored; expert weights cannot masquerade as event calibration. | `tests/application/test_arb.py::test_ac_arb_11` |
 | AC-OPS-09 | VT00 | PASSED | Scaffold/package checks and application acceptance execution have separate counts and no unimplemented capability receives a pass. | `tests/application/test_ops.py::test_ac_ops_09` |

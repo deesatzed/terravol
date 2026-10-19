@@ -97,3 +97,8 @@ class ConditionalFusionTests(unittest.TestCase):
         result=conditional_fuse({"no":.9,"yes":.1},{"a":DiscreteDistribution(((0.0,1.0),)),"b":DiscreteDistribution(((1.0,1.0),))},{"a":.25,"b":.75})
         self.assertEqual(result.world_masses,{"no":.9,"yes":.1})
         self.assertNotEqual(result.world_masses,{"a":.25,"b":.75})
+
+    def test_ac_arb_02_post_inference_features_cannot_drive_selection(self) -> None:
+        from volterra.selection import CheapFeature, SelectionError, select_experts
+        now=datetime(2026,1,1,tzinfo=UTC)
+        with self.assertRaises(SelectionError): select_experts(("a","b"),("a",),(CheapFeature("spread",1.0,now,True),),now)

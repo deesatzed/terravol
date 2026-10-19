@@ -127,3 +127,20 @@ class CoverageSelectionTests(unittest.TestCase):
         self.assertAlmostEqual(direct.expected_coverage, 0.6)
         self.assertEqual(exact.selected_monitor_ids, ("a", "b"))
         self.assertAlmostEqual(exact.expected_coverage, direct.expected_coverage)
+
+class SelectionAuditTests(unittest.TestCase):
+    def test_ac_sel_09_unrun_expert_has_no_counterfactual_loss(self) -> None:
+        from datetime import datetime, timezone
+        from volterra.selection import CheapFeature, select_experts
+        now=datetime(2026,1,1,tzinfo=timezone.utc)
+        decision=select_experts(("a","b"),("a",),(CheapFeature("lag",1.0,now,False),),now)
+        self.assertIsNone(decision.realized_loss("b"))
+        self.assertEqual(decision.excluded_reasons["b"],"NOT_SELECTED")
+
+    def test_ac_sel_10_full_pool_audit_records_cost_and_propensity(self) -> None:
+        from datetime import datetime, timezone
+        from volterra.selection import CheapFeature, full_pool_audit
+        now=datetime(2026,1,1,tzinfo=timezone.utc)
+        audit=full_pool_audit(("a","b"),(CheapFeature("lag",1.0,now,False),),now,{"a":.2,"b":.3},selection_propensity=.5)
+        self.assertEqual(audit.total_cost_usd,.5)
+        self.assertEqual(audit.selection_propensity,.5)

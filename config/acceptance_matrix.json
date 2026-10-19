@@ -776,11 +776,21 @@
       "id": "AC-ARB-02",
       "requirement": "Post-inference features cannot be used to claim pre-inference cost savings.",
       "ticket": "VT16",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py",
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_arb.py::test_ac_arb_02",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt16-selection-audit-20261019",
+        "executed_at": "2026-10-19T00:20:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt16/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-ARB-03",
@@ -1974,21 +1984,41 @@
       "id": "AC-SEL-09",
       "requirement": "An unrun expert has no realized counterfactual forecast score; missing forecasts never become zero loss.",
       "ticket": "VT16",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py",
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_09",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt16-selection-audit-20261019",
+        "executed_at": "2026-10-19T00:20:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt16/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-10",
       "requirement": "Full-pool audit forecasts and randomized selection propensities are recorded with their full compute/acquisition cost.",
       "ticket": "VT16",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_arb.py",
+        "tests/application/test_sel.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_10",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt16-selection-audit-20261019",
+        "executed_at": "2026-10-19T00:20:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt16/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-CASC-13",

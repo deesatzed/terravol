@@ -1,6 +1,6 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT15 are closed within bounded local/synthetic scopes; VT16 is the next ticket. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT16 are closed within bounded local/synthetic scopes; VT17 is the next ticket. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
@@ -20,7 +20,7 @@ Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_que
 | VT13 | VT10, VT12 | COMPLETE | Coverage planning and conditional research watches |
 | VT14 | VT05, VT08 | COMPLETE | Same-pool global/rolling/feature arbitration |
 | VT15 | VT10, VT11, VT12, VT14 | COMPLETE | Event-stage gates and conditional-world fusion |
-| VT16 | VT02, VT14, VT15 | NOT_IMPLEMENTED | Cheap pre-inference selector and charged reliability audits |
+| VT16 | VT02, VT14, VT15 | COMPLETE | Cheap pre-inference selector and charged reliability audits |
 | VT17 | VT10, VT13, VT16 | NOT_IMPLEMENTED | Bounded investigation and time-matched revisions |
 | VT18 | VT05, VT15, VT17 | NOT_IMPLEMENTED | Matured-outcome memory, shadow promotion and rollback |
 | VT19 | VT08, VT09, VT12, VT13, VT15, VT18 | NOT_IMPLEMENTED | Computed local workbench for W01-W09 |

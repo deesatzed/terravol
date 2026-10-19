@@ -303,9 +303,11 @@
         "selection",
         "policy"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "No fresh expensive outputs in cheap features; cold/warm cost; unrun forecasts missing; full-pool audit costs/propensities explicit.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt16/ticket-verification.json"
+      ],
       "optional": false
     },
     {
