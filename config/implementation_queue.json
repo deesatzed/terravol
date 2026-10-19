@@ -322,9 +322,11 @@
         "acquisition",
         "policy"
       ],
-      "status": "NOT_IMPLEMENTED",
+      "status": "COMPLETE",
       "exit_evidence": "Permitted requests, pre-dispatch reservations, stopping and same-time/same-future-target controls.",
-      "evidence_refs": [],
+      "evidence_refs": [
+        "reports/vt17/ticket-verification.json"
+      ],
       "optional": false
     },
     {

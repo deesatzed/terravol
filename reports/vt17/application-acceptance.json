@@ -1,0 +1,16 @@
+{
+  "scope": "application_acceptance",
+  "requirement_ids": [
+    "AC-SEL-07",
+    "AC-SEL-08"
+  ],
+  "test_refs": [
+    "tests/application/test_acquisition.py"
+  ],
+  "status": "PASSED",
+  "tests_run": 131,
+  "run_id": "vt17-acquisition-controls-20261019",
+  "executed_at": "2026-10-19T00:35:00+00:00",
+  "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0
+}

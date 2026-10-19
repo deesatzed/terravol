@@ -1214,21 +1214,39 @@
       "id": "AC-SEL-07",
       "requirement": "Acquisition scoring uses a same-time, same-future-target control rather than crediting elapsed time.",
       "ticket": "VT17",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_acquisition.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_07",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt17-acquisition-controls-20261019",
+        "executed_at": "2026-10-19T00:35:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt17/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-SEL-08",
       "requirement": "Off-policy learning records supported action propensities and does not invent unobserved counterfactual rewards.",
       "ticket": "VT17",
-      "status": "NOT_IMPLEMENTED",
-      "test_refs": [],
+      "status": "PASSED",
+      "test_refs": [
+        "tests/application/test_acquisition.py"
+      ],
       "planned_test": "tests/application/test_sel.py::test_ac_sel_08",
-      "last_run": null,
-      "evidence_refs": []
+      "last_run": {
+        "run_id": "vt17-acquisition-controls-20261019",
+        "executed_at": "2026-10-19T00:35:00+00:00",
+        "command": "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v",
+        "exit_code": 0
+      },
+      "evidence_refs": [
+        "reports/vt17/application-acceptance.json"
+      ]
     },
     {
       "id": "AC-LEARN-01",
