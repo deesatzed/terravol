@@ -2,7 +2,7 @@
 
 Canonical requirements: [GOAL_UPD.md](../GOAL_UPD.md). Machine source: [acceptance_matrix.json](../config/acceptance_matrix.json).
 
-**120 application requirements; 99 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
+**120 application requirements; 120 executed.** Scaffold tests and v1 package checks are separate. AC-ECO-01 through AC-ECO-04 are the optional VT22 research lane; AC-ECO-05 (no brokerage/execution) is mandatory VT02 work. Each passed row has an application-test receipt; every remaining test path is planned. Preserve all original 100 v2 IDs; the additional 20 requirements close consolidation gaps.
 
 ## Execution receipt contract
 

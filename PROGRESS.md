@@ -1,5 +1,13 @@
 # VOLTERRA progress
 
+**Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Engineering status:** all VT00–VT23 tickets have retained local receipts and all 120 acceptance rows have executed local tests. This does not establish real-data/model, scientific, prospective, economic, production, or deployment readiness; see [release record](docs/RELEASE_REPORT.md).
+
+## 2026-10-19 — Final local engineering validation
+
+**Evidence:** `PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -q` passed 145 tests; `PYTHONPATH=src .venv/bin/python -B -m volterra scaffold validate` passed with 120/120 executed acceptance rows and no next ticket.
+
+**Boundary:** real licensed/historical data, artifact availability, external integration smoke tests, prospective labels, and observed economic quotes remain blocked or unassessed. The optional economic implementation only returns explicit `NOT_ASSESSED` without quotes. No production or trading surface exists.
+
 **Current authority:** [GOAL_UPD.md](GOAL_UPD.md) v2.1. **Current implementation status:** bounded local/synthetic components exist through VT15; the full application remains NOT_IMPLEMENTED. The machine control records 96/120 executed application acceptance requirements. VT16 is next.
 
 ## 2026-10-19 — VT15 conditional-world fusion

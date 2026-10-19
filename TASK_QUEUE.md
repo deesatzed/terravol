@@ -1,6 +1,6 @@
 # VOLTERRA implementation queue
 
-Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT16 are closed within bounded local/synthetic scopes; VT17 is the next ticket. Scaffold work remains separate from application implementation.
+Canonical scope: [GOAL_UPD.md](GOAL_UPD.md). Machine source: [implementation_queue.json](config/implementation_queue.json). VT00–VT23 are complete as bounded local/synthetic engineering work; no queue ticket remains. Scaffold work remains separate from application implementation.
 
 | Ticket | Dependencies | Status | Deliverable |
 |---|---|---|---|
